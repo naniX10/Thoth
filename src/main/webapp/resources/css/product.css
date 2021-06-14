@@ -1,0 +1,16 @@
+#wrap{
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    min-height:500px;
+}
+.lside{
+    grid-column: 1/2;
+    background-color:skyblue;
+}
+.cside{
+    grid-column: 2/3;
+}
+.rside{
+    grid-column: 3/4;
+    background-color:skyblue;
+}

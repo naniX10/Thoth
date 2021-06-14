@@ -3,7 +3,7 @@
 
 <header class="row">
     <div class="col"><h1><a href="/"
-                            style="color:black; text-decoration:none">Lorem Ipsum</a></h1></div>
+                            style="color:black; text-decoration:none">Thoth</a></h1></div>
     <div class="col text-right">
             <h1>
                 <button type="button" class="btn btn-danger">로그인</button>
@@ -17,10 +17,9 @@
 <!-- nav Area -->
 <nav class="navbar navbar-expand navbar-dark bg-dark">
     <ul class="navbar-nav nav-fill w-100">
-        <li class="nav-item"><a href="#" class="nav-link">프로젝트소개</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">게시판</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">자료실</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">갤러리</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">관리자</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">도서</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">공지사항</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Q&A</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">이벤트</a></li>
     </ul>
 </nav>
