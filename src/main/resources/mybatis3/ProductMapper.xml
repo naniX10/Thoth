@@ -5,7 +5,8 @@
     <!-- 상품 조회 list-->
     <select id="selectProduct" statementType="PREPARED"
             parameterType="int" resultType="thoth.spring.project.vo.Product">
-            select tnum, title, author, publish, image, url, origin_price, sale_price, amount  from categoryAll order by tnum;
+            select tnum, title, author, publish, image, url, origin_price, sale_price, amount  from categoryAll
+            order by tnum limit ${snum}, 10;
     </select>
     <!-- 게시글 수 -->
     <select id="countProduct" statementType="PREPARED"

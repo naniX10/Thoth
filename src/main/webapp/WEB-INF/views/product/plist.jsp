@@ -3,6 +3,23 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<!-- 페이징관련 변수 -->
+<!-- 현재페이지번호 : 전달받은 값-->
+<fmt:parseNumber var = "cp" value="${param.cp}"/>
+<!-- 시작번호 1, 11, 21, 31 ... -->
+<fmt:parseNumber var = "sp" value="${(cp-1)/10}" integerOnly="true"/>
+<fmt:parseNumber var = "sp" value="${sp*10+1}"/>
+<!-- 끝번호 10, 20, 30, 40 ...-->
+<fmt:parseNumber var = "ep" value="${sp+9}"/>
+<!-- 총페이지 -->
+<fmt:parseNumber var = "tp" value="${pcnt/10}" integerOnly="true"/>
+<c:if test="${(pcnt % 10)>0}">
+    <fmt:parseNumber var = "tp" value="${tp+1}"/>
+</c:if>
+
+<%-- 페이지 링크 --%>
+<c:set var="pglink" value="/product/plist?cp="/>
+
 <div id="main">
     <div id="wrap">
     <!-- 좌측 영역 -->
@@ -41,6 +58,16 @@
 
     <!-- 중앙 영역 -->
     <div class="cside">
+        <!-- 검색바 -->
+        <div id="searchArea">
+            <form name="searchFrmIn" method="get">
+                <input type="search" id="searchIn" placeholder="분야내 검색">
+                <button type="button" id="searchInbtn">
+                    <i class="fa fa-search"></i>&nbsp;검색
+                </button>
+            </form>
+        </div> <!-- 검색바 -->
+
         <table class="table table-striped text-center table-hover">
             <thead style="background: #dff0d8">
             <tr>
@@ -51,7 +78,7 @@
                 <th>이미지</th>
                 <th>정가</th>
                 <th>판매가</th>
-                <th>양</th>
+<%--                <th>양</th>--%>
             </tr>
             </thead>
             <tbody>
@@ -64,11 +91,37 @@
                     <td><img src="${p.image}" alt="도서이미지" width="100px"></img></td>
                     <td>${p.origin_price}</td>
                     <td>${p.sale_price}</td>
-                    <td>${p.amount}</td>
+<%--                    <td>${p.amount}</td>--%>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
+
+        <!-- 페이지 네비게이션 -->
+        <div>
+            <ul class="pagination justify-content-center">
+
+                <%-- '이전'버튼이 작동되어야 할때는 sp가 11보다 클때 --%>
+                <li class="page-item <c:if test="${sp lt 11}">disabled </c:if>"><a href="${pglink}${sp-10}" class="page-link text-dark border-dark">이전</a></li>
+
+                <%-- 반복문을 이용해서 페이지 링크 생성 --%>
+                <c:forEach var="i" begin="${sp}" end="${ep}" step="1">
+                    <%-- 표시하는 페이지i가 총페이지수보다 작거나 같을 동안만 출력 --%>
+                    <c:if test="${i le tp}">
+                        <c:if test="${i eq cp}" >
+                            <li class="page-item active"><a href="${pglink}${i}" class="page-link bg-dark border-dark">${i}</a></li>
+                        </c:if>
+                        <c:if test="${i ne cp}">
+                            <li class="page-item"><a href="${pglink}${i}" class="page-link text-dark border-dark">${i}</a></li>
+                        </c:if>
+                    </c:if>
+                </c:forEach>
+                <%-- '다음'버튼 작동 --%>
+                <li class="page-item <c:if test="${ep gt tp}">disabled</c:if>"><a href="${pglink}${sp+10}" class="page-link text-dark border-dark">다음</a></li>
+
+            </ul>
+
+        </div> <!-- 페이지 네비게이션 -->
     </div><!-- cside -->
 
     <!-- 우측 영역 -->

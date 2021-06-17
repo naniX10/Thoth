@@ -12,23 +12,13 @@ public class ProductController {
     @Autowired
     private ProductService psrv;
 
-//    @GetMapping("/product/plist")
-//    public ModelAndView plist(ModelAndView mv, String cp) {
-//        if(cp==null) cp="1";
-//        mv.setViewName("product/plist/tiles");
-//        mv.addObject("pds",psrv.readProduct(cp));
-//
-//        return mv;
-//    }
-//    @GetMapping("/product/plist")
-//    public String plist() {return "product/plist.tiles";}
 
     @GetMapping("/product/plist")
     public ModelAndView plist(ModelAndView mv, String cp) {
         if(cp==null) cp="1";
         mv.setViewName("product/plist.tiles");
         mv.addObject("pds",psrv.readProduct(cp));
-        //mv.addObject("pcnt",psrv.countProduct());
+        mv.addObject("pcnt",psrv.countProduct());
         return mv;
     }
 

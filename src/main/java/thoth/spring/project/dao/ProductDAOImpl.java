@@ -20,6 +20,12 @@ public class ProductDAOImpl implements ProductDAO{
         return sqlSession.selectList("product.selectProduct",snum);
     }
 
+    // 전체 페이지 수 구하기
+    @Override
+    public int selectCountProduct() {
+        return sqlSession.selectOne("product.countProduct");
+    }
+
     // 상품 상세 조회
     // tnum의 상품 조회
     @Override
@@ -28,9 +34,6 @@ public class ProductDAOImpl implements ProductDAO{
         return sqlSession.selectOne("product.selectOne",tnum);
     }
 
-    @Override
-    public int selectCountProduct() {
-        return sqlSession.selectOne("product.countProduct");
-    }
+
 
 }
