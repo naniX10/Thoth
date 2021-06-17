@@ -1,6 +1,7 @@
 #wrap{
     display:grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    /*grid-template-columns: 1fr 2fr 1fr;*/
+    grid-template-columns: 20% auto 10%;
     min-height:500px;
 }
 .lside{
