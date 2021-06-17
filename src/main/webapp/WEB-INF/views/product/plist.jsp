@@ -7,9 +7,8 @@
     <div id="wrap">
     <!-- 좌측 영역 -->
     <div class="lside">
-        <p>좌측 영역</p>
+        <p>카테고리별</p>
         <ul>
-            <li>카테고리별</li>
             <li>종합</li>
             <li>소설</li>
             <li>에세이</li>
@@ -31,8 +30,8 @@
             <li>여행</li>
             <li>기술/컴퓨터</li>
         </ul>
+        <p>아동코너</p>
         <ul>
-            <li>아동코너</li>
             <li>유아</li>
             <li>어린이</li>
             <li>청소년</li>
@@ -62,7 +61,7 @@
                     <td>${p.title}</td>
                     <td>${p.author}</td>
                     <td>${p.publish}</td>
-                    <td><img src="${p.image}" alt="도서이미지"></img></td>
+                    <td><img src="${p.image}" alt="도서이미지" width="100px"></img></td>
                     <td>${p.origin_price}</td>
                     <td>${p.sale_price}</td>
                     <td>${p.amount}</td>
