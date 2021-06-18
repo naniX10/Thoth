@@ -15,6 +15,11 @@ public class NoticeDAOImpl implements NoticeDAO{
 
     @Override
     public List<Notice> selectBoard(int snum) {
-        return sqlSession.selectList("ntBoard.selectBoard", snum);
+        return sqlSession.selectList("Notice.selectBoard", snum);
+    }
+
+    @Override
+    public Notice selectOneBoard(String bdno) {
+        return sqlSession.selectOne("Notice.selectOne", bdno);
     }
 }

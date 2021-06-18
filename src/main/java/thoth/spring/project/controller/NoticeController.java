@@ -21,4 +21,13 @@ public class NoticeController {
         return mv;
     }
 
+    @GetMapping("/notice/ntview")
+    public ModelAndView view(String bdno, ModelAndView mv) {
+
+        mv.setViewName("notice/ntview.tiles");
+        mv.addObject("bd", nsrv.readOneBoard(bdno));
+
+        return mv;
+    }
+
 }

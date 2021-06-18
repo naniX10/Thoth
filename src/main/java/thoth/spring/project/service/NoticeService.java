@@ -8,4 +8,7 @@ public interface NoticeService {
 
     List<Notice> readBoard(String cp);
 
+    Notice readOneBoard(String bdno);
+
+
 }

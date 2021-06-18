@@ -19,4 +19,9 @@ public class NoticeServiceImpl implements NoticeService{
         return ndao.selectBoard(snum);
     }
 
+    @Override
+    public Notice readOneBoard(String bdno) {
+        return ndao.selectOneBoard(bdno);
+    }
+
 }
