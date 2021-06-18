@@ -1,24 +1,24 @@
 package thoth.spring.project.controller;
 
+import thoth.spring.project.service.NoticeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class NoticeController {
 
-    @GetMapping("/notice/ndelete")
-    public String ndelete() {return "notice/ndelete.tiles";}
+    @Autowired
+    private NoticeService nsrv;
 
-    @GetMapping("/notice/nlist")
-    public String nlist() {return "notice/nlist.tiles";}
+    @GetMapping("/notice/ntlist")
+    public ModelAndView ntlist(ModelAndView mv, String cp) {
+        if (cp == null) cp = "1";
+        mv.setViewName("notice/ntlist.tiles");
+        mv.addObject("bds", nsrv.readBoard(cp));
 
-    @GetMapping("/notice/nmodify")
-    public String nmodify() {return "notice/nmodify.tiles";}
-
-    @GetMapping("/notice/nview")
-    public String nview() {return "notice/nview.tiles";}
-
-    @GetMapping("/notice/nwrite")
-    public String nwrite() {return "notice/nwrite.tiles";}
+        return mv;
+    }
 
 }
