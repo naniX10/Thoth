@@ -49,4 +49,9 @@ public class ProductDAOImpl implements ProductDAO{
     public int insertProduct(Product p){
         return sqlSession.insert("product.insertProduct",p);
     }
+
+    @Override
+    public void deleteProduct(String tnum) {
+        sqlSession.delete("product.deleteProduct",tnum);
+    }
 }

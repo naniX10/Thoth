@@ -49,6 +49,18 @@
         values (#{tnum}, #{title}, #{author}, #{publish}, #{origin_price}, #{sale_price}, #{amount})
     </insert>
 
+    <!-- 상품 삭제 -->
+    <delete id="deleteProduct" statementType="PREPARED" parameterType="String">
+        delete from categoryAll where tnum = #{tnum}
+    </delete>
+
+    <!-- 상품 수정 -->
+    <update id="updateProduct" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
+        update categoryAll set tnum =#{tnum}, title=#{title}, author=#{author}, publish=#{publish},
+        origin_price=#{origin_price}, sale_price=#{sale_price}, amount=#{amount}
+        where tnum=#{tnum}
+    </update>
+
 
 
 </mapper>
