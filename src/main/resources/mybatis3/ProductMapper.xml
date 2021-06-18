@@ -25,6 +25,7 @@
         <if test="ftype == 'titauth'">
             where title like concat('%',#{fkey},'%') or author like concat('%',#{fkey},'%')
         </if>
+        limit ${snum}, 10
     </select>
 
     <select id="findSelectCount" statementType="PREPARED" parameterType="map" resultType="int">

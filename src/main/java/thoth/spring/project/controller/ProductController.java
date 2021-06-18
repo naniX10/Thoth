@@ -27,7 +27,6 @@ public class ProductController {
         mv.setViewName("product/plist.tiles");
         mv.addObject("pds",psrv.readProduct(cp,findtype,findkey));  // 검색
         mv.addObject("pcnt",psrv.countProduct(findtype,findkey));
-        System.out.println(psrv.countProduct(findtype,findkey));
 
         return mv;
     }
