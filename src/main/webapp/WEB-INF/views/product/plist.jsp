@@ -24,6 +24,7 @@
 <c:if test ="${not empty param.findkey}">
     <c:set var="pglink" value="/product/find?findtype=${param.findtype}&findkey=${param.findkey}&cp="/>
 </c:if>
+<a name="top"></a>
 <div id="main">
     <div id="wrap">
     <!-- 좌측 영역 -->
@@ -75,16 +76,19 @@
                     <i class="fa fa-search"></i>&nbsp;검색
                 </button>
             <p>검색 결과 : ${pcnt} 개의 결과가 검색되었습니다. 총 페이지 수 : ${tp}</p>
+            <button type="button" class="newPbtn" id="newPbtn">상품등록</button>
+            <button type="button" class="modPbtn" id="modPbtn">상품수정</button>
+            <button type="button" class="delPbtn" id="delPbtn">상품삭제</button>
         </div> <!-- 검색바 -->
 
         <table class="table table-striped text-center table-hover">
             <thead style="background: #dff0d8">
             <tr>
 <%--                <th>기호</th>--%>
+                <th>이미지</th>
                 <th>제목</th>
                 <th>작가</th>
                 <th>출판사</th>
-                <th>이미지</th>
                 <th>정가</th>
                 <th>판매가</th>
 <%--                <th>양</th>--%>
@@ -94,10 +98,11 @@
             <c:forEach var="p" items="${pds}">
                 <tr>
 <%--                    <td>${p.tnum}</td>--%>
-                    <td>${p.title}</td>
+                    <td><a href="/product/pview?tnum=${p.tnum}">
+                        <img src="${p.image}" alt="도서이미지" width="100px"></img></a></td>
+                    <td><a href="/product/pview?tnum=${p.tnum}">${p.title}</a></td>
                     <td>${p.author}</td>
                     <td>${p.publish}</td>
-                    <td><img src="${p.image}" alt="도서이미지" width="100px"></img></td>
                     <td>${p.origin_price}</td>
                     <td>${p.sale_price}</td>
 <%--                    <td>${p.amount}</td>--%>
@@ -135,8 +140,12 @@
 
     <!-- 우측 영역 -->
     <div class="rside">
-        <p>우측 영역</p>
+        <div class="quick_menu">
+        <div class="quick_top"><a href="#top"><i class="fa fa-arrow-up fa-2x"></i></a></div>
+        <div class="quick_bottom"><a href="#bottom"><i class="fa fa-arrow-down fa-2x"></i></a></div>
+        </div>
     </div><!-- rside -->
 
     </div><!--wrap-->
 </div>
+<a name="bottom"></a>

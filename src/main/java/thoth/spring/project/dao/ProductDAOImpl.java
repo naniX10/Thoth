@@ -39,13 +39,14 @@ public class ProductDAOImpl implements ProductDAO{
     }
 
     // 상품 상세 조회
-    // tnum의 상품 조회
     @Override
     public Product selectOneProduct(String tnum) {
-
         return sqlSession.selectOne("product.selectOne",tnum);
     }
 
-
-
+    // 상품 등록
+    @Override
+    public int insertProduct(Product p){
+        return sqlSession.insert("product.insertProduct",p);
+    }
 }
