@@ -60,7 +60,12 @@ public class ProductServiceImpl implements ProductService{
         return isInserted;
     }
 
-
+    @Override
+    public Product removeProduct(String tnum) {
+        Product p = pdao.selectOneProduct(tnum); // 지우고자 하는 상품 분류코드
+        pdao.deleteProduct(tnum);
+        return p;
+    }
 
 
 }

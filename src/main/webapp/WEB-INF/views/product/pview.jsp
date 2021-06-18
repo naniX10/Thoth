@@ -38,6 +38,14 @@
 
         <!-- 중앙 영역 -->
         <div class="cside">
+            <!-- 버튼 -->
+            <button type="button" class="modPbtn" id="modPbtn">상품수정</button>
+            <button type="button" class="delPbtn" id="delPbtn">상품삭제</button>
+            <button type="button" class="listPbtn" id="listPbtn">목록보기</button>
+
+            <!-- 상품수정/삭제를 위해 넘겨주는 값 -->
+            <input type="hidden" id="tnum" value="${param.tnum}"/>
+
             <table class="table table-striped text-center table-hover">
                 <thead style="background: #dff0d8">
                 <tr>

@@ -32,6 +32,11 @@ public interface ProductDAO {
 
     // 상품 등록
     int insertProduct(Product p);
-
-
+    
+    // 상품 삭제 - view에서
+    void deleteProduct(String tnum);
+    
+    // 상품 수정
+    
+    //상품 선택 삭제 - list에서
 }

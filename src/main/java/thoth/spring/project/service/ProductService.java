@@ -31,5 +31,9 @@ public interface ProductService {
     boolean newProduct(Product p);
 
     // 상품 삭제
+    Product removeProduct(String tnum);
+
     // 상품 수정
+
+    // 상품 선택 삭제
 }

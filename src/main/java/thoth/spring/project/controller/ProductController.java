@@ -56,5 +56,33 @@ public class ProductController {
 
         return returnPage;
     }
+    
+    // 상품 삭제 - view에서 삭제
+    @GetMapping("/product/premove")
+    public String premove(String tnum){
+        Product p = psrv.removeProduct(tnum); // 상품 삭제
+
+        return "redirect:/product/plist";
+    }
+
+    // 상품 수정 페이지
+    @GetMapping("/product/pupdate")
+    public String pupdate(){
+        return "product/pupdate.tiles";
+    }
+
+    // 상품 수정 완료
+//    @PostMapping("/product/pupdate")
+//    public String updateok(Product p){
+//        String returnPage = "redirect:/product/plist";
+//        if(psrv.modifyProduct(p))
+//            System.out.println("상품 수정이 완료되었습니다.");
+//
+//        return returnPage;
+//    }
+
+    // 상품 삭제 - list에서 선택한 상품 모두 삭제
+
+
 
 }
