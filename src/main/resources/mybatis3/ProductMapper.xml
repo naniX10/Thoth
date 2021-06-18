@@ -2,16 +2,39 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="product">
 
-    <!-- 상품 조회 list-->
+    <!-- 상품 조회 - n개의 상품 출력(현재는 10개 출력)-->
     <select id="selectProduct" statementType="PREPARED"
             parameterType="int" resultType="thoth.spring.project.vo.Product">
             select tnum, title, author, publish, image, url, origin_price, sale_price, amount  from categoryAll
             order by tnum limit ${snum}, 10;
     </select>
-    <!-- 게시글 수 -->
+
+    <!-- 상품 조회 - 전체 상품 수 구하기 -->
     <select id="countProduct" statementType="PREPARED"
             parameterType="thoth.spring.project.vo.Product" resultType="int">
         select count(tnum) from categoryAll
+    </select>
+
+    <!-- 상품 조회 - 검색 기능 구현 -->
+    <!-- 동적 질의문 사용 - 컬럼명,테이블명만 ${}사용 -->
+    <select id="findSelect" statementType="PREPARED" parameterType="map" resultType="thoth.spring.project.vo.Product">
+        select tnum, title, author, publish, image, url, origin_price, sale_price, amount from categoryAll
+        <if test="ftype != 'titauth'">
+            where ${ftype} like concat('%',#{fkey},'%')
+        </if>
+        <if test="ftype == 'titauth'">
+            where title like concat('%',#{fkey},'%') or author like concat('%',#{fkey},'%')
+        </if>
+    </select>
+
+    <select id="findSelectCount" statementType="PREPARED" parameterType="map" resultType="int">
+        select count(tnum) cnt from categoryAll
+        <if test="ftype != 'titauth'">
+            where ${ftype} like concat('%',#{fkey},'%')
+        </if>
+        <if test="ftype == 'titauth'">
+            where title like concat('%',#{fkey},'%') or author like concat('%',#{fkey},'%')
+        </if>
     </select>
 
     <!-- 상품 상세 조회 view-->

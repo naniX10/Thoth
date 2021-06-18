@@ -13,13 +13,17 @@
 <fmt:parseNumber var = "ep" value="${sp+9}"/>
 <!-- 총페이지 -->
 <fmt:parseNumber var = "tp" value="${pcnt/10}" integerOnly="true"/>
-<c:if test="${(pcnt % 10)>0}">
+<c:if test="${(pcnt % 10) gt 0}">
     <fmt:parseNumber var = "tp" value="${tp+1}"/>
 </c:if>
 
 <%-- 페이지 링크 --%>
 <c:set var="pglink" value="/product/plist?cp="/>
 
+<%-- 페이지 링크2 - 검색 --%>
+<c:if test ="${not empty param.findkey}">
+    <c:set var="pglink" value="/product/find?findtype=${param.findtype}&findkey=${param.findkey}&cp="/>
+</c:if>
 <div id="main">
     <div id="wrap">
     <!-- 좌측 영역 -->
@@ -60,12 +64,17 @@
     <div class="cside">
         <!-- 검색바 -->
         <div id="searchArea">
-            <form name="searchFrmIn" method="get">
-                <input type="search" id="searchIn" placeholder="분야내 검색">
+            <select name="findtype" id="findtype">
+                <option value="title">제목</option>
+                <option value="author">작가</option>
+                <option value="titauth">제목+작가</option>
+                <option value="publish">출판사</option>
+            </select>
+            <input type="search" name="findkey" id="findkey" placeholder="분야내 검색">
                 <button type="button" id="searchInbtn">
                     <i class="fa fa-search"></i>&nbsp;검색
                 </button>
-            </form>
+            <p>검색 결과 : ${pcnt} 개의 결과가 검색되었습니다. 총 페이지 수 : ${tp}</p>
         </div> <!-- 검색바 -->
 
         <table class="table table-striped text-center table-hover">
