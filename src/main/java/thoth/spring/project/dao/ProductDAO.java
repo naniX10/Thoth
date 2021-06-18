@@ -3,6 +3,7 @@ package thoth.spring.project.dao;
 import thoth.spring.project.vo.Product;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ProductDAO {
     
@@ -14,14 +15,21 @@ public interface ProductDAO {
         5. 상품 수정 - 시간이 남을 경우 구현할 것
      */
 
-    // 상품 조회
-    // snum은 paging 구현을 위해 사용
-    // limit snum, 10이면 snum부터 10개 출력
+    // 상품 조회 - snum부터 n개의 게시물 출력(현재는 10개로 설정)
     List<Product> selectProduct(int snum);
+
+    // 상품 조회 - 전체 상품 수 구하기
+    int selectCountProduct();
+
+    // 상품 조회 - 검색 기능
+    List<Product> findSelectProduct(Map<String,Object> param);
+
+    // 상품 조회 - 검색된 상품 수
+    int selectCountProduct(Map<String,Object> params);
 
     // 상품 상세조회
     // tnum의 값을 상세조회
     Product selectOneProduct(String tnum);
 
-    int selectCountProduct();
+
 }

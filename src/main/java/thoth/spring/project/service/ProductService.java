@@ -16,14 +16,18 @@ public interface ProductService {
      
     
     // 상품 조회
-    // cp : 페이지 네비게이션에 사용
-    List<Product> readProduct(String cp);
+    List<Product> readProduct(String cp); // cp: 페이지 번호(페이징에 사용)
     // 게시글 수
     int countProduct();
-
+    // 상품 검색(내부)
+    List<Product> readProduct(String cp, String ftype, String fkey);
+    // 검색된 상품 수
+    int countProduct(String ftype, String fkey);
+    
     // 상품 상세조회
     // tnum : 테이블의 데이터 구분에 사용(key값)
     Product readOneProduct(String tnum);
+
 
     // 상품 등록
     // 상품 삭제
