@@ -27,9 +27,11 @@ public interface ProductDAO {
     // 상품 조회 - 검색된 상품 수
     int selectCountProduct(Map<String,Object> params);
 
-    // 상품 상세조회
-    // tnum의 값을 상세조회
+    // 상품 상세조회 - tnum의 값 조회
     Product selectOneProduct(String tnum);
+
+    // 상품 등록
+    int insertProduct(Product p);
 
 
 }

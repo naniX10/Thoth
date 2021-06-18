@@ -25,11 +25,11 @@ public interface ProductService {
     int countProduct(String ftype, String fkey);
     
     // 상품 상세조회
-    // tnum : 테이블의 데이터 구분에 사용(key값)
     Product readOneProduct(String tnum);
 
-
     // 상품 등록
+    boolean newProduct(Product p);
+
     // 상품 삭제
     // 상품 수정
 }

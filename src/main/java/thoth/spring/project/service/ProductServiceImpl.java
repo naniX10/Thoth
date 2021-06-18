@@ -46,9 +46,18 @@ public class ProductServiceImpl implements ProductService{
         return pdao.selectCountProduct(params);
     }
 
+    // 상품 상세 조회
     @Override
     public Product readOneProduct(String tnum) {
         return pdao.selectOneProduct(tnum);
+    }
+    
+    // 상품 등록
+    @Override
+    public boolean newProduct(Product p){
+        boolean isInserted = false;
+        if(pdao.insertProduct(p)>0) isInserted = true;
+        return isInserted;
     }
 
 
