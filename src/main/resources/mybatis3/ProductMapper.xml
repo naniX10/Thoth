@@ -5,7 +5,9 @@
     <!-- 상품 조회 - n개의 상품 출력(현재는 10개 출력)-->
     <select id="selectProduct" statementType="PREPARED"
             parameterType="int" resultType="thoth.spring.project.vo.Product">
-            select tnum, title, author, publish, image, url, origin_price, sale_price, amount  from categoryAll
+            select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+            b.fnames, b.fsizes, b.uuid from categoryAll c
+            left outer join bookImage b using(tnum)
             order by tnum limit ${snum}, 10;
     </select>
 
@@ -53,6 +55,17 @@
     <delete id="deleteProduct" statementType="PREPARED" parameterType="String">
         delete from categoryAll where tnum = #{tnum}
     </delete>
+
+    <!-- 상품 등록 write(이미지) -->
+    <insert id="insertImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
+        insert into bookImage (tnum,title,author, fnames, fsizes, uuid)
+        values(#{tnum},#{title},#{author},#{fnames},#{fsizes},#{uuid})
+    </insert>
+
+    <!-- 상품 상세 조회 view(이미지)-->
+    <select id="selectOneImage" statementType="PREPARED" parameterType="String" resultType="thoth.spring.project.vo.BookImage">
+        select * from bookImage where tnum = #{tnum}
+    </select>
 
     <!-- 상품 수정 -->
     <update id="updateProduct" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">

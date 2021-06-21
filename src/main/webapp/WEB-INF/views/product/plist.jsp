@@ -3,6 +3,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<%--<c:set var="fnameMain" value="${fn:split(p.fnames,'/')[0]}"/>--%>
+<%--<c:set var="fsizeMain" value="${fn:split(p.fsizes,'/')[0]}"/>--%>
+<%--<c:set var="fnames" value="${fn:split(p.fnames,'/')}"/>--%>
+<%--<c:set var="fsizes" value="${fn:split(p.fsizes,'/')}"/>--%>
+<c:set var="baseURL" value="http://localhost/book/"/>
+
+
 <!-- 페이징관련 변수 -->
 <!-- 현재페이지번호 : 전달받은 값-->
 <fmt:parseNumber var = "cp" value="${param.cp}"/>
@@ -96,15 +103,26 @@
             <tbody>
             <c:forEach var="p" items="${pds}">
                 <tr>
-<%--                    <td>${p.tnum}</td>--%>
+                    <!-- 기존글 이미지 -->
+                    <c:if test="${not empty p.image}">
                     <td><a href="/product/pview?tnum=${p.tnum}">
                         <img src="${p.image}" alt="도서이미지" width="100px"></img></a></td>
+                    </c:if>
+                    <!-- 새글쓰기로 추가한 이미지 -->
+                    <c:if test="${empty p.image}">
+                        <c:set var="f" value="${fn:split(p.fnames,'/')[0]}"/>
+                            <c:if test="${f ne '-'}">
+                                <c:set var="pos" value="${fn:indexOf(f,'.')}"/>
+                                <c:set var="fname" value="${fn:substring(f,0,pos)}"/>
+                                <c:set var="fext" value="${fn:substring(f,pos+1,fn:length(f))}"/>
+                         <td><a href="/product/pview?tnum=${p.tnum}"><img src="${baseURL}${fname}${p.uuid}.${fext}" alt="도서이미지2" width="100px"></img></a></td>
+        </c:if>
+    </c:if>
                     <td><a href="/product/pview?tnum=${p.tnum}">${p.title}</a></td>
                     <td>${p.author}</td>
                     <td>${p.publish}</td>
                     <td>${p.origin_price}</td>
                     <td>${p.sale_price}</td>
-<%--                    <td>${p.amount}</td>--%>
                 </tr>
             </c:forEach>
             </tbody>

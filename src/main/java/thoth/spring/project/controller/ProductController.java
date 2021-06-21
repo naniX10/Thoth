@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import thoth.spring.project.service.ProductService;
+import thoth.spring.project.vo.BookImage;
 import thoth.spring.project.vo.Product;
 
 @Controller
@@ -39,6 +41,7 @@ public class ProductController {
 
         mv.setViewName("product/pview.tiles");
         mv.addObject("p", psrv.readOneProduct(tnum));   // tnum 상품 정보 조회
+        mv.addObject("b",psrv.readOneImage(tnum)); // 이미지 조회
         return mv;
     }
     
@@ -48,10 +51,11 @@ public class ProductController {
 
     // write - 상품 등록 완료
     @PostMapping("/product/pwrite")
-    public String pwriteok(Product p){
+    public String pwriteok(Product p, BookImage b, MultipartFile[] img){
+
         String returnPage = "redirect:/product/plist";
 
-        if(psrv.newProduct(p))
+        if(psrv.newProduct(p,b,img))
             System.out.println("상품 등록이 완료되었습니다.");
 
         return returnPage;

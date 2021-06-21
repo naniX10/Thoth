@@ -1,5 +1,6 @@
 package thoth.spring.project.dao;
 
+import thoth.spring.project.vo.BookImage;
 import thoth.spring.project.vo.Product;
 
 import java.util.List;
@@ -31,11 +32,15 @@ public interface ProductDAO {
     Product selectOneProduct(String tnum);
 
     // 상품 등록
-    int insertProduct(Product p);
+    int insertProduct(Product p, BookImage b);
     
     // 상품 삭제 - view에서
     void deleteProduct(String tnum);
-    
+
+    // 상품 상세조회 - 이미지
+    BookImage selectOneImage(String tnum);
+
+
     // 상품 수정
     
     //상품 선택 삭제 - list에서

@@ -1,5 +1,7 @@
 package thoth.spring.project.service;
 
+import org.springframework.web.multipart.MultipartFile;
+import thoth.spring.project.vo.BookImage;
 import thoth.spring.project.vo.Product;
 
 import java.util.List;
@@ -28,10 +30,14 @@ public interface ProductService {
     Product readOneProduct(String tnum);
 
     // 상품 등록
-    boolean newProduct(Product p);
+    boolean newProduct(Product p, BookImage b, MultipartFile[] img);
 
     // 상품 삭제
     Product removeProduct(String tnum);
+
+    // 상품 상세조회 - 이미지
+    BookImage readOneImage(String tnum);
+
 
     // 상품 수정
 

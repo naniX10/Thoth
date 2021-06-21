@@ -28,6 +28,7 @@ $('#savePbtn').on('click',function(){
         const frm = $('#prdfrm');
         frm.attr('action','/product/pwrite');
         frm.attr('method','post');
+        frm.attr('enctype','multipart/form-data');
         frm.submit();
         alert('상품이 등록되었습니다.');
     };
@@ -43,6 +44,24 @@ $('#delPbtn').on('click',function(){
     alert('상품이 삭제되었습니다.');
     location.href='/product/premove?tnum='+$('#tnum').val();
 });
+
+
+// 상품 등록 - 이미지 등록시 파일명 표시
+$('#imageMain').on('change',function(){
+    var fname = $(this).val();
+    fname = fname.substring(fname.lastIndexOf("\\")+1);
+    $(this).next('.imageMain').html(fname);
+})
+$('#imageSub1').on('change',function(){
+    var fname = $(this).val();
+    fname = fname.substring(fname.lastIndexOf("\\")+1);
+    $(this).next('.imageSub1').html(fname);
+})
+$('#imageSub2').on('change',function(){
+    var fname = $(this).val();
+    fname = fname.substring(fname.lastIndexOf("\\")+1);
+    $(this).next('.imageSub2').html(fname);
+})
 
 // 상품 수정 버튼 클릭 이벤트 : view에서 상품 수정
 

@@ -2,9 +2,13 @@ package thoth.spring.project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import thoth.spring.project.dao.ProductDAO;
+import thoth.spring.project.utils.ImgUploadUtil;
+import thoth.spring.project.vo.BookImage;
 import thoth.spring.project.vo.Product;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +17,7 @@ import java.util.Map;
 public class ProductServiceImpl implements ProductService{
 
     @Autowired private ProductDAO pdao;
+    @Autowired private ImgUploadUtil imgutil;
 
     // 상품 조회 - n개의 게시글 출력
     @Override
@@ -54,9 +59,51 @@ public class ProductServiceImpl implements ProductService{
     
     // 상품 등록
     @Override
-    public boolean newProduct(Product p){
+    public boolean newProduct(Product p, BookImage b, MultipartFile[] img){
+        
+        // 식별코드 생성
+        String uuid = imgutil.makeUUID();
+        
+        // 첨부파일이 존재할 경우
+        if(imgutil.checkImageFiles(img)) {
+
+            // 이미지명 저장을 위한 공간 생성
+            List<String> imgs = new ArrayList<>();
+
+
+            // imgs에 저장, 저장 실패시 '-/-'를 넘김
+            for (MultipartFile f : img) {
+                if (!f.getOriginalFilename().isEmpty())
+                    imgs.add(imgutil.ImageUpload(f, uuid));
+                else
+                    imgs.add("-/-");
+            }
+
+            // DB저장을 위한 변수 선언
+            String fnames = "";
+            String fsizes = "";
+
+            // 파일명, 파일크기 저장
+            for (int i = 0; i < imgs.size(); ++i) {
+                fnames += imgs.get(i).split("/")[0] + "/";
+                fsizes += imgs.get(i).split("/")[1] + "/";
+            }
+
+            // VO에 반영
+            b.setFnames(fnames);
+            b.setFsizes(fsizes);
+            b.setUuid(uuid);
+
+            p.setFnames(fnames);
+            p.setFsizes(fsizes);
+            p.setUuid(uuid);
+
+        }
+
+        //DAO에 전달
         boolean isInserted = false;
-        if(pdao.insertProduct(p)>0) isInserted = true;
+        if(pdao.insertProduct(p,b)>0) isInserted = true;
+        //pdao.insertProduct(p,b);
         return isInserted;
     }
 
@@ -66,6 +113,13 @@ public class ProductServiceImpl implements ProductService{
         pdao.deleteProduct(tnum);
         return p;
     }
+
+    // 상품 상세 조회 - 이미지
+    @Override
+    public BookImage readOneImage(String tnum) {
+        return pdao.selectOneImage(tnum);
+    }
+
 
 
 }
