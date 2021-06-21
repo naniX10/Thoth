@@ -67,6 +67,11 @@
         select * from bookImage where tnum = #{tnum}
     </select>
 
+    <!-- 상품 삭제(이미지) -->
+    <delete id="deleteImage" statementType="PREPARED" parameterType="String">
+        delete from bookImage where tnum = #{tnum}
+    </delete>
+
     <!-- 상품 수정 -->
     <update id="updateProduct" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
         update categoryAll set tnum =#{tnum}, title=#{title}, author=#{author}, publish=#{publish},

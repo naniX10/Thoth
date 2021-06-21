@@ -38,6 +38,9 @@ public interface ProductService {
     // 상품 상세조회 - 이미지
     BookImage readOneImage(String tnum);
 
+    // 상품 삭제 - 이미지
+    BookImage removeImage(String tnum);
+
 
     // 상품 수정
 

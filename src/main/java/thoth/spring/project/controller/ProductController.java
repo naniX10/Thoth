@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import thoth.spring.project.service.ProductService;
+import thoth.spring.project.utils.ImgUploadUtil;
 import thoth.spring.project.vo.BookImage;
 import thoth.spring.project.vo.Product;
 
@@ -15,6 +16,8 @@ public class ProductController {
 
     @Autowired
     private ProductService psrv;
+    @Autowired
+    private ImgUploadUtil imgUtil;
 
     // 리스트 - 상품 조회, 페이징
     @GetMapping("/product/plist")
@@ -65,6 +68,8 @@ public class ProductController {
     @GetMapping("/product/premove")
     public String premove(String tnum){
         Product p = psrv.removeProduct(tnum); // 상품 삭제
+        BookImage b = psrv.removeImage(tnum); // 상품 이미지 삭제
+        imgUtil.removeImage(b);
 
         return "redirect:/product/plist";
     }
@@ -75,17 +80,6 @@ public class ProductController {
         return "product/pupdate.tiles";
     }
 
-    // 상품 수정 완료
-//    @PostMapping("/product/pupdate")
-//    public String updateok(Product p){
-//        String returnPage = "redirect:/product/plist";
-//        if(psrv.modifyProduct(p))
-//            System.out.println("상품 수정이 완료되었습니다.");
-//
-//        return returnPage;
-//    }
-
-    // 상품 삭제 - list에서 선택한 상품 모두 삭제
 
 
 

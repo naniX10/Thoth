@@ -107,6 +107,7 @@ public class ProductServiceImpl implements ProductService{
         return isInserted;
     }
 
+    // 상품 삭제
     @Override
     public Product removeProduct(String tnum) {
         Product p = pdao.selectOneProduct(tnum); // 지우고자 하는 상품 분류코드
@@ -120,6 +121,13 @@ public class ProductServiceImpl implements ProductService{
         return pdao.selectOneImage(tnum);
     }
 
+    // 상품 삭제 - 이미지
+    @Override
+    public BookImage removeImage(String tnum) {
+        BookImage b = pdao.selectOneImage(tnum); // 지우고자 하는 상품 분류코드
+        pdao.deleteImage(tnum);
+        return b;
+    }
 
 
 }

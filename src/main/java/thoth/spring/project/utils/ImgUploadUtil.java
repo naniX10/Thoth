@@ -2,6 +2,7 @@ package thoth.spring.project.utils;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
+import thoth.spring.project.vo.BookImage;
 
 import java.io.File;
 
@@ -54,4 +55,38 @@ public class ImgUploadUtil {
         return uuid;
     }
 
+    public void removeImage(BookImage b) {
+
+        String item1=b.getFnames().split("[/]")[0];
+        String item2=b.getFnames().split("[/]")[1];
+        String item3=b.getFnames().split("[/]")[2];
+
+        // 삭제할 파일명 재조립
+        int pos = item1.lastIndexOf(".");
+        String fname = item1.substring(0,pos)
+                +b.getUuid()+"."+item1.substring(pos+1);
+        File f = new File(uploadPath,fname);
+        f.delete();
+
+        // 삭제할 파일명 재조립2
+        // 첨부파일이 없을 경우 -가 들어가는데 떄문에 .으로 나눌 수가 없어 에러가 발생
+        // 따라서, 예외를 무시하고 넘어가도록 하는 코드가 필요
+        try {
+            pos = item2.lastIndexOf(".");
+            fname = item2.substring(0, pos)
+                    + b.getUuid() + "." + item2.substring(pos + 1);
+            f = new File(uploadPath,fname);
+            f.delete();
+        }catch(Exception ex) {}
+
+        try {
+            pos = item3.lastIndexOf(".");
+            fname = item3.substring(0, pos)
+                    + b.getUuid() + "." + item3.substring(pos + 1);
+            f = new File(uploadPath,fname);
+            f.delete();
+        }catch(Exception ex) {}
+
+
+    }
 }

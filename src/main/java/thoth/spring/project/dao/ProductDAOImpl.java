@@ -64,4 +64,10 @@ public class ProductDAOImpl implements ProductDAO{
         return  sqlSession.selectOne("product.selectOneImage",tnum);
     }
 
+    // 상품 삭제 - 이미지
+    @Override
+    public void deleteImage(String tnum) {
+        sqlSession.delete("product.deleteImage",tnum);
+    }
+
 }

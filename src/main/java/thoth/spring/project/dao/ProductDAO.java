@@ -40,6 +40,9 @@ public interface ProductDAO {
     // 상품 상세조회 - 이미지
     BookImage selectOneImage(String tnum);
 
+    // 상품 삭제 - 이미지
+    void deleteImage(String tnum);
+
 
     // 상품 수정
     
