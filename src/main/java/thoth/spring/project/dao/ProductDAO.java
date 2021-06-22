@@ -46,6 +46,14 @@ public interface ProductDAO {
     // 상품 수정
     int updateProduct(Product p);
 
-    
+    // 상품 수정 - 이미지
+    int updateImage(BookImage b);
+
+    // 파일 이름 읽어오기 (상품 수정에 사용)
+    String readFnames(String tnum);
+
+    // 파일 크기 읽어오기 (상품 수정에 사용)
+    String readFsizes(String tnum);
+
     //상품 선택 삭제 - list에서
 }

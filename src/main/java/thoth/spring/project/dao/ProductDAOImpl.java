@@ -76,4 +76,22 @@ public class ProductDAOImpl implements ProductDAO{
         return sqlSession.update("product.updateProduct",p);
     }
 
+    // 상품 수정 - 이미지
+    @Override
+    public int updateImage(BookImage b) {
+        return sqlSession.update("product.updateImage",b);
+    }
+
+    // 파일 이름 읽어오기
+    @Override
+    public String readFnames(String tnum) {
+        return sqlSession.selectOne("product.readFnames",tnum);
+    }
+
+    // 파일 크기 읽어오기
+    @Override
+    public String readFsizes(String tnum) {
+        return sqlSession.selectOne("product.readFsizes",tnum);
+    }
+
 }

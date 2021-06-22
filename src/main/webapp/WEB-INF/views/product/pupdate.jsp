@@ -47,9 +47,20 @@
                     <input type="text" name="tnum" id="tnum" value="${p.tnum}" readonly>
                 </div>
                 <!-- 이미지 업로드는 나중에 구현 -->
-                <div class="prdfrmB">
-                    <label for="image">이미지</label>
-                    <input type="text" name="image" id="image" hidden>
+                <div class="prdfrmB1">
+                    <input type="checkbox" id="die1">
+                    <label class="imageMain" for="imageMain">메인이미지</label>
+                    <input type="file" name="img" id="imageMain" accept="image/*" disabled>
+                </div>
+                <div class="prdfrmB2">
+                    <input type="checkbox" id="die2">
+                    <label class="imageSub1" for="imageSub1">서브이미지</label>
+                    <input type="file" name="img" id="imageSub1" accept="image/*" disabled>
+                </div>
+                <div class="prdfrmB3">
+                    <input type="checkbox" id="die3">
+                    <label class="imageSub2" for="imageSub2">서브이미지</label>
+                    <input type="file" name="img" id="imageSub2" accept="image/*" disabled>
                 </div>
                 <div class="prdfrmC">
                     <label for="title">제목</label>
@@ -57,11 +68,11 @@
                 </div>
                 <div class="prdfrmD">
                     <label for="author">저자</label>
-                    <input type="text" name="author" id="author" value="${p.author}" readonly>
+                    <input type="text" name="author" id="author" value="${p.author}">
                 </div>
                 <div class="prdfrmE">
                     <label for="publish">출판사</label>
-                    <input type="text" name="publish" id="publish" value="${p.publish}" readonly>
+                    <input type="text" name="publish" id="publish" value="${p.publish}">
                 </div>
                 <div class="prdfrmF">
                     <label for="origin_price">정가</label>
@@ -88,6 +99,10 @@
                     <button type="button" id="save2Pbtn">수정완료</button>
                     <button type="reset" id="re2Pbtn">다시입력</button>
                 </div>
+
+                <%-- 기타 넘겨주는 변수들 --%>
+                <input type="hidden" name="todie" id="todie">
+                <input type="hidden" name="uuid" value="${b.uuid}">
 
             </form>
         </div><!-- cside -->

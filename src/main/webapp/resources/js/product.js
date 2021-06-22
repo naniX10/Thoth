@@ -83,4 +83,35 @@ $('#save2Pbtn').on('click',function(){
     };
 });
 
+// 수정 : 삭제할 이미지 선택
+$('#die1').on('change',function(){
+    if($('#die1').is(':checked')){// checkbox가 체크되면
+        $('#imageMain').attr('disabled',false); // disabled 해제
+        $('#todie').val("1"+$('#todie').val()); // 첨부파일 수정목록에 1 추가
+    } else if (!$('#die1').is(':checked')){
+        $('#imageMain').attr('disabled',true);
+        $('#todie').val($('#todie').val().replace(/1/g,'')); // 첨부파일 수정목록에 1 제거
+    }
+});
+
+$('#die2').on('change',function(){
+    if($('#die2').is(':checked')){//checkbox가 체크되면
+        $('#imageSub1').attr('disabled',false); // disabled 해제
+        $('#todie').val("2"+$('#todie').val()); // 첨부파일 수정목록에 2 추가
+    } else if (!$('#die2').is(':checked')){
+        $('#imageSub1').attr('disabled',true);
+        $('#todie').val($('#todie').val().replace(/2/g,'')); // 첨부파일 수정목록에 2 제거
+    }
+});
+
+$('#die3').on('change',function(){
+    if($('#die3').is(':checked')){// checkbox가 체크되면
+        $('#imageSub2').attr('disabled',false); // disabled 해제
+        $('#todie').val("3"+$('#todie').val()); // 첨부파일 수정목록에 3 추가
+    } else if (!$('#die3').is(':checked')){
+        $('#imageSub2').attr('disabled',true);
+        $('#todie').val($('#todie').val().replace(/3/g,'')); // 첨부파일 수정목록에 3 제거
+    }
+});
+
 // 상품 삭제 버튼 클릭 이벤트 2 : list에서 상품 삭제(여러개 제거)

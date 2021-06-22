@@ -82,14 +82,15 @@ public class ProductController {
     {
         mv.setViewName("product/pupdate.tiles");
         mv.addObject("p",psrv.readOneProduct(tnum));
+        mv.addObject("b",psrv.readOneImage(tnum));
         return mv;
     }
 
     // 상품 수정 완료
     @PostMapping("/product/pupdate")
-    public String pupdateok(Product p){
+    public String pupdateok(Product p,BookImage b, MultipartFile[] img){
         psrv.modifyProduct(p);
-        //psrv.modifyImage(b,img);
+        psrv.modifyImage(b,img);
         return "redirect:/product/plist";
     }
 

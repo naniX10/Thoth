@@ -74,10 +74,28 @@
 
     <!-- 상품 수정 -->
     <update id="updateProduct" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
-        update categoryAll set origin_price=#{origin_price}, sale_price=#{sale_price}, amount=#{amount}
+        update categoryAll set author=#{author}, publish=#{publish}, origin_price=#{origin_price}, sale_price=#{sale_price}, amount=#{amount}
         where tnum = #{tnum}
     </update>
 
+    <!-- 상품 수정 (이미지) -->
+    <update id="updateImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
+        update bookImage set author=#{author}
+            <if test="todie != ''">
+                ,fnames= #{fnames}, fsizes=#{fsizes}
+            </if>
+        where tnum = #{tnum};
+    </update>
+
+    <!-- 파일이름 읽어오기(수정에 사용) -->
+    <select id="readFnames" statementType="PREPARED" parameterType="String" resultType="String">
+        select fnames from bookImage where tnum = #{tnum}
+    </select>
+
+    <!-- 파일크기 읽어오기(수정에 사용) -->
+    <select id="readFsizes" statementType="PREPARED" parameterType="String" resultType="String">
+        select fsizes from bookImage where tnum = #{tnum}
+    </select>
 
 
 </mapper>

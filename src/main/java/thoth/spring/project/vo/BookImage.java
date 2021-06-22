@@ -8,6 +8,8 @@ public class BookImage {
     protected String fsizes;
     protected String uuid;
 
+    protected String todie;
+
     public String getTnum() {
         return tnum;
     }
@@ -54,5 +56,13 @@ public class BookImage {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public String getTodie() {
+        return todie;
+    }
+
+    public void setTodie(String todie) {
+        this.todie = todie;
     }
 }
