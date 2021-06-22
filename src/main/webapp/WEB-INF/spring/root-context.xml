@@ -8,9 +8,9 @@
     <bean id="dbcpDataSource"
           class="org.apache.commons.dbcp2.BasicDataSource"
           p:driverClassName="org.mariadb.jdbc.Driver"
-          p:url="jdbc:mariadb://bigdata.c9w8jbh68v0y.ap-northeast-2.rds.amazonaws.com:3306/THOTH"
-          p:username="admin"
-          p:password="bigdata2020"
+          p:url=""
+          p:username=""
+          p:password=""
           p:initialSize="10"
           p:maxTotal="7"
           p:maxIdle="3"/>
