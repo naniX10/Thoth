@@ -43,8 +43,9 @@ public interface ProductDAO {
     // 상품 삭제 - 이미지
     void deleteImage(String tnum);
 
-
     // 상품 수정
+    int updateProduct(Product p);
+
     
     //상품 선택 삭제 - list에서
 }

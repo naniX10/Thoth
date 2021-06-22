@@ -11,6 +11,8 @@ import thoth.spring.project.utils.ImgUploadUtil;
 import thoth.spring.project.vo.BookImage;
 import thoth.spring.project.vo.Product;
 
+import java.awt.print.Book;
+
 @Controller
 public class ProductController {
 
@@ -74,12 +76,22 @@ public class ProductController {
         return "redirect:/product/plist";
     }
 
-    // 상품 수정 페이지
+    // 상품 수정
     @GetMapping("/product/pupdate")
-    public String pupdate(){
-        return "product/pupdate.tiles";
+    public ModelAndView pupdate(ModelAndView mv, String tnum)
+    {
+        mv.setViewName("product/pupdate.tiles");
+        mv.addObject("p",psrv.readOneProduct(tnum));
+        return mv;
     }
 
+    // 상품 수정 완료
+    @PostMapping("/product/pupdate")
+    public String pupdateok(Product p){
+        psrv.modifyProduct(p);
+        //psrv.modifyImage(b,img);
+        return "redirect:/product/plist";
+    }
 
 
 

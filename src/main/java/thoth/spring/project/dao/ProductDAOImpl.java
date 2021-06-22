@@ -70,4 +70,10 @@ public class ProductDAOImpl implements ProductDAO{
         sqlSession.delete("product.deleteImage",tnum);
     }
 
+    // 상품 수정
+    @Override
+    public int updateProduct(Product p) {
+        return sqlSession.update("product.updateProduct",p);
+    }
+
 }

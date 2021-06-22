@@ -41,8 +41,11 @@ public interface ProductService {
     // 상품 삭제 - 이미지
     BookImage removeImage(String tnum);
 
-
     // 상품 수정
+    void modifyProduct(Product p);
+
+    // 상품 수정 - 이미지
+    void modifyImage(BookImage b, MultipartFile[] img);
 
     // 상품 선택 삭제
 }

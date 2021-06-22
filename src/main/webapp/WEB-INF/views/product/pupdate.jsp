@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <a name="top"></a>
 <div id="main">
     <div id="wrap">
@@ -38,10 +41,10 @@
 
         <!-- 중앙 영역 -->
         <div class="cside">
-            <form id="prdfrm" class="prdfrm">
+            <form id="modprdfrm" class="modprdfrm">
                 <div class="prdfrmA">
                     <label for="tnum">분류코드</label>
-                    <input type="text" name="tnum" id="tnum">
+                    <input type="text" name="tnum" id="tnum" value="${p.tnum}" readonly>
                 </div>
                 <!-- 이미지 업로드는 나중에 구현 -->
                 <div class="prdfrmB">
@@ -50,27 +53,27 @@
                 </div>
                 <div class="prdfrmC">
                     <label for="title">제목</label>
-                    <input type="text" name="title" id="title">
+                    <input type="text" name="title" id="title" value="${p.title}" readonly>
                 </div>
                 <div class="prdfrmD">
                     <label for="author">저자</label>
-                    <input type="text" name="author" id="author">
+                    <input type="text" name="author" id="author" value="${p.author}" readonly>
                 </div>
                 <div class="prdfrmE">
                     <label for="publish">출판사</label>
-                    <input type="text" name="publish" id="publish">
+                    <input type="text" name="publish" id="publish" value="${p.publish}" readonly>
                 </div>
                 <div class="prdfrmF">
                     <label for="origin_price">정가</label>
-                    <input type="text" name="origin_price" id="origin_price">
+                    <input type="text" name="origin_price" id="origin_price" value="${p.origin_price}">
                 </div>
                 <div class="prdfrmG">
                     <label for="sale_price">판매가</label>
-                    <input type="text" name="sale_price" id="sale_price">
+                    <input type="text" name="sale_price" id="sale_price" value="${p.sale_price}">
                 </div>
                 <div class="prdfrmH">
                     <label for="amount">판매량</label>
-                    <input type="text" name="amount" id="amount">
+                    <input type="text" name="amount" id="amount" value="${p.amount}">
                 </div>
 
                 <!-- 자동입력방지 -->
@@ -82,8 +85,8 @@
 
                 <!-- 버튼들 -->
                 <div class="prdfrmJ">
-                    <button type="button" id="savePbtn">입력완료</button>
-                    <button type="reset" id="rePbtn">다시입력</button>
+                    <button type="button" id="save2Pbtn">수정완료</button>
+                    <button type="reset" id="re2Pbtn">다시입력</button>
                 </div>
 
             </form>

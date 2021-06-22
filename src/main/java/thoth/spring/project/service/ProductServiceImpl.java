@@ -129,5 +129,17 @@ public class ProductServiceImpl implements ProductService{
         return b;
     }
 
+    // 상품 수정
+    @Override
+    public void modifyProduct(Product p) {
+        pdao.updateProduct(p);
+    }
+
+    // 상품 수정 - 이미지
+    @Override
+    public void modifyImage(BookImage b, MultipartFile[] img) {
+
+    }
+
 
 }

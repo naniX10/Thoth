@@ -74,9 +74,8 @@
 
     <!-- 상품 수정 -->
     <update id="updateProduct" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
-        update categoryAll set tnum =#{tnum}, title=#{title}, author=#{author}, publish=#{publish},
-        origin_price=#{origin_price}, sale_price=#{sale_price}, amount=#{amount}
-        where tnum=#{tnum}
+        update categoryAll set origin_price=#{origin_price}, sale_price=#{sale_price}, amount=#{amount}
+        where tnum = #{tnum}
     </update>
 
 
