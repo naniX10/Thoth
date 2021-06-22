@@ -83,7 +83,7 @@
                     <i class="fa fa-search"></i>&nbsp;검색
                 </button>
             <p>검색 결과 : ${pcnt} 개의 결과가 검색되었습니다. 총 페이지 수 : ${tp}</p>
-            <button type="button" class="newPbtn" id="newPbtn">상품등록</button
+            <button type="button" class="newPbtn" id="newPbtn">상품등록</button>
             <button type="button" class="delPbtn" id="delSelectPbtn">선택한상품삭제</button>
         </div> <!-- 검색바 -->
 

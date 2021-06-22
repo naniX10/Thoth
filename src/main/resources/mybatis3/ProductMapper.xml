@@ -19,13 +19,16 @@
 
     <!-- 상품 조회 - 검색 기능 구현 -->
     <!-- 동적 질의문 사용 - 컬럼명,테이블명만 ${}사용 -->
-    <select id="findSelect" statementType="PREPARED" parameterType="map" resultType="thoth.spring.project.vo.Product">
-        select tnum, title, author, publish, image, url, origin_price, sale_price, amount from categoryAll
+    <select id="findSelect" statementType="PREPARED"
+            parameterType="map" resultType="thoth.spring.project.vo.Product">
+            select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+            b.fnames,b.fsizes, b.uuid from categoryAll c
+            left outer join bookImage b using(tnum)
         <if test="ftype != 'titauth'">
             where ${ftype} like concat('%',#{fkey},'%')
         </if>
         <if test="ftype == 'titauth'">
-            where title like concat('%',#{fkey},'%') or author like concat('%',#{fkey},'%')
+            where c.title like concat('%',#{fkey},'%') or c.author like concat('%',#{fkey},'%')
         </if>
         limit ${snum}, 10
     </select>
@@ -58,8 +61,8 @@
 
     <!-- 상품 등록 write(이미지) -->
     <insert id="insertImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
-        insert into bookImage (tnum,title,author, fnames, fsizes, uuid)
-        values(#{tnum},#{title},#{author},#{fnames},#{fsizes},#{uuid})
+        insert into bookImage (tnum, fnames, fsizes, uuid)
+        values(#{tnum},#{fnames},#{fsizes},#{uuid})
     </insert>
 
     <!-- 상품 상세 조회 view(이미지)-->
@@ -80,9 +83,9 @@
 
     <!-- 상품 수정 (이미지) -->
     <update id="updateImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
-        update bookImage set author=#{author}
+        update bookImage set
             <if test="todie != ''">
-                ,fnames= #{fnames}, fsizes=#{fsizes}
+                fnames= #{fnames}, fsizes=#{fsizes}
             </if>
         where tnum = #{tnum};
     </update>

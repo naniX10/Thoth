@@ -2,8 +2,6 @@ package thoth.spring.project.vo;
 
 public class BookImage {
     protected String tnum;
-    protected String title;
-    protected String author;
     protected String fnames;
     protected String fsizes;
     protected String uuid;
@@ -18,21 +16,6 @@ public class BookImage {
         this.tnum = tnum;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
 
     public String getFnames() {
         return fnames;
@@ -65,4 +48,5 @@ public class BookImage {
     public void setTodie(String todie) {
         this.todie = todie;
     }
+
 }
