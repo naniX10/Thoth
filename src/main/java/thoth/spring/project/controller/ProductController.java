@@ -90,7 +90,9 @@ public class ProductController {
     @PostMapping("/product/pupdate")
     public String pupdateok(Product p,BookImage b, MultipartFile[] img){
         psrv.modifyProduct(p);
-        psrv.modifyImage(b,img);
+        if(b.getTodie()!=""){
+            psrv.modifyImage(b,img);
+        }
         return "redirect:/product/plist";
     }
 

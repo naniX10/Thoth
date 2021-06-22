@@ -81,12 +81,19 @@
         where tnum = #{tnum}
     </update>
 
+<!--    &lt;!&ndash; 상품 수정 (이미지) &ndash;&gt;-->
+<!--    <update id="updateImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">-->
+<!--        update bookImage set-->
+<!--            <if test="todie != ''">-->
+<!--                fnames= #{fnames}, fsizes=#{fsizes}-->
+<!--            </if>-->
+<!--        where tnum = #{tnum};-->
+<!--    </update>-->
+
     <!-- 상품 수정 (이미지) -->
     <update id="updateImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
         update bookImage set
-            <if test="todie != ''">
-                fnames= #{fnames}, fsizes=#{fsizes}
-            </if>
+            fnames= #{fnames}, fsizes=#{fsizes}
         where tnum = #{tnum};
     </update>
 
@@ -99,6 +106,7 @@
     <select id="readFsizes" statementType="PREPARED" parameterType="String" resultType="String">
         select fsizes from bookImage where tnum = #{tnum}
     </select>
+
 
 
 </mapper>
