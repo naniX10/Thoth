@@ -6,12 +6,10 @@
     <!-- dbcp 설정 -->
     <bean id="dbcpDataSource"
           class="org.apache.commons.dbcp2.BasicDataSource"
-          p:driverClassName=""
-          p:url=""
-          p:username="playground"
-          p:password="bigdata2020"
-          p:initialSize="10"
-          p:maxTotal="7"
+          p:driverClassName="org.mariadb.jdbc.Driver"
+          p:url="jdbc:mariadb://bigdata.chrpnj0d47aq.ap-northeast-2.rds.amazonaws.com:3306/THOTH"
+          p:username="playground" p:password="bigdata2020"
+          p:initialSize="10" p:maxTotal="7"
           p:maxIdle="3"/>
 
 <!--        &lt;!&ndash; myBatis 설정 #1 &ndash;&gt;-->
