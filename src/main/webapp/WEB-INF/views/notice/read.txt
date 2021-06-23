@@ -1,0 +1,13 @@
+// DB 테이블 생성
+create table ntBoard(
+    bdno int auto_increment primary key ,
+    title varchar(255) not null ,
+    userid varchar(255) not null ,
+    regdate timestamp default  current_timestamp(),
+    views int default 0 ,
+    contents varchar(255) default null
+);
+
+// ntBoard 에 샘플 데이터 입력
+insert into ntBoard (title , userid)
+values ("첫번쨰 공지입니다" , "관리자ID");
