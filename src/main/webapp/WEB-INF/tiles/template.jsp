@@ -34,12 +34,12 @@
 
         <!-- header Area -->
 		<tiles:insertAttribute name="header" />
-			
-     	
-		<!-- main Area -->
-		<tiles:insertAttribute name="main"/>      	
 
-      	
+
+		<!-- main Area -->
+		<tiles:insertAttribute name="main"/>
+
+
      	<!-- footer Area -->
      	<tiles:insertAttribute name="footer"/>
       

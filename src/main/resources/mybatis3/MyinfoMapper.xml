@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myinfo">
+
+    <!-- QnA 데이터 삽입? -->
+    <insert id="insertQna" statementType="PREPARED" parameterType="thoth.spring.project.vo.Myinfo"
+        >
+        insert into myinfo (title, userid, contents)
+        values (#{title}, #{userid}, #{contents})
+    </insert>
+
+    <!-- QnA 게시판 보여주기? -->
+    <select id="selectQna" statementType="PREPARED" parameterType="int"
+            resultType="thoth.spring.project.vo.Myinfo">
+        select mino, title, userid, regdate from myinfo
+        order by mino desc limit #{snum}, 20
+    </select>
+
+    <!-- QnA 게시글 상세 조회 -->
+    <select id="selectOneQna" statementType="PREPARED" parameterType="String"
+            resultType="thoth.spring.project.vo.Myinfo">
+        select * from myinfo where mino = #{mino}
+    </select>
+
+
+    <!-- 동적 질의문으로 검색기능 구현 -->
+    <select id="findSelect" statementType="PREPARED"
+            parameterType="map" resultType="thoth.spring.project.vo.Myinfo">
+        select mino, title, userid, regdate from myinfo
+        <if test="ftype != 'titcont'">
+            where ${ftype} like concat(#{fkey}, '%') </if>
+        <if test="ftype == 'titcont'">
+            where title like concat(#{fkey}, '%') or
+            contents like concat(#{fkey}, '%') </if>
+        order by mino desc limit #{snum}, 20
+    </select>
+
+    <!--  -->
+    <select id="findSelectCount" statementType="PREPARED"
+            parameterType="map" resultType="int">
+        select count(mino) cnt from myinfo
+        <if test="ftype != 'titcont'">
+            where ${ftype} like concat(#{fkey}, '%') </if>
+        <if test="ftype == 'titcont'">
+            where title like concat(#{fkey}, '%') or
+            contents like concat(#{fkey}, '%') </if>
+    </select>
+
+    <select id="countQna" statementType="PREPARED"
+            resultType="int">
+        select count(mino) cnt from myinfo
+    </select>
+
+
+</mapper>
