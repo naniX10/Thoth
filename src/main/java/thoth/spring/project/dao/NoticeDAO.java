@@ -12,5 +12,5 @@ public interface NoticeDAO {
 
     int insertBoard(Notice bd);
 
-    int updateBoard(String bd);
+    int updateBoard(Notice bd);
 }

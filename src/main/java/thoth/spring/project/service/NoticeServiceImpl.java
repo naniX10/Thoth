@@ -32,8 +32,10 @@ public class NoticeServiceImpl implements NoticeService{
     }
 
     @Override
-    public int updateBoard(String bd) {
-         return ndao.updateBoard(bd);
+    public boolean updateBoard(Notice bd) {
+        boolean isUpdateed = false;
+        if (ndao.updateBoard(bd) > 0) isUpdateed = true;
+        return isUpdateed;
     }
 
 }

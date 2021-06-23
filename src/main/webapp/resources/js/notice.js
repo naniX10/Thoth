@@ -15,3 +15,9 @@ $('#savebdbtn').on('click',function() {
     }
 });
 
+$('#updatebdbtn').on('click',function() {
+    const frm = $('#updateboardfrm');
+    frm.attr('method','post');
+    frm.attr('action','/notice/ntupdate');
+    frm.submit();
+});

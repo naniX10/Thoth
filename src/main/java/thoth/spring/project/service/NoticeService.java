@@ -12,5 +12,5 @@ public interface NoticeService {
 
     boolean newBoard(Notice bd);
 
-    int updateBoard(String bd);
+    boolean updateBoard(Notice bd);
 }

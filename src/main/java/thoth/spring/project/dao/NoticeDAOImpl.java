@@ -29,7 +29,7 @@ public class NoticeDAOImpl implements NoticeDAO{
     }
 
     @Override
-    public int updateBoard(String bd) {
+    public int updateBoard(Notice bd) {
         return sqlSession.insert("Notice.updateBoard", bd);
     }
 

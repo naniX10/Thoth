@@ -1,7 +1,7 @@
 <%@ page pageEncoding="UTF-8"%>
 
 <div id = "main">
-    <form role = "form" method = "get" action = "/notice/update">
+    <form name = "updateboardfrm" id = "updateboardfrm">
 
         <input type="hidden" name="bdno" value="${bd.bdno}">
 
@@ -21,7 +21,7 @@
         </div>
 
         <div>
-            <button type="submit">입력완료</button>
+            <button type="button" id="updatebdbtn">입력완료</button>
             <button type="reset">다시입력</button>
         </div>
 
