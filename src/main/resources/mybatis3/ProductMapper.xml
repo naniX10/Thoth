@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+
+    <!-- 상품 조회 - n개의 상품 출력(현재는 10개 출력)-->
+    <select id="selectProduct" statementType="PREPARED"
+            parameterType="int" resultType="thoth.spring.project.vo.Product">
+            select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+            b.fnames, b.fsizes, b.uuid from categoryAll c
+            left outer join bookImage b using(tnum)
+            order by tnum limit ${snum}, 10;
+    </select>
+
+    <!-- 상품 조회 - 전체 상품 수 구하기 -->
+    <select id="countProduct" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Product" resultType="int">
+        select count(tnum) from categoryAll
+    </select>
+
+    <!-- 상품 조회 - 검색 기능 구현 -->
+    <!-- 동적 질의문 사용 - 컬럼명,테이블명만 ${}사용 -->
+    <select id="findSelect" statementType="PREPARED"
+            parameterType="map" resultType="thoth.spring.project.vo.Product">
+            select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+            b.fnames,b.fsizes, b.uuid from categoryAll c
+            left outer join bookImage b using(tnum)
+        <if test="ftype != 'titauth'">
+            where ${ftype} like concat('%',#{fkey},'%')
+        </if>
+        <if test="ftype == 'titauth'">
+            where c.title like concat('%',#{fkey},'%') or c.author like concat('%',#{fkey},'%')
+        </if>
+        limit ${snum}, 10
+    </select>
+
+    <select id="findSelectCount" statementType="PREPARED" parameterType="map" resultType="int">
+        select count(tnum) cnt from categoryAll
+        <if test="ftype != 'titauth'">
+            where ${ftype} like concat('%',#{fkey},'%')
+        </if>
+        <if test="ftype == 'titauth'">
+            where title like concat('%',#{fkey},'%') or author like concat('%',#{fkey},'%')
+        </if>
+    </select>
+
+    <!-- 상품 상세 조회 view-->
+    <select id="selectOne" statementType="PREPARED" parameterType="String" resultType="thoth.spring.project.vo.Product">
+        select * from categoryAll where tnum = #{tnum}
+    </select>
+
+    <!-- 상품 등록 write -->
+    <insert id="insertProduct" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
+        insert into categoryAll(tnum, title, author, publish, origin_price, sale_price, amount)
+        values (#{tnum}, #{title}, #{author}, #{publish}, #{origin_price}, #{sale_price}, #{amount})
+    </insert>
+
+    <!-- 상품 삭제 -->
+    <delete id="deleteProduct" statementType="PREPARED" parameterType="String">
+        delete from categoryAll where tnum = #{tnum}
+    </delete>
+
+    <!-- 상품 등록 write(이미지) -->
+    <insert id="insertImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
+        insert into bookImage (tnum, fnames, fsizes, uuid)
+        values(#{tnum},#{fnames},#{fsizes},#{uuid})
+    </insert>
+
+    <!-- 상품 상세 조회 view(이미지)-->
+    <select id="selectOneImage" statementType="PREPARED" parameterType="String" resultType="thoth.spring.project.vo.BookImage">
+        select * from bookImage where tnum = #{tnum}
+    </select>
+
+    <!-- 상품 삭제(이미지) -->
+    <delete id="deleteImage" statementType="PREPARED" parameterType="String">
+        delete from bookImage where tnum = #{tnum}
+    </delete>
+
+    <!-- 상품 수정 -->
+    <update id="updateProduct" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
+        update categoryAll set author=#{author}, publish=#{publish}, origin_price=#{origin_price}, sale_price=#{sale_price}, amount=#{amount}
+        where tnum = #{tnum}
+    </update>
+
+<!--    &lt;!&ndash; 상품 수정 (이미지) &ndash;&gt;-->
+<!--    <update id="updateImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">-->
+<!--        update bookImage set-->
+<!--            <if test="todie != ''">-->
+<!--                fnames= #{fnames}, fsizes=#{fsizes}-->
+<!--            </if>-->
+<!--        where tnum = #{tnum};-->
+<!--    </update>-->
+
+    <!-- 상품 수정 (이미지) -->
+    <update id="updateImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
+        update bookImage set
+            fnames= #{fnames}, fsizes=#{fsizes}
+        where tnum = #{tnum};
+    </update>
+
+    <!-- 파일이름 읽어오기(수정에 사용) -->
+    <select id="readFnames" statementType="PREPARED" parameterType="String" resultType="String">
+        select fnames from bookImage where tnum = #{tnum}
+    </select>
+
+    <!-- 파일크기 읽어오기(수정에 사용) -->
+    <select id="readFsizes" statementType="PREPARED" parameterType="String" resultType="String">
+        select fsizes from bookImage where tnum = #{tnum}
+    </select>
+
+
+
+</mapper>
