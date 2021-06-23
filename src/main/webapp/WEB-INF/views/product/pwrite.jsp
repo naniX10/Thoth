@@ -44,9 +44,17 @@
                     <input type="text" name="tnum" id="tnum">
                 </div>
                 <!-- 이미지 업로드는 나중에 구현 -->
-                <div class="prdfrmB">
-                    <label for="image">이미지</label>
-                    <input type="text" name="image" id="image" hidden>
+                <div class="prdfrmB1">
+                    <label class="imageMain" for="imageMain">메인이미지</label>
+                    <input type="file" name="img" id="imageMain" accept="image/*">
+                </div>
+                <div class="prdfrmB2">
+                    <label class="imageSub1" for="imageSub1">서브이미지</label>
+                    <input type="file" name="img" id="imageSub1" accept="image/*">
+                </div>
+                <div class="prdfrmB3">
+                    <label class="imageSub2" for="imageSub2">서브이미지</label>
+                    <input type="file" name="img" id="imageSub2" accept="image/*">
                 </div>
                 <div class="prdfrmC">
                     <label for="title">제목</label>
@@ -82,7 +90,7 @@
 
                 <!-- 버튼들 -->
                 <div class="prdfrmJ">
-                    <button type="button" id="savePbtn">입력완료</button>
+                    <button type="submit" id="savePbtn">입력완료</button>
                     <button type="reset" id="rePbtn">다시입력</button>
                 </div>
 

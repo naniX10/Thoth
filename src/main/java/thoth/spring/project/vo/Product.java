@@ -11,6 +11,11 @@ public class Product {
     protected int sale_price;
     protected int amount;
 
+    // join 사용을 위해 추가
+    protected String fnames;
+    protected String fsizes;
+    protected String uuid;
+
     public String getTnum() {
         return tnum;
     }
@@ -73,5 +78,30 @@ public class Product {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    // 나중에 맞는지 확인해 볼것
+    public String getFnames() {
+        return fnames;
+    }
+
+    public void setFnames(String fnames) {
+        this.fnames = fnames;
+    }
+
+    public String getFsizes() {
+        return fsizes;
+    }
+
+    public void setFsizes(String fsizes) {
+        this.fsizes = fsizes;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 }
