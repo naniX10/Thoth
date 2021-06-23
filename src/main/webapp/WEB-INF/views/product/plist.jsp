@@ -35,22 +35,28 @@
             <li>Category</li>
         </ul>
         <div class="col-9">
-            <!-- 검색바 -->
-            <div id="searchArea">
-                <select name="findtype" id="findtype">
-                    <option value="title">제목</option>
-                    <option value="author">작가</option>
-                    <option value="titauth">제목+작가</option>
-                    <option value="publish">출판사</option>
-                </select>
-                <input type="search" name="findkey" id="findkey" placeholder="분야내 검색">
-                <button type="button" id="searchInbtn">
-                    <i class="fa fa-search"></i>&nbsp;검색
-                </button>
-                <p>검색 결과 : ${pcnt} 개의 결과가 검색되었습니다. 총 페이지 수 : ${tp}</p>
-                <button type="button" class="newPbtn" id="newPbtn">상품등록</button>
-                <button type="button" class="delPbtn" id="delSelectPbtn">선택한상품삭제</button>
-            </div> <!-- 검색바 -->
+            <div class="container">
+                <div class="row">
+                    <div class="col"><div class="Titletext">종합</div></div>
+                    <div class="col ">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="searchArea">
+                        <select name="findtype" id="findtype">
+                            <option value="title">제목</option>
+                            <option value="author">작가</option>
+                            <option value="titauth">제목+작가</option>
+                            <option value="publish">출판사</option>
+                        </select>
+                        <input type="search" name="findkey" id="findkey" placeholder="분야내 검색">
+                        <button type="button"  class="btn" id="searchInbtn">검색</button>
+                        <button type="button" class="btn newPbtn" id="newPbtn">상품등록</button>
+                    </div>
+                        <%--                <p>검색 결과 : ${pcnt} 개의 결과가 검색되었습니다. 총 페이지 수 : ${tp}</p>--%></div>
+            </div>
+
         </div>
     </div><!-- 공통 영역 : 카테고리 타이틀, 검색 -->
 

@@ -27,12 +27,14 @@
     padding-top:50px;
     text-align: center;
     margin:0px;
+
 }
 
 #categoryUl {
     margin:0px;
     list-style: none;
     padding: 0px;
+
 }
 #categoryUl li{
     border-bottom-style: solid;
@@ -56,4 +58,54 @@
     background-color:#EDEEF7;
     position:fixed; top:150px; left:0px;
     opacity : 0.6;
+}
+
+#searchInbtn{
+    /*background-color:#E4FBFF;*/
+    background-color:#7868E6;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-color:#7868E6;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+#findkey{
+    height:40px;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+    width:200px;
+}
+
+#findtype{
+    height:40px;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+}
+
+#searchArea{
+    margin-top:40px;
+
+}
+
+.Titletext{
+    font-size: 25px;
+    font-weight: bold;
+    padding-top:20px;
+
+}
+#newPbtn{
+    background-color:#B8B5FF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
 }
