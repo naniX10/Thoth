@@ -10,41 +10,11 @@
 <c:set var="baseURL" value="http://localhost/book/"/>
 
 <a name="top"></a>
-<div id="main">
-    <div id="wrap">
+<div class="wrapPlist"></div>
+<div id="main" class="container">
+    <div id="row">
         <!-- 좌측 영역 -->
-        <div class="lside">
-            <p>카테고리별</p>
-            <ul>
-                <li>종합</li>
-                <li>소설</li>
-                <li>에세이</li>
-                <li>시</li>
-                <li>인문</li>
-                <li>정치사회</li>
-                <li>경제경영</li>
-                <li>건강</li>
-                <li>교양과학</li>
-                <li>외국어</li>
-                <li>예술</li>
-                <li>취미/스포츠</li>
-                <li>TOEIC/TOEFL</li>
-                <li>종교</li>
-                <li>만화</li>
-                <li>요리/와인</li>
-                <li>역사/문화</li>
-                <li>자기계발</li>
-                <li>여행</li>
-                <li>기술/컴퓨터</li>
-            </ul>
-            <p>아동코너</p>
-            <ul>
-                <li>유아</li>
-                <li>어린이</li>
-                <li>청소년</li>
-                <li>아동만화</li>
-            </ul>
-        </div><!-- lside -->
+
 
         <!-- 중앙 영역 -->
         <div class="cside">
