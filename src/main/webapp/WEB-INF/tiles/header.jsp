@@ -6,9 +6,9 @@
 </header>
 
 <div class="row">
-    <div class="col-8"></div>
-    <div class="col-2">로그인</div>
-    <div class="col-2">회원가입</div>
+    <button type="button" class="btn btn-danger">로그인</button>
+    <button type="button" class="btn btn-primary">회원가입</button>
+    <button type="button" id="logoutbtn" class="btn btn-dark">로그아웃</button>
 </div>
 
 <!-- nav Area -->
