@@ -24,4 +24,16 @@ public class NoticeServiceImpl implements NoticeService{
         return ndao.selectOneBoard(bdno);
     }
 
+    @Override
+    public boolean newBoard(Notice bd) {
+        boolean isInserted = false;
+        if (ndao.insertBoard(bd) > 0) isInserted = true;
+        return isInserted;
+    }
+
+    @Override
+    public int updateBoard(String bd) {
+         return ndao.updateBoard(bd);
+    }
+
 }

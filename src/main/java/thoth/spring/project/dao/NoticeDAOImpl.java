@@ -22,4 +22,15 @@ public class NoticeDAOImpl implements NoticeDAO{
     public Notice selectOneBoard(String bdno) {
         return sqlSession.selectOne("Notice.selectOne", bdno);
     }
+
+    @Override
+    public int insertBoard(Notice bd) {
+        return sqlSession.insert("Notice.insertBoard", bd);
+    }
+
+    @Override
+    public int updateBoard(String bd) {
+        return sqlSession.insert("Notice.updateBoard", bd);
+    }
+
 }

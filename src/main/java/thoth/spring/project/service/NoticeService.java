@@ -10,5 +10,7 @@ public interface NoticeService {
 
     Notice readOneBoard(String bdno);
 
+    boolean newBoard(Notice bd);
 
+    int updateBoard(String bd);
 }

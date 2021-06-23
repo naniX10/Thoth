@@ -9,10 +9,38 @@
         order by bdno desc limit #{snum}, 10
     </select>
 
+    <select id="countBoard" statementType="PREPARED"
+            resultType="int">
+        select count(bdno) cnt from ntBoard
+    </select>
+
     <select id="selectOne" statementType="PREPARED"
             parameterType="String"
             resultType="thoth.spring.project.vo.Notice">
         select * from ntBoard where bdno = #{bdno}
     </select>
+
+    <insert id="insertBoard" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Notice">
+        insert into ntBoard (title, userid, contents)
+        values (#{title}, #{userid}, #{contents})
+    </insert>
+
+    <!-- 게시물 수정 -->
+    <update id="updateBoard" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Notice" >
+        UPDATE ntBoard
+        SET title = #{title},
+            contents = #{contents}
+        WHERE bdno = #{bdno}
+    </update>
+
+    <!-- 게시글 삭제 -->
+    <delete id="deleteBoard" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Notice">
+        delete
+        from ntBoard
+        WHERE bdno = #{bdno}
+    </delete>
 
 </mapper>
