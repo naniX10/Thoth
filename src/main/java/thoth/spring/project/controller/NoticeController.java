@@ -48,5 +48,21 @@ public class NoticeController {
         return mv;
     }
 
+    @PostMapping("/notice/ntupdate")
+    public String updateok(Notice bdno) {
+        String returnPage = "redirect:/notice/ntlist";
+        if (nsrv.updateBoard(bdno))
+            System.out.println("수정완료!");
+        return returnPage;
+    }
+
+    @PostMapping("/notice/ntdelete")
+    public String delete(Notice bdno) {
+        String returnPage = "redirect:/notice/ntlist";
+        if (nsrv.deleteBoard(bdno))
+            System.out.println("삭제완료!");
+        return returnPage;
+    }
+
 }
 
