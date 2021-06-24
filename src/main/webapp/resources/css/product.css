@@ -152,6 +152,7 @@ a:active {
     color:white;
 }
 
+/* pview style */
 .viewPImage{
     text-align: center;
 }
@@ -228,5 +229,68 @@ a:active {
 }
 
 .viewWrap{
+    margin-top:50px;
+}
+
+/* pwrite style*/
+.pwriteTitle{
+    font-size:30px;
+    color:#3E206D;
+    font-weight:bold;
+    text-align: center;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.prdfrm{
+    margin-top:30px;
+}
+
+#rePbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#savePbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+input[name="tnum"]:hover{
+    background :#F0E3FF;
+}
+input[name="title"]:hover{
+    background :#F0E3FF;
+}
+input[name="author"]:hover{
+    background :#F0E3FF;
+}
+input[name="publish"]:hover{
+    background :#F0E3FF;
+}
+input[name="origin_price"]:hover{
+    background :#F0E3FF;
+}
+input[name="sale_price"]:hover{
+    background :#F0E3FF;
+}
+input[name="amount"]:hover{
+    background :#F0E3FF;
+}
+
+.prdfrmJ{
     margin-top:50px;
 }
