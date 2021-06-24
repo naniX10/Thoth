@@ -294,3 +294,28 @@ input[name="amount"]:hover{
 .prdfrmJ{
     margin-top:50px;
 }
+
+/* pupdate */
+#re2Pbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#save2Pbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
