@@ -20,8 +20,7 @@
     <div class="headermain">
         <div class="logo">
             <img src="/img/Tothlogo.png" width="50%">
-            <!--
-                                <i class="fas fa-crow" style="font-size: 30px; color:forestgreen"></i>
+            <!--                                <i class="fas fa-crow" style="font-size: 30px; color:forestgreen"></i>
                                 <div class="col"><h5><b>KYOBO 교보문고</b></h5></div>
             -->
         </div>
