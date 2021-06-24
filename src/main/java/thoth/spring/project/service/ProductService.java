@@ -47,5 +47,9 @@ public interface ProductService {
     // 상품 수정 - 이미지
     void modifyImage(BookImage b, MultipartFile[] img);
 
-    // 상품 선택 삭제
+    // 상품 조회2
+    List<Product> readProduct2(String cp); // cp: 페이지 번호(페이징에 사용)
+
+    // 게시글 수2
+    int countProduct2();
 }

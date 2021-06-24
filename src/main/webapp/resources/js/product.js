@@ -115,3 +115,8 @@ $('#die3').on('change',function(){
 });
 
 // 상품 삭제 버튼 클릭 이벤트 2 : list에서 상품 삭제(여러개 제거)
+
+// 카테고리 전환 이벤트
+$('#categoryUl li').on('click',function(){
+
+});
