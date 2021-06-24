@@ -5,46 +5,49 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div id="main">
-    <div>
-        <i class="fas fa-comments fa-2x"> 자유 게시판 </i>
-        <hr>
-    </div><!-- 페이지 타이틀 -->
-
-    <div>
+    <form name = "viewfrm" id = "viewfrm">
+        <input type="hidden" name="bdno" value="${bd.bdno}">
+        <div>
+            <i class="fas fa-comments fa-2x"> 자유 게시판 </i>
+            <hr>
+        </div><!-- 페이지 타이틀 -->
 
         <div>
-            <table>
 
-                <tr>
-                    <th>
-                        <h2>${bd.title}</h2>
-                    </th>
-                </tr>
+            <div>
+                <table>
 
-                <tr>
-                    <td>${bd.userid}</td>
-                    <td class="text-right">${bd.regdate} / ${bd.views}</td>
-                </tr>
+                    <tr>
+                        <th>
+                            <h2>${bd.title}</h2>
+                        </th>
+                    </tr>
 
-                <tr>
-                    <td>
-                        ${fn:replace(bd.contents, newChar, "<br>")}
-                    </td>
-                </tr>
+                    <tr>
+                        <td>${bd.userid}</td>
+                        <td class="text-right">${bd.regdate} / ${bd.views}</td>
+                    </tr>
 
-            </table>
-        </div>
+                    <tr>
+                        <td>
+                            ${fn:replace(bd.contents, newChar, "<br>")}
+                        </td>
+                    </tr>
 
-        <div>
-            <%-- 프론트엔드 분이 선택 or 다른것 사용해도 굳--%>
-            <input type="button" value="back" onclick="history.back(-1)">
-            <a href="javascript:history.back(-1)">목록으로</a>
-        </div>
+                </table>
+            </div>
 
-        <div>
-            <a href="/notice/ntupdate?bdno=${bd.bdno}">수정</a>
-            <button type="button" class="delete_btn">삭제</button>
-        </div>
+            <div>
+                <%-- 프론트엔드 분이 선택 or 다른것 사용해도 굳--%>
+                <input type="button" value="back" onclick="history.back(-1)">
+                <a href="javascript:history.back(-1)">목록으로</a>
+            </div>
 
-    </div><!-- 본문글 -->
+            <div>
+                <a href="/notice/ntupdate?bdno=${bd.bdno}">수정</a>
+                <button type="button" id="delete_btn">삭제</button>
+            </div>
+
+        </div><!-- 본문글 -->
+    </form>
 </div>

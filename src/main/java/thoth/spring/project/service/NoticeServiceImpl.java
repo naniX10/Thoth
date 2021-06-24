@@ -38,4 +38,11 @@ public class NoticeServiceImpl implements NoticeService{
         return isUpdateed;
     }
 
+    @Override
+    public boolean deleteBoard(Notice bdno) {
+        boolean isDeleteed = false;
+        if (ndao.deleteBoard(bdno) > 0) isDeleteed = true;
+        return isDeleteed;
+    }
+
 }

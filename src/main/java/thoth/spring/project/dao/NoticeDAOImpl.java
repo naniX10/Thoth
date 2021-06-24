@@ -30,7 +30,12 @@ public class NoticeDAOImpl implements NoticeDAO{
 
     @Override
     public int updateBoard(Notice bd) {
-        return sqlSession.insert("Notice.updateBoard", bd);
+        return sqlSession.update("Notice.updateBoard", bd);
+    }
+
+    @Override
+    public int deleteBoard(Notice bdno) {
+        return sqlSession.delete("Notice.deleteBoard", bdno);
     }
 
 }

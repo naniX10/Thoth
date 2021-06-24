@@ -21,3 +21,10 @@ $('#updatebdbtn').on('click',function() {
     frm.attr('action','/notice/ntupdate');
     frm.submit();
 });
+
+$('#delete_btn').on('click' , function() {
+    const frm = $('#viewfrm');
+    frm.attr('method','post');
+    frm.attr('action','/notice/ntdelete');
+    frm.submit();
+})

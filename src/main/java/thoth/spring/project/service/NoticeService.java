@@ -13,4 +13,6 @@ public interface NoticeService {
     boolean newBoard(Notice bd);
 
     boolean updateBoard(Notice bd);
+
+    boolean deleteBoard(Notice bdno);
 }

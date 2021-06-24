@@ -56,5 +56,13 @@ public class NoticeController {
         return returnPage;
     }
 
+    @PostMapping("/notice/ntdelete")
+    public String delete(Notice bdno) {
+        String returnPage = "redirect:/notice/ntlist";
+        if (nsrv.deleteBoard(bdno))
+            System.out.println("삭제완료!");
+        return returnPage;
+    }
+
 }
 
