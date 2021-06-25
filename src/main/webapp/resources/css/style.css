@@ -1,0 +1,99 @@
+.header_top{
+    margin: 5px 15px 0 0;
+}
+
+.header_top ul li a{
+    color: black;
+}
+
+.headermain{
+    display: flex;
+    justify-content: space-between
+}
+
+.logo{
+    text-align: center; margin: 0 0 0 0;
+
+}
+
+.nav-item :link { text-decoration: none; color: white }
+.nav-item :visited { text-decoration: none; color: white }
+.nav-item :hover { text-decoration: none; color: white }
+.nav-item :active { text-decoration: none; color: white }
+
+.d-block {
+    height: 200px;
+}
+
+.row{
+    justify-content: space-between; font-size: 13px;
+    list-style-type:none;
+}
+
+body{
+    width: 1200px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar{
+    justify-content: space-between;
+    background-color:#5e6b9e;
+    font-size: 18px;
+}
+
+.navbar_toogleBtn{
+    margin: 0;
+    color: white;
+    padding: 12px;
+}
+
+ul{
+    list-style-type:none;
+}
+
+aside{
+    float:left;
+    width:170px;
+}
+
+.myroom_snb{
+    margin-bottom: 10px
+}
+
+.cscenter_snb{
+
+    padding: 0;
+}
+.depth2 {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #dadada;
+    padding: 0 15px 15px 30px;
+    list-style-type:disc;
+}
+
+
+.depth2 li a{
+    color: #4d4d4d;
+}
+
+.member_area {
+    width: 1200px;
+    float: left;
+    height: 50px;
+    background-color: #8b8b8b;
+    line-height: 15px;
+
+}
+
+
+main{
+    width: 900px;
+    border: 5px solid black;
+}
+
+.nav_member ul li a{
+    line-height: 50px;
+    color: white;
+    padding: 20px 30px 0 10px;
+}
