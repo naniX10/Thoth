@@ -94,4 +94,16 @@ public class ProductDAOImpl implements ProductDAO{
         return sqlSession.selectOne("product.readFsizes",tnum);
     }
 
+    // 상품 조회2
+    @Override
+    public List<Product> selectProduct2(int snum) {
+        return sqlSession.selectList("product.selectProduct2",snum);
+    }
+
+    // 상품 전체 개수2
+    @Override
+    public int selectCountProduct2() {
+        return sqlSession.selectOne("product.countProduct2");
+    }
+
 }

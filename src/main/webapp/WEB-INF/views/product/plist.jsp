@@ -26,6 +26,11 @@
 <c:if test ="${not empty param.findkey}">
     <c:set var="pglink" value="/product/find?findtype=${param.findtype}&findkey=${param.findkey}&cp="/>
 </c:if>
+
+<%-- 카테고리 --%>
+<c:set var="catlink" value="&category="/>
+<c:set var="category" value="All"/>
+
 <a name="top"></a>
 <div class="wrapPlist"></div>
 <div id="main" class="container">
@@ -64,11 +69,12 @@
     <div class="row">
         <!-- 카테고리 리스트 -->
             <ul class="col-3" id="categoryUl">
-                <li>종합</li>
+                <li><c:set var="category" value="All"></c:set>종합</li>
                 <li>소설</li>
                 <li>에세이</li>
-                <li>시</li>
-                <li>인문</li>
+                <li><c:set var="category" value="C"></c:set>
+                    시</li>
+                <li><c:set var="category" value="D"></c:set>인문</li>
                 <li>정치사회</li>
                 <li>경제경영</li>
                 <li>건강</li>
@@ -84,7 +90,7 @@
                 <li>자기계발</li>
                 <li>여행</li>
                 <li>기술/컴퓨터</li>
-            </ul>
+            </ul><!-- 카테고리 리스트 -->
         <!-- 상품 리스트 -->
         <div class="col-9">
             <div class="container">
@@ -159,25 +165,16 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- 페이지 네비게이션 -->
-            <div>
-
-
-            </div> <!-- 페이지 네비게이션 -->
-        </div>
+        </div><!-- 상품 리스트 -->
     </div><!-- 분리 -->
 
-
-
+    <!-- 카테고리 전환을 위해 전달 -->
+    <input type="hidden" name="linkClass" value="${category}">
 
     <div class="quick_menu">
         <div class="quick_top"><a href="#top"><i class="fa fa-arrow-up fa-2x"></i></a></div>
         <div class="quick_bottom"><a href="#bottom"><i class="fa fa-arrow-down fa-2x"></i></a></div>
     </div>
-
-
 </div>
 
 <a name="bottom"></a>

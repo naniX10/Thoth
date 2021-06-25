@@ -23,7 +23,7 @@ public class ProductServiceImpl implements ProductService{
     // 상품 조회 - n개의 게시글 출력
     @Override
     public List<Product> readProduct(String cp) {
-        int snum = (Integer.parseInt(cp)-1)*10; // 10개 게시물 출력
+        int snum = (Integer.parseInt(cp)-1)*20; // 10개 게시물 출력
         return pdao.selectProduct(snum);
     }
     // 상품 조회 - 전체 상품 갯수 구하기
@@ -213,6 +213,17 @@ public class ProductServiceImpl implements ProductService{
         pdao.updateImage(b);
 
        
+    }
+
+    @Override
+    public List<Product> readProduct2(String cp) {
+        int snum = (Integer.parseInt(cp)-1)*20; // 10개 게시물 출력
+        return pdao.selectProduct2(snum);
+    }
+
+    @Override
+    public int countProduct2() {
+        return pdao.selectCountProduct2();
     }
 
 
