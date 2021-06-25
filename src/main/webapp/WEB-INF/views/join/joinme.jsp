@@ -209,30 +209,47 @@
                                 [검색하기] 버튼을 클릭하세요</p>
                             <select class="col-8 offset-2 form-control"
                                     size="10" id="addrlist" name="addrlist">
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
-                                <option>123-456 서울 종로구 창신동</option>
+                                <option>063-14 서울시 강남구 개포동</option>
+                                <option>141-08 서울시 마포구 노고산동</option>
+                                <option>016-82 서울시 노원구 상계동</option>
+                                <option>047-14 서울시 성동구 행당동</option>
+                                <option>043-63 서울시 용산구 용문동</option>
+                                <option>033-55 서울시 은평구 불광동</option>
+                                <option>045-78 서울시 중구 신당동</option>
+                                <option>022-05 서울시 중랑구 면목동</option>
+                                <option>256-27 강원도 강릉시 모전리</option>
+                                <option>264-49 강원도 원주시 단구동</option>
+                                <option>261-19 강원도 정선군 용탄리</option>
+                                <option>240-23 강원도 철원군 구수동1길</option>
+                                <option>244-06 강원도 춘천시 신숭겸로</option>
+                                <option>251-07 강원도 홍천군 한서로</option>
+                                <option>241-04 강원도 화천군 수피령로</option>
+                                <option>252-21 강원도 횡성군 한우로</option>
+                                <option>124-10 경기도 가평군 개곡리</option>
+                                <option>134-55 경기도 성남시 운중동</option>
+                                <option>175-04 경기도 안성시 봉산리</option>
+                                <option>160-46 경기도 의왕시 오전동</option>
+                                <option>111-57 경기도 포천시 유교리</option>
+                                <option>183-47 경기도 화성시 황계동</option>
+                                <option>101-21 경기도 김포시 향산리</option>
+                                <option>145-20 경기도 부천시 도당동</option>
+                                <option>624-63 광주시 광산구 고룡동</option>
+                                <option>616-19 광주시 남구 월산동</option>
+                                <option>614-48 광주시 동구 지산동</option>
+                                <option>610-96 광주시 북구 동림동</option>
+                                <option>619-14 광주시 서구 광천동</option>
+                                <option>622-01 광주시 광산구 임곡동</option>
+                                <option>616-11 광주시 남구 월산동</option>
+                                <option>611-51 광주시 북구 각화동</option>
+                                <option>467-05 부산시 강서구 강동동</option>
+                                <option>462-25 부산시 금정구 남산동</option>
+                                <option>460-44 부산시 기장군 삼성리</option>
+                                <option>487-22 부산시 동구 범일동</option>
+                                <option>477-55 부산시 동래구 안락동</option>
+                                <option>466-10 부산시 북구 만덕동</option>
+                                <option>494-18 부산시 사하구 신평동</option>
+                                <option>490-72 부산시 영도구 신선동3가</option>
+
                             </select>
                         </div>
                     </form>
