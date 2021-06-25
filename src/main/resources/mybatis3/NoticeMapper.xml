@@ -43,4 +43,28 @@
         WHERE bdno = #{bdno}
     </delete>
 
+    <update id="viewsBoard" statementType="PREPARED"
+            parameterType="String">
+        update ntBoard set views = views + 1 where bdno = #{bdno}
+    </update>
+
+    <select id="nextBoard" statementType="PREPARED"
+            parameterType="String"
+            resultType="thoth.spring.project.vo.Notice">
+      select *
+      from ntBoard
+      where bdno > #{bdno}
+      order by bdno desc limit 1
+    </select>
+
+    <select id="backBoard" statementType="PREPARED"
+            parameterType="String"
+            resultType="thoth.spring.project.vo.Notice">
+        select *
+        from ntBoard
+        where #{bdno} > bdno
+        order by bdno desc limit 1
+    </select>
+
+
 </mapper>

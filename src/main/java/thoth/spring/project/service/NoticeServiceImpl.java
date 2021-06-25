@@ -45,4 +45,21 @@ public class NoticeServiceImpl implements NoticeService{
         return isDeleteed;
     }
 
+    @Override
+    public boolean viewCountBoard(String bdno) {
+        boolean isUpdated = false;
+        if (ndao.viewCountBoard(bdno) > 0) isUpdated = true;
+        return isUpdated;
+    }
+
+    @Override
+    public Notice nextBoard(String bdno) {
+        return ndao.nextBoard(bdno);
+    }
+
+    @Override
+    public Notice backBoard(String bdno) {
+        return ndao.backBoard(bdno);
+    }
+
 }
