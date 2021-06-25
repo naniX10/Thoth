@@ -3,22 +3,24 @@ package thoth.spring.project.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import thoth.spring.project.dao.MemberDAO;
 import thoth.spring.project.vo.Member;
 
 import javax.servlet.http.HttpSession;
 
-@Service("msrv")
+@Service("mbsrv")
 public class MemberServiceImpl implements MemberService {
 
-    private MemberDAO mdao;
+    @Autowired
+    private MemberDAO mbdao;
 
     @Override
     public String newMember(Member m) {
         String result = "회원정보 저장 실패!";
 
-        int cnt = mdao.insertMember(m);
+        int cnt = mbdao.insertMember(m);
         if (cnt > 0) result = "회원정보 저장 성공!";
 
         return result;
@@ -60,7 +62,7 @@ public class MemberServiceImpl implements MemberService {
 
         try {
             json = mapper.writeValueAsString(
-                    mdao.selectZipcode(dong)
+                    mbdao.selectZipcode(dong)
             ); //
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -71,7 +73,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public String checkUserid(String uid) {
-        return mdao.selectOneUserid(uid)+"";
+        return mbdao.selectOneUserid(uid)+"";
     }
 
     @Override
@@ -81,7 +83,7 @@ public class MemberServiceImpl implements MemberService {
         // 로그인 성공시 회원정보를 세션에 저장
         // 입력한 아이디/비밀번호가 member 테이블에 있는지 확인
         // 있으면 : 1을 반환, 없으면 : 0을 반환
-        if (mdao.selectLogin(m) > 0) {
+        if (mbdao.selectLogin(m) > 0) {
             sess.setAttribute("UID", m.getUserid());
             isLogin = true;
         }

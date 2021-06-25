@@ -8,7 +8,7 @@
     <!--boolean checkLogin(Member m, HttpSession sess);-->
 
     <insert id="insertMember" statementType="PREPARED"
-            parameterType="siestageek.spring.mvc.vo.Member">
+            parameterType="thoth.spring.project.vo.Member">
         insert into joinMember
             (name, userid, passwd, jumin, zipcode, addr1, addr2, email, phone)
         values (#{name}, #{userid}, #{passwd}, #{jumin}, #{zipcode}, #{addr1}, #{addr2}, #{email}, #{phone})
@@ -16,7 +16,7 @@
 
     <select id="selectZipcode" statementType="PREPARED"
             parameterType="String"
-            resultType="siestageek.spring.mvc.vo.Zipcode">
+            resultType="thoth.spring.project.vo.Zipcode">
         select * from zipcode where dong like #{dong}
     </select>
 
@@ -27,7 +27,7 @@
     </select>
 
     <select id="checkLogin" statementType="PREPARED"
-            parameterType="siestageek.spring.mvc.vo.Member"
+            parameterType="thoth.spring.project.vo.Member"
             resultType="int">
         select count(userid) cnt from joinMember
         where userid = #{userid} and passwd = #{passwd}

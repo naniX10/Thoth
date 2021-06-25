@@ -10,7 +10,7 @@ import thoth.spring.project.vo.Zipcode;
 
 import java.util.List;
 
-@Repository("mdao")
+@Repository("mbdao")
 public class MemberDAOImpl implements MemberDAO {
 
     @Autowired private SqlSession sqlSession;

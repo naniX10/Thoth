@@ -18,7 +18,7 @@ import java.io.IOException;
 @Controller
 public class JoinController {
 
-    @Autowired private MemberService msrv;
+    @Autowired private MemberService mbsrv;
 
     @GetMapping("/join/agree")
     public String agree() {
@@ -38,7 +38,9 @@ public class JoinController {
     @PostMapping("/join/joinok")
     public String joinok(Member m, HttpServletRequest req) {
 
-        msrv.newMember(m);
+        System.out.println( ">>" + m.getUserid());
+
+        mbsrv.newMember(m);
 
         return "join/joinok.tiles";
     }
@@ -57,7 +59,7 @@ public class JoinController {
             // 응답결과의 유형은 JSON형식으로 설정
             res.setContentType("application/json; charset=UTF-8");
             // 응답결과를 뷰없이 브라우져로 바로 출력
-            res.getWriter().print( msrv.findZipcode(dong) );
+            res.getWriter().print( mbsrv.findZipcode(dong) );
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -71,7 +73,7 @@ public class JoinController {
     @GetMapping("/join/checkuid")
     public void checkuid(String uid, HttpServletResponse res) {
         try {
-            res.getWriter().println( msrv.checkUserid(uid) );
+            res.getWriter().println( mbsrv.checkUserid(uid) );
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -88,7 +90,7 @@ public class JoinController {
     public String login(Member m, HttpSession sess) {
         String returnPage = "redirect:/join/loginfail";
 
-        if (msrv.checkLogin(m, sess)) // 로그인 성공시
+        if (mbsrv.checkLogin(m, sess)) // 로그인 성공시
             returnPage = "redirect:/";
 
         return returnPage;
