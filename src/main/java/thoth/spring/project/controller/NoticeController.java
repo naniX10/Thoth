@@ -23,8 +23,13 @@ public class NoticeController {
 
     @GetMapping("/notice/ntview")
     public ModelAndView view(String bdno, ModelAndView mv) {
+
+        nsrv.viewCountBoard(bdno);   // 조회수 처리
+
         mv.setViewName("notice/ntview.tiles");
         mv.addObject("bd", nsrv.readOneBoard(bdno));
+        mv.addObject("nbd", nsrv.nextBoard(bdno));
+        mv.addObject("bbd", nsrv.backBoard(bdno));
         return mv;
     }
 

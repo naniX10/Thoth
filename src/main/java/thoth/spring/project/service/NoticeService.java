@@ -15,4 +15,10 @@ public interface NoticeService {
     boolean updateBoard(Notice bd);
 
     boolean deleteBoard(Notice bdno);
+
+    boolean viewCountBoard(String bdno);
+
+    Notice nextBoard(String bdno);
+
+    Notice backBoard(String bdno);
 }

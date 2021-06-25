@@ -38,4 +38,19 @@ public class NoticeDAOImpl implements NoticeDAO{
         return sqlSession.delete("Notice.deleteBoard", bdno);
     }
 
+    @Override
+    public int viewCountBoard(String bdno) {
+        return sqlSession.update("Notice.viewsBoard", bdno);
+    }
+
+    @Override
+    public Notice nextBoard(String bdno) {
+        return sqlSession.selectOne("Notice.nextBoard" , bdno);
+    }
+
+    @Override
+    public Notice backBoard(String bdno) {
+        return sqlSession.selectOne("Notice.backBoard" , bdno);
+    }
+
 }
