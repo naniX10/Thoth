@@ -55,5 +55,6 @@
         <li>이벤트</li>
         <li>사은품</li>
         <li>Picks</li>
+
     </ul>
 </nav>

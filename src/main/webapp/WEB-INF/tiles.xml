@@ -8,7 +8,8 @@
      <definition name="base" template="/WEB-INF/tiles/template.jsp">
      	<put-attribute name="header" value="/WEB-INF/tiles/header.jsp"/>
      	<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"/>
-     	
+     	<put-attribute name="quick" value="/WEB-INF/tiles/quick.jsp"/>
+
      </definition>
     
      <!--  메인영역에 보여줄 페이지를 요청방법에 따라 구분해서 정의 -->
