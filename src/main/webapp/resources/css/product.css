@@ -1,0 +1,321 @@
+
+.quick_menu{
+    position:fixed;
+    display:block;
+    bottom:0;
+    right:100px;
+}
+.quick_top{
+    width:70px;
+    height:50px;
+    /*border-style:solid;*/
+    /*border-width:1px;*/
+}
+.quick_bottom{
+    width:70px;
+    height:50px;
+    /*border-style:solid;*/
+    /*border-width:1px;*/
+}
+
+#categoryTitle{
+    /*background-color:#B8B5FF;*/
+    /*background-color:#7868E6;*/
+    background-color:#BE79DF;
+    color:white;
+    font-size:30px;
+    height:150px;
+    padding-top:50px;
+    text-align: center;
+    margin:0px;
+
+}
+
+#categoryUl {
+    margin:0px;
+    list-style: none;
+    padding: 0px;
+
+}
+#categoryUl li{
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+    background-color:white;
+    height:50px;
+    font-size:15px;
+    padding-top:15px;
+    padding-left:20px;
+
+}
+
+.plArea1{
+    height:150px;
+}
+.wrapPlist{
+    width:100%;
+    height:100%;
+    min-height:500px;
+    background-color:#EDEEF7;
+    position:fixed; top:150px; left:0px;
+    opacity : 0.6;
+}
+
+#searchInbtn{
+    /*background-color:#E4FBFF;*/
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+#findkey{
+    height:40px;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+    width:200px;
+}
+
+#findtype{
+    height:40px;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+}
+
+#searchArea{
+    margin-top:40px;
+
+}
+
+.Titletext{
+    font-size: 25px;
+    font-weight: bold;
+    padding-top:20px;
+
+}
+#newPbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.listAImage{
+    text-align: center;
+}
+.listA{
+    text-align: center;
+    font-size:13px;
+}
+.listAPaging{
+    margin-top:50px;
+}
+
+.textList{
+    color:#3B064D;
+    height:50px;
+    font-size:15px;
+    padding-top:15px;
+    padding-left:20px;
+
+}
+a:link {
+    color : black;
+}
+a:visited {
+    color : black;
+}
+a:hover {
+    color : black;
+}
+a:active {
+    color : black;
+}
+
+.pagingStyleA{
+    color:black;
+    border-color:black;
+}
+.pagingStyleB{
+    background-color:black;
+    border-color:black;
+    color:white;
+}
+
+/* pview style */
+.viewPImage{
+    text-align: center;
+}
+
+#pviewText1{
+    display:block;
+    color:#3E206D;
+    font-size:30px;
+    font-weight: bold;
+}
+#pviewText2{
+    display:block;
+    font-size:20px;
+
+}
+.pviewhr{
+    width:100%;
+    border-style: solid;
+}
+
+#buy1Pbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#buy2Pbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+
+#modPbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+}
+#delPbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+}
+#listPbtn{
+    background-color:#916DD5;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.viewWrap{
+    margin-top:50px;
+}
+
+/* pwrite style*/
+.pwriteTitle{
+    font-size:30px;
+    color:#3E206D;
+    font-weight:bold;
+    text-align: center;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.prdfrm{
+    margin-top:30px;
+}
+
+#rePbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#savePbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+input[name="tnum"]:hover{
+    background :#F0E3FF;
+}
+input[name="title"]:hover{
+    background :#F0E3FF;
+}
+input[name="author"]:hover{
+    background :#F0E3FF;
+}
+input[name="publish"]:hover{
+    background :#F0E3FF;
+}
+input[name="origin_price"]:hover{
+    background :#F0E3FF;
+}
+input[name="sale_price"]:hover{
+    background :#F0E3FF;
+}
+input[name="amount"]:hover{
+    background :#F0E3FF;
+}
+
+.prdfrmJ{
+    margin-top:50px;
+}
+
+/* pupdate */
+#re2Pbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#save2Pbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
