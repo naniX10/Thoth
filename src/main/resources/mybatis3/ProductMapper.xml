@@ -8,13 +8,28 @@
             select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
             b.fnames, b.fsizes, b.uuid from categoryAll c
             left outer join bookImage b using(tnum)
-            order by tnum limit ${snum}, 10;
+            order by tnum limit ${snum}, 20;
+    </select>
+
+    <!-- 카테고리별 조회(All 조회 제외) -->
+    <select id="selectProduct2" statementType="PREPARED" parameterType="int" resultType="thoth.spring.project.vo.Product">
+        select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+               b.fnames, b.fsizes, b.uuid from categoryAll c
+                   left outer join bookImage b using(tnum)
+        where substr(tnum,1,1)='category' order by tnum limit ${snum}, 20;
+;
     </select>
 
     <!-- 상품 조회 - 전체 상품 수 구하기 -->
     <select id="countProduct" statementType="PREPARED"
             parameterType="thoth.spring.project.vo.Product" resultType="int">
         select count(tnum) from categoryAll
+    </select>
+
+    <select id="countProduct2" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Product" resultType="int">
+        select count(tnum) from categoryAll
+        where substr(tnum,1,1)='category';
     </select>
 
     <!-- 상품 조회 - 검색 기능 구현 -->
