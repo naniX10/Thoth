@@ -1,99 +1,67 @@
-.header_top{
-    margin: 5px 15px 0 0;
-}
-
-.header_top ul li a{
-    color: black;
-}
-
-.headermain{
-    display: flex;
-    justify-content: space-between
-}
-
-.logo{
-    text-align: center; margin: 0 0 0 0;
-
-}
-
-.nav-item :link { text-decoration: none; color: white }
-.nav-item :visited { text-decoration: none; color: white }
-.nav-item :hover { text-decoration: none; color: white }
-.nav-item :active { text-decoration: none; color: white }
-
-.d-block {
-    height: 200px;
-}
-
-.row{
-    justify-content: space-between; font-size: 13px;
-    list-style-type:none;
-}
-
 body{
-    width: 1200px;
-    padding: 0px;
-    margin: 0px;
+    min-width: 1000px;
+}
+.nav_member{
+
 }
 
-.navbar{
+.member_area{
+    display: flex;
+    background-color:#8b8b8b;
     justify-content: space-between;
-    background-color:#5e6b9e;
-    font-size: 18px;
 }
 
-.navbar_toogleBtn{
-    margin: 0;
-    color: white;
-    padding: 12px;
-}
-
-ul{
+.member_area li {
+    font-size: 13px;
     list-style-type:none;
-}
-
-aside{
-    float:left;
-    width:170px;
-}
-
-.myroom_snb{
-    margin-bottom: 10px
-}
-
-.cscenter_snb{
-
-    padding: 0;
-}
-.depth2 {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #dadada;
-    padding: 0 15px 15px 30px;
-    list-style-type:disc;
-}
-
-
-.depth2 li a{
-    color: #4d4d4d;
-}
-
-.member_area {
-    width: 1200px;
-    float: left;
-    height: 50px;
     background-color: #8b8b8b;
-    line-height: 15px;
-
+    float: left;
 }
-
-
-main{
-    width: 900px;
-    border: 5px solid black;
-}
-
 .nav_member ul li a{
     line-height: 50px;
     color: white;
     padding: 20px 30px 0 10px;
+}
+
+.headerTop{
+
+    margin: 0;
+    display:grid;
+    grid-template-columns: 15% 85%;
+
+}
+.headerLeft{
+    margin: 0 5px 5px 15px;
+    grid-column:1/2;
+    min-width: 300px;
+}
+.headerRight{
+    margin : 20px 0 0px 45px;
+    grid-column:2/3;
+    background-color: #916dd5;
+}
+.headerNav{
+    display: flex;
+    list-style:none;
+    padding-left:0px;
+    height:40px;
+}
+.headerNav li{
+    min-width:100px;
+    padding: 10px 0 0 0;
+    float:left;
+    margin-left:300px;
+    text-align: center;
+}
+.headerNav li a{
+    color: white
+}
+.footerLogo{
+    height: 30px;
+
+}
+
+.footerInfo{
+    font-size: 14px;
+    margin: 5px 15px;
 }
