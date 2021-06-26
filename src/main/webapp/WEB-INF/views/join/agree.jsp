@@ -1,50 +1,64 @@
 <%@ page pageEncoding="UTF-8"%>
 
-<div id="main">
-    <div>
-        <i class="fas fa-users fa-2x"> 회원가입 </i>
+<div id="main" class="container">
+    <!-- Page Title -->
+    <div class="row">
+        <div class="col">
+            <p class="joinTitle">회원가입</p>
+        </div>
         <hr>
     </div><!-- 페이지 타이틀 -->
 
-    <nav>
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item active">
-                <button type="button" disabled
-                        class="btn btn-success">
-                    이용약관</button>
-            </li>
-            <li class="breadcrumb-item">
-                <button type="button" disabled
-                        class="btn btn-light">
-                    실명확인</button>
-            </li>
-            <li class="breadcrumb-item">
-                <button type="button" disabled
-                        class="btn btn-light">
-                    정보입력</button>
-            </li>
-            <li class="breadcrumb-item">
-                <button type="button" disabled
-                        class="btn btn-light">
-                    가입완료</button>
-            </li>
-        </ul>
-    </nav><!-- 브레드크럼 -->
+    <!-- 브레드 크럼 -->
+        <nav class="row">
+            <ul class="offset-3 col breadStyle">
+                <li class="">
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <button type="button" disabled
+                            class="btn btnActive">
+                        이용약관</button>
+                    <span class="itemA">&nbsp;&nbsp;&sc;&nbsp;&nbsp;</span>
+                </li>
+                <li class="">
+                    <button type="button" disabled
+                            class="btn btnDisabled">
+                        실명확인</button>
+                    <span class="itemA">&nbsp;&nbsp;&sc;&nbsp;&nbsp;</span>
+                </li>
+                <li class="">
+                    <button type="button" disabled
+                            class="btn btnDisabled">
+                        정보입력</button>
+                    <span class="itemA">&nbsp;&nbsp;&sc;&nbsp;&nbsp;</span>
+                </li>
+                <li class="">
+                    <button type="button" disabled
+                            class="btn btnDisabled">
+                        가입완료</button>
+                </li>
+            </ul>
 
-    <div>
-        <h2>사이트 약관 동의</h2>
-        <small class="text-muted">
-            회원가입을 위해서 아래 사이트 이용약관 &middot;
-            개인정보 수집 및 이용에 대한 안내를 읽고 동의해 주세요.
-        </small>
-        <hr>
+        </nav><!-- 브레드 크럼 -->
+
+    <!-- 섹션 타이틀 -->
+    <div class="row sectionTitle">
+        <div class="col">
+            <h2 style="font-weight:bold">사이트 약관 동의</h2>
+            <small class="text-muted">
+                회원가입을 위해서 아래 사이트 이용약관 &middot;
+                개인정보 수집 및 이용에 대한 안내를 읽고 동의해 주세요.
+            </small>
+            <hr>
+        </div>
+
     </div><!-- 섹션 타이틀 -->
 
-    <div class="card card-body bg-light">
-        <h3>사이트 이용약관</h3>
+
+    <div class="card card-body agreeCard">
+        <h3 style="margin-bottom:15px;">사이트 이용약관</h3>
         <form name="agreefrm" id="agreefrm">
             <div class="form-group">
-                        <textarea rows="10" class="form-control border-danger">
+                        <textarea  rows="10" class="form-control">
                             Thoth계정 약관
 
 제 1 장 환영합니다!
@@ -214,9 +228,10 @@ Copyright © Thoth Corp. All rights reserved.
             </div>
         </form>
     </div>
-
-    <div class="card card-body bg-light">
-        <h3>개인정보 수집 및 이용에 대한 안내</h3>
+    <br>
+    <br>
+    <div class="card card-body agreeCard">
+        <h3 style="margin-bottom:15px;">개인정보 수집 및 이용에 대한 안내</h3>
         <form>
             <div class="form-group">
                         <textarea rows="10" class="form-control  border-danger">
@@ -394,14 +409,20 @@ Copyright © Thoth Corp. All rights reserved.
             </div>
         </form>
     </div><!-- 이용약관/개인정보 수집 -->
-
-    <div class="bg-light text-center">
-        <button type="button" id="okagree"
-                class="btn btn-success">
-            모두 동의합니다</button>
-        <button type="button" id="noagree"
-                class="btn btn-danger">
-            모두 동의하지 않습니다</button>
+    <br>
+    <br>
+    <div class="row text-center">
+        <div class="col">
+            <button type="button" id="okagree"
+                    class="btn btn-success">
+                <i class="fa fa-check-circle"></i>
+                모두 동의합니다</button>
+            <button type="button" id="noagree"
+                    class="btn btn-danger">
+                <i class="fa fa-times-circle"></i>
+                모두 동의하지 않습니다</button>
+        </div>
     </div><!-- 버튼들 -->
-
+    <br>
+    <br>
 </div>

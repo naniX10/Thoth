@@ -1,3 +1,8 @@
+// 회원가입 버튼 이벤트
+$('#signupbtn').on('click',function(){
+   location.href='/join/agree';
+});
+
 // agree
 $('#okagree').on('click', function() {
     if (!$('#agree1').is(':checked'))
@@ -200,3 +205,9 @@ $('#lgmbtn').on('click', function() {
 $('#logoutbtn').on('click', function() {
     location.href = '/join/logout';
 });
+
+// logoutbtn
+$('#go2index').on('click', function() {
+    location.href = '/';
+});
+

@@ -10,6 +10,7 @@
     right:0;
     z-index:999;
     background-color:white;
+    min-height:150px;
 }
 .headerAreaA{
     grid-row:1/2;
@@ -130,11 +131,40 @@
 }
 
 /*footer Area */
+.footerArea{
+    display:grid;
+    min-height:100px;
+    background-color:white;
+    position:absolute;
+    right:0;
+    down:0;
+    left:0;
 
+}
+.footerAreaA{
+    z-index:990;
+    grid-row: 1/2;
+    background-color:white;
+
+}
+.footerAreaB{
+
+    grid-row :2/3;
+    /*display:grid;*/
+    background-color:white;
+    z-index:990;
+}
+.footerAreaBLeft{
+    /*grid-column:1/2;*/
+}
+.footerAreaBRight{
+    /*grid-column:2/3;*/
+}
 .member_area{
     display: flex;
     background-color:#8b8b8b;
     justify-content: space-between;
+
 }
 
 .member_area li {
@@ -142,6 +172,7 @@
     list-style-type:none;
     background-color: #8b8b8b;
     float: left;
+
 }
 .nav_member ul li a{
     line-height: 50px;

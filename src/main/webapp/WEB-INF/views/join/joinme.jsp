@@ -5,127 +5,138 @@
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
-    <div>
-        <i class="fas fa-users fa-2x"> 회원가입 </i>
+    <!-- Page Title -->
+    <div class="row">
+        <div class="col">
+            <p class="joinTitle">회원가입</p>
+        </div>
         <hr>
     </div><!-- 페이지 타이틀 -->
 
-    <nav>
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item active">
+    <!-- 브레드 크럼 -->
+    <nav class="row">
+        <ul class="offset-3 col breadStyle">
+            <li class="">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 <button type="button" disabled
-                        class="btn btn-success">
+                        class="btn btnActive">
                     이용약관</button>
+                <span class="itemA">&nbsp;&nbsp;&sc;&nbsp;&nbsp;</span>
             </li>
-            <li class="breadcrumb-item">
+            <li class="">
                 <button type="button" disabled
-                        class="btn btn-success">
+                        class="btn btnActive">
                     실명확인</button>
+                <span class="itemA">&nbsp;&nbsp;&sc;&nbsp;&nbsp;</span>
             </li>
-            <li class="breadcrumb-item">
+            <li class="">
                 <button type="button" disabled
-                        class="btn btn-success">
+                        class="btn btnActive">
                     정보입력</button>
+                <span class="itemA">&nbsp;&nbsp;&sc;&nbsp;&nbsp;</span>
             </li>
-            <li class="breadcrumb-item">
+            <li class="">
                 <button type="button" disabled
-                        class="btn btn-light">
+                        class="btn btnDisabled">
                     가입완료</button>
             </li>
         </ul>
-    </nav><!-- 브레드크럼 -->
 
-    <div>
-        <h2>회원정보 입력</h2>
-        <small class="text-muted">
-            회원정보는 개인정보 취급방침에 따라 안전하게 보호되며,
-            회원님의 명백한 동의없이 공개 또는 제3자에게 제공되지 않습니다.
-        </small>
-        <hr>
+    </nav><!-- 브레드 크럼 -->
+    <!-- 섹션 타이틀 -->
+    <div class="row sectionTitle">
+        <div class="col">
+            <h2 style="font-weight:bold">회원정보 입력</h2>
+            <small class="text-muted">
+                회원정보는 개인정보 취급방침에 따라 안전하게 보호되며,
+                회원님의 명백한 동의없이 공개 또는 제3자에게 제공되지 않습니다.
+            </small>
+            <hr>
+        </div>
     </div><!-- 섹션 타이틀 -->
 
-    <div class="card card-body bg-light">
-        <h3>일반회원</h3>
 
+    <div class="card card-body agreeCard">
+        <h3 style="margin-bottom:15px;">일반회원</h3>
         <form name="joinfrm" id="joinfrm">
             <div class="row">
                 <div class="col-11 offset-1">
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right" for="name">
+                        <label class="col-2 col-form-label text-dark text-right" for="name">
                             이름</label>
                         <input type="text" name="name" id="name"
-                               class="form-control border-danger col-2"
+                               class="form-control border-dark col-2"
                                readonly value="${param.name}">
                     </div><!-- 이름 -->
 
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right" for="jumin1">
+                        <label class="col-2 col-form-label text-dark text-right" for="jumin1">
                             주민번호</label>
                         <input type="text" name="jumin1" id="jumin1"
-                               class="form-control border-danger col-2" readonly value="${param.jumin1}">
+                               class="form-control border-dark col-2" readonly value="${param.jumin1}">
                         <span class="col-form-label">
                         &nbsp;&mdash;&nbsp;</span>
                         <input type="text" name="jumin2" id="jumin2"
-                               class="form-control border-danger col-2" readonly value="${param.jumin2}">
+                               class="form-control border-dark col-2" readonly value="${param.jumin2}">
                     </div><!-- 주민번호 -->
 
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right" for="userid">아이디</label>
+                        <label class="col-2 col-form-label text-dark text-right" for="userid">아이디</label>
                         <input type="text" name="userid" id="userid"
-                               class="form-control border-danger col-3">
+                               class="form-control border-dark col-3">
                         <span id="uidmsg" class="text-muted col-form-label">&nbsp;8~16자의 영문 소문자, 숫자와 특수기호(_)만 사용할 수 있습니다.</span>
                     </div><!-- 아이디 -->
 
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right" for="passwd">비밀번호</label>
+                        <label class="col-2 col-form-label text-dark text-right" for="passwd">비밀번호</label>
                         <input type="password" name="passwd" id="passwd"
-                               class="form-control border-danger col-3">
+                               class="form-control border-dark col-3">
                         <span id="pwdmsg" class="text-muted col-form-label">&nbsp;8~16자의 영문 소문자, 숫자와 특수기호(_)만 사용할 수 있습니다.</span>
                     </div><!-- 비번 -->
 
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right" for="repasswd">비밀번호 확인</label>
+                        <label class="col-2 col-form-label text-dark text-right" for="repasswd">비밀번호 확인</label>
                         <input type="password" name="repasswd" id="repasswd"
-                               class="form-control border-danger col-3">
+                               class="form-control border-dark col-3">
                         <span class="col-form-label">&nbsp;이전 항목에서 입력했던 비밀번호를 한번 더 입력하세요.</span>
                     </div><!-- 비번확인 -->
 
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right" for="zip1">우편번호</label>
+                        <label class="col-2 col-form-label text-dark text-right" for="zip1">우편번호</label>
                         <input type="text" name="zip1" id="zip1"
-                               class="form-control border-danger col-1" readonly>
+                               class="form-control border-dark col-1" readonly>
                         <span class="col-form-label">
                         &nbsp;&mdash;&nbsp;</span>
                         <input type="text" name="zip2" id="zip2"
-                               class="form-control border-danger col-1" readonly>
+                               class="form-control border-dark col-1" readonly>
                         &nbsp;
                         <button type="button" class="btn btn-dark"
                                 data-toggle="modal" data-target="#zipmodal">
-                            <i class="fas fa-question-circle"></i>
+                            <i class="fa fa-question-circle"></i>
                             우편번호 찾기</button>
                     </div><!-- 우편번호 -->
 
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right" for="addr1">주소</label>
+                        <label class="col-2 col-form-label text-dark text-right" for="addr1">주소</label>
                         <input type="text" name="addr1" id="addr1"
-                               class="form-control border-danger col-4">
+                               class="form-control border-dark col-4">
                         &nbsp;&nbsp;
                         <input type="text" name="addr2" id="addr2"
-                               class="form-control border-danger col-4">
+                               class="form-control border-dark col-4">
                     </div><!-- 주소 -->
 
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right" for="addr1">전자우편 주소</label>
+                        <label class="col-2 col-form-label text-dark text-right" for="addr1">전자우편 주소</label>
                         <input type="text" name="email1" id="email1"
-                               class="form-control border-danger col-3">
+                               class="form-control border-dark col-3">
 
                         <div class="input-group-prepend">
                             <span class="input-group-text">@</span>
                         </div>
                         <input type="text" name="email2" id="email2"
-                               class="form-control border-danger col-2" readonly>
+                               class="form-control border-dark col-2" readonly>
                         &nbsp;
-                        <select class="form-control border-danger col-2" id="email3">
+                        <select class="form-control border-dark col-2" id="email3">
                             <option>-선택하세요-</option>
                             <option>직접입력하기</option>
                             <option>naver.com</option>
@@ -135,8 +146,8 @@
                     </div><!-- 이메일 -->
 
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right" for="tel1">전화번호</label>
-                        <select class="form-control border-danger col-2"
+                        <label class="col-2 col-form-label text-dark text-right" for="tel1">전화번호</label>
+                        <select class="form-control border-dark col-2"
                                 name="tel1" id="tel1">
                             <option>-국번-</option>
                             <option>010</option>
@@ -144,14 +155,14 @@
                         </select>
                         <span class="col-form-label">&nbsp;&mdash;&nbsp;</span>
                         <input type="text" name="tel2" id="tel2"
-                               class="form-control border-danger col-2">
+                               class="form-control border-dark col-2">
                         <span class="col-form-label">&nbsp;&mdash;&nbsp;</span>
                         <input type="text" name="tel3" id="tel3"
-                               class="form-control border-danger col-2">
+                               class="form-control border-dark col-2">
                     </div><!-- 전화번호 -->
 
                     <div class="form-group row">
-                        <label class="col-2 col-form-label text-danger text-right">자동가입방지</label>
+                        <label class="col-2 col-form-label text-dark text-right">자동가입방지</label>
                         <div class="g-recaptcha"
                              data-sitekey="6LdmIwgbAAAAAPO06Cyw44ZE0pkeDeMHEwVbgiM-"></div>
                         <input type="hidden" id="g-recaptcha" name="g-recaptcha" />
@@ -162,11 +173,11 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <hr>
-                    <button type="button" class="btn btn-primary"
-                            id="joinbtn"><i class="fas fa-check-circle"></i>
+                    <button type="button" class="btn"
+                            id="joinbtn"><i class="fa fa-check-circle"></i>
                         입력완료</button>
-                    <button type="button" class="btn btn-danger"
-                            id="cancelbtn"><i class="fas fa-times-circle"></i>
+                    <button type="button" class="btn"
+                            id="cancelbtn"><i class="fa fa-times-circle"></i>
                         입력취소</button>
                 </div>
             </div><!-- 버튼들 -->
@@ -179,6 +190,8 @@
         </form>
     </div><!-- 회원정보 입력 -->
 
+    <br>
+    <br>
     <!-- 우편번호 폼 모달 -->
     <div id="zipmodal" class="modal" role="dialog" tabindex="-1">
         <div class="modal-dialog modal-lg">
@@ -199,56 +212,16 @@
                             &nbsp;&nbsp;
                             <button type="button" class="btn btn-primary"
                                     id="findzipbtn">
-                                <i class="fas fa-search"></i>
+                                <i class="fa fa-search"></i>
                                 검색하기</button>
                         </div>
                         <div class="form-group row">
                             <hr class="col-9">
-                            <p class="col-12 text-danger text-center">
+                            <p class="col-12 text-dark text-center">
                                 지역의 읍/면/동의 이름을 공백없이 입력하신 후,
                                 [검색하기] 버튼을 클릭하세요</p>
                             <select class="col-8 offset-2 form-control"
                                     size="10" id="addrlist" name="addrlist">
-                                <option>063-14 서울시 강남구 개포동</option>
-                                <option>141-08 서울시 마포구 노고산동</option>
-                                <option>016-82 서울시 노원구 상계동</option>
-                                <option>047-14 서울시 성동구 행당동</option>
-                                <option>043-63 서울시 용산구 용문동</option>
-                                <option>033-55 서울시 은평구 불광동</option>
-                                <option>045-78 서울시 중구 신당동</option>
-                                <option>022-05 서울시 중랑구 면목동</option>
-                                <option>256-27 강원도 강릉시 모전리</option>
-                                <option>264-49 강원도 원주시 단구동</option>
-                                <option>261-19 강원도 정선군 용탄리</option>
-                                <option>240-23 강원도 철원군 구수동1길</option>
-                                <option>244-06 강원도 춘천시 신숭겸로</option>
-                                <option>251-07 강원도 홍천군 한서로</option>
-                                <option>241-04 강원도 화천군 수피령로</option>
-                                <option>252-21 강원도 횡성군 한우로</option>
-                                <option>124-10 경기도 가평군 개곡리</option>
-                                <option>134-55 경기도 성남시 운중동</option>
-                                <option>175-04 경기도 안성시 봉산리</option>
-                                <option>160-46 경기도 의왕시 오전동</option>
-                                <option>111-57 경기도 포천시 유교리</option>
-                                <option>183-47 경기도 화성시 황계동</option>
-                                <option>101-21 경기도 김포시 향산리</option>
-                                <option>145-20 경기도 부천시 도당동</option>
-                                <option>624-63 광주시 광산구 고룡동</option>
-                                <option>616-19 광주시 남구 월산동</option>
-                                <option>614-48 광주시 동구 지산동</option>
-                                <option>610-96 광주시 북구 동림동</option>
-                                <option>619-14 광주시 서구 광천동</option>
-                                <option>622-01 광주시 광산구 임곡동</option>
-                                <option>616-11 광주시 남구 월산동</option>
-                                <option>611-51 광주시 북구 각화동</option>
-                                <option>467-05 부산시 강서구 강동동</option>
-                                <option>462-25 부산시 금정구 남산동</option>
-                                <option>460-44 부산시 기장군 삼성리</option>
-                                <option>487-22 부산시 동구 범일동</option>
-                                <option>477-55 부산시 동래구 안락동</option>
-                                <option>466-10 부산시 북구 만덕동</option>
-                                <option>494-18 부산시 사하구 신평동</option>
-                                <option>490-72 부산시 영도구 신선동3가</option>
 
                             </select>
                         </div>
@@ -256,8 +229,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" id="sendzip">
-                        <i class="fas fa-check-square"></i>
+                    <button type="button" class="btn btn-dark" id="sendzip">
+                        <i class="fa fa-check-square"></i>
                         선택하고 닫기</button>
                 </div>
             </div>
