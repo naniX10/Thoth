@@ -10,4 +10,4 @@ create table ntBoard(
 
 // ntBoard 에 샘플 데이터 입력
 insert into ntBoard (title , userid)
-values ("첫번쨰 공지입니다" , "관리자ID");
+values ("첫번째 공지입니다" , "관리자ID");

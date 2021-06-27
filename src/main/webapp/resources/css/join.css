@@ -1,0 +1,99 @@
+/*agree*/
+/*agree-타이틀 */
+.joinTitle{
+    font-size:40px;
+    color:#3E206D;
+    font-weight:bold;
+    text-align: center;
+    margin-top:30px;
+    margin-bottom:30px;
+
+}
+/*agree-브레드 크럼 */
+.breadStyle{
+    text-align: center;
+    padding:10px;
+    z-index:300;
+
+}
+.breadStyle li {
+    float:left;
+
+}
+/*agree-브레드 크럼 버튼 */
+.btnActive{
+    background-color:#3E206D;
+    color:white;
+}
+.btnActive:hover {
+    color: white;
+}
+.btnDisabled{
+    background-color:#D89CF6;
+    color:white;
+}
+
+.btnDisabled:hover{
+    color:white;
+}
+
+
+/*agree-섹션 타이틀 */
+.sectionTitle{
+
+    color:#3E206D;
+
+    margin-top:30px;
+
+}
+
+/*agree-card */
+.agreeCard{
+    background-color:white;
+}
+
+#chk2btn{
+    background-color:#BE79DF;
+    color:white;
+    border-radius : 3px;
+    border-style:none;
+}
+#cancel2btn{
+    background-color:#E5B0EA;
+    color:white;
+    border-radius : 3px;
+    border-style:none;
+}
+
+#joinbtn{
+    background-color:#BE79DF;
+    color:white;
+    border-radius : 3px;
+    border-style:none;
+}
+#cancelbtn{
+    background-color:#E5B0EA;
+    color:white;
+    border-radius : 3px;
+    border-style:none;
+}
+
+#okagree{
+    background-color:#BE79DF;
+    color:white;
+    border-radius : 3px;
+    border-style:none;
+}
+#noagree{
+    background-color:#E5B0EA;
+    color:white;
+    border-radius : 3px;
+    border-style:none;
+}
+
+#go2index{
+    background-color:#BE79DF;
+    color:white;
+    border-radius : 3px;
+    border-style:none;
+}

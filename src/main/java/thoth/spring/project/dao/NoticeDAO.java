@@ -15,4 +15,10 @@ public interface NoticeDAO {
     int updateBoard(Notice bd);
 
     int deleteBoard(Notice bdno);
+
+    int viewCountBoard(String bdno);
+
+    Notice nextBoard(String bdno);
+
+    Notice backBoard(String bdno);
 }

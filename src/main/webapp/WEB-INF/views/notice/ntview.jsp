@@ -4,6 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<link rel = "stylesheet" href = "/css/notice.css">
+
 <div id="main">
     <form name = "viewfrm" id = "viewfrm">
         <input type="hidden" name="bdno" value="${bd.bdno}">
@@ -12,24 +14,29 @@
             <hr>
         </div><!-- 페이지 타이틀 -->
 
+        <div style = "float : right">
+            <a href="/notice/ntupdate?bdno=${bd.bdno}">수정</a>
+            <button type="button" id="delete_btn">삭제</button>
+        </div>
+
         <div>
 
             <div>
-                <table>
+                <table style = "margin : 0px auto">
 
                     <tr>
-                        <th>
-                            <h2>${bd.title}</h2>
+                        <th style = "padding-left: 380px">
+                            <h2 style="width : 300px">${bd.title}</h2>
                         </th>
                     </tr>
 
                     <tr>
-                        <td>${bd.userid}</td>
-                        <td class="text-right">${bd.regdate} / ${bd.views}</td>
+                        <td style = "float : left"> 작성자 : ${bd.userid}</td>
+                        <td class="text-right">작성일 : ${bd.regdate} / 조회수 : ${bd.views}</td>
                     </tr>
 
                     <tr>
-                        <td>
+                        <td colspan="2">
                             ${fn:replace(bd.contents, newChar, "<br>")}
                         </td>
                     </tr>
@@ -38,14 +45,19 @@
             </div>
 
             <div>
-                <%-- 프론트엔드 분이 선택 or 다른것 사용해도 굳--%>
-                <input type="button" value="back" onclick="history.back(-1)">
-                <a href="javascript:history.back(-1)">목록으로</a>
+                <a href="/notice/ntlist" class="nav-link">목록으로</a>
             </div>
 
             <div>
-                <a href="/notice/ntupdate?bdno=${bd.bdno}">수정</a>
-                <button type="button" id="delete_btn">삭제</button>
+
+                <c:if test="${nbd.bdno > 0}">
+                    <li><a href = "/notice/ntview?bdno=${nbd.bdno}">다음글</a></li>
+                </c:if>
+
+                <c:if test="${bbd.bdno > 0}">
+                    <li><a href = "/notice/ntview?bdno=${bbd.bdno}">이전글</a></li>
+                </c:if>
+
             </div>
 
         </div><!-- 본문글 -->

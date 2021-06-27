@@ -1,0 +1,192 @@
+/*header Area*/
+.spaceArea{
+    min-height:150px;
+}
+.headerArea{
+    display:grid;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:999;
+    background-color:white;
+    min-height:150px;
+}
+.headerAreaA{
+    grid-row:1/2;
+    width:100%;
+    border-bottom-style:solid;
+    border-width:1px;
+    border-color: black;
+    min-height:60px;
+}
+.headerAreaB{
+    grid-row:2/3;
+    margin: 0;
+    display:grid;
+    grid-template-columns: 15% 85%;
+    min-height:70px;
+    border-bottom-style:solid;
+    border-width:1px;
+    border-color: black;
+
+}
+.headerLeft{
+    margin: 0 5px 5px 15px;
+    grid-column:1/2;
+    min-width: 300px;
+    position:fixed;
+    left:70px;
+    top:80px;
+    z-index:999;
+
+}
+.headerRight{
+    margin : 20px 0 0px 45px;
+    grid-column:2/3;
+    /*background-color: #916dd5;*/
+    margin-top:35px;
+    margin-left:40px;
+
+}
+.headerNav{
+    display: flex;
+    list-style:none;
+    padding-left:0px;
+    height:40px;
+    background-color:white;
+
+}
+.headerNav li{
+    min-width:100px;
+    padding: 10px 0 0 0;
+    float:left;
+    margin-left:100px;
+    text-align: center;
+}
+.headerNav li a{
+    color:#3B064D;
+    font-size:20px;
+    font-weight:bold;
+}
+.headerNav li a:hover{
+    color:#7868E6;
+    font-size:20px;
+    font-weight:bold;
+}
+#loginbtn{
+    position:fixed;
+    right:120px;
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-Top:10px;
+    z-index:999;
+}
+#signupbtn{
+    position:fixed;
+    right:0px;
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-Top:10px;
+    margin-right:10px;
+    z-index:999;
+}
+#logoutbtn{
+    position:fixed;
+    right:220px;
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-Top:10px;
+    margin-right:10px;
+    z-index:999;
+}
+#signoutbtn{
+    position:fixed;
+    right:330px;
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-Top:10px;
+    margin-right:10px;
+    z-index:999;
+}
+
+/*footer Area */
+.footerArea{
+    display:grid;
+    min-height:100px;
+    background-color:white;
+    position:absolute;
+    right:0;
+    down:0;
+    left:0;
+
+}
+.footerAreaA{
+    z-index:990;
+    grid-row: 1/2;
+    background-color:white;
+
+}
+.footerAreaB{
+
+    grid-row :2/3;
+    /*display:grid;*/
+    background-color:white;
+    z-index:990;
+}
+.footerAreaBLeft{
+    /*grid-column:1/2;*/
+}
+.footerAreaBRight{
+    /*grid-column:2/3;*/
+}
+.member_area{
+    display: flex;
+    background-color:#8b8b8b;
+    justify-content: space-between;
+
+}
+
+.member_area li {
+    font-size: 13px;
+    list-style-type:none;
+    background-color: #8b8b8b;
+    float: left;
+
+}
+.nav_member ul li a{
+    line-height: 50px;
+    color: white;
+    padding: 20px 30px 0 10px;
+}
+
+
+.footerLogo{
+    height: 30px;
+
+}
+
+.footerInfo{
+    font-size: 14px;
+    margin: 5px 15px;
+}

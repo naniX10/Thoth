@@ -21,16 +21,19 @@
 <%-- 페이지 링크 : 검색 기능 x --%>
 <c:set var="pglink" value="/notice/ntlist?cp=" />
 
-<div id = "main">
+<link rel = "stylesheet" href = "/css/notice.css">
 
-    <div>
+<div id = "main" style = "margin-top : 50px">
+
+    <div id = "listhead">
         <ul>
             <li>공지사항</li>
-            <li><button type="button" id="gowrite" style="float: left">작성하기</button></li>
         </ul>
     </div>
 
-    <table>
+    <button type="button" id="gowrite" style="margin-left : 465px">작성하기</button>
+
+    <table style = "margin : 0px auto">
 
         <thead>
             <tr>
@@ -44,7 +47,7 @@
 
         <c:forEach var = "bd" items = "${bds}">
             <tr>
-                <td>${snum}</td>
+                <td>${bd.bdno}</td><%--${snum}--%>
                 <td><a href="/notice/ntview?bdno=${bd.bdno}">${bd.title}</a></td>
                 <td>${bd.userid}</td>
                 <td>${fn:substring(bd.regdate,0,10)}</td>
