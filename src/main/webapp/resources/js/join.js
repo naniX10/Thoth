@@ -183,7 +183,7 @@ $('#email3').on('change', function() {
 });
 
 // loginbtn
-$('#loginbtn').on('click', function (){
+$('#loginModalbtn').on('click', function (){
     if ($('#userid').val() == '') alert('아이디를 입력하세요!');
     else if ($('#passwd').val() == '') alert('비밀번호를 입력하세요!');
     else {

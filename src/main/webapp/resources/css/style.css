@@ -103,7 +103,7 @@
 }
 #logoutbtn{
     position:fixed;
-    right:220px;
+    right:120px;
     background-color:#BE79DF;
     color:white;
     height:40px;
@@ -112,12 +112,11 @@
     border-style:none;
     font-size:15px;
     margin-Top:10px;
-    margin-right:10px;
     z-index:999;
 }
 #signoutbtn{
     position:fixed;
-    right:330px;
+    right:0px;
     background-color:#E5B0EA;
     color:white;
     height:40px;
@@ -129,6 +128,7 @@
     margin-right:10px;
     z-index:999;
 }
+
 
 /*footer Area */
 .footerArea{
@@ -189,4 +189,26 @@
 .footerInfo{
     font-size: 14px;
     margin: 5px 15px;
+}
+
+input[type="text"]:hover{
+    background :#F0E3FF;
+}
+
+#findIdbtn{
+    background-color:#E5B0EA;
+    color:white;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+
+}
+#loginModalbtn{
+    background-color:#BE79DF;
+    color:white;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+
+
 }

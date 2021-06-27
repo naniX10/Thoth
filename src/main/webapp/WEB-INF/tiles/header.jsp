@@ -4,13 +4,17 @@
     <div class="row spaceArea"></div>
     <div class="headerArea">
         <div class="headerAreaA">
-            <button type="button" id="loginbtn" class="btn" >로그인</button>
+            <c:if test="${empty UID}">
+            <button type="button" id="loginbtn" class="btn"  data-toggle="modal"
+                    data-target="#loginmodal" >로그인</button>
             <span class="spaceA">&nbsp;</span>
             <button type="button" id="signupbtn" class="btn">회원가입</button>
-            <span class="spaceB">&nbsp;</span>
+            </c:if>
+            <c:if test="${not empty UID}">
             <button type="button" id="logoutbtn" class="btn" >로그아웃</button>
-            <span class="spaceC">&nbsp;</span>
+                <span class="spaceA">&nbsp;</span>
             <button type="button" id="signoutbtn" class="btn" >내정보</button>
+            </c:if>
         </div>
         <div class="headerAreaB">
             <div class="headerLeft">
