@@ -145,5 +145,25 @@ public class ProductDAOImpl implements ProductDAO{
         return result;
     }
 
+    @Override
+    public void delete2Product(String tnum) {
+        sqlSession.delete("product.delete2Product",tnum);
+    }
+
+    @Override
+    public void delete2Image(String tnum) {
+        sqlSession.delete("product.delete2Image",tnum);
+    }
+
+    @Override
+    public int update2Product(Product p) {
+        return sqlSession.update("product.update2Product",p);
+    }
+
+    @Override
+    public int update2Image(BookImage b) {
+        return sqlSession.update("product.update2Image",b);
+    }
+
 
 }

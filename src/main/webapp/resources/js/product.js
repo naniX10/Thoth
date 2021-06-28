@@ -73,12 +73,20 @@ $('#listPbtn').on('click',function(){
     location.href='/product/plist';
 });
 
+$('#list2Pbtn').on('click',function(){
+    location.href='/product/pchild';
+});
 
 
 // 상품 삭제 버튼 클릭 이벤트 1 : view에서 상품 삭제(1개 제거)
 $('#delPbtn').on('click',function(){
     alert('상품이 삭제되었습니다.');
     location.href='/product/premove?tnum='+$('#tnum').val();
+});
+
+$('#delPbtn2').on('click',function(){
+    alert('상품이 삭제되었습니다.');
+    location.href='/product/premove2?tnum='+$('#tnum').val();
 });
 
 
@@ -104,6 +112,10 @@ $('#modPbtn').on('click',function(){
     location.href = '/product/pupdate?tnum='+$('#tnum').val();
 });
 
+$('#modPbtn2').on('click',function(){
+    location.href = '/product/pupdate2?tnum='+$('#tnum').val();
+});
+
 // 수정 완료 버튼 클릭 이벤트 : 상품 수정 완료
 $('#save2Pbtn').on('click',function(){
    if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
@@ -114,6 +126,18 @@ $('#save2Pbtn').on('click',function(){
          frm.attr('enctype','multipart/form-data');
          frm.submit();
          alert('상품이 수정되었습니다.');
+    };
+});
+
+$('#save3Pbtn').on('click',function(){
+    if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
+    else {
+        const frm = $('#modprdfrm');
+        frm.attr('action','/product/pupdate2');
+        frm.attr('method','post');
+        frm.attr('enctype','multipart/form-data');
+        frm.submit();
+        alert('상품이 수정되었습니다.');
     };
 });
 

@@ -78,7 +78,7 @@ public class ProductController {
     @GetMapping("/product/pviewchild")
     public ModelAndView pview2(String tnum, ModelAndView mv) {
 
-        mv.setViewName("product/pview.tiles");
+        mv.setViewName("product/pview2.tiles");
         mv.addObject("p", psrv.readOne2Product(tnum));   // tnum 상품 정보 조회
         mv.addObject("b",psrv.readOne2Image(tnum)); // 이미지 조회
         return mv;
@@ -124,6 +124,15 @@ public class ProductController {
         return "redirect:/product/plist";
     }
 
+    @GetMapping("/product/premove2")
+    public String premove2(String tnum){
+        Product p = psrv.removeProduct2(tnum); // 상품 삭제
+        BookImage b = psrv.removeImage2(tnum); // 상품 이미지 삭제
+        imgUtil.removeImage2(b);
+
+        return "redirect:/product/pchild";
+    }
+
     // 상품 수정
     @GetMapping("/product/pupdate")
     public ModelAndView pupdate(ModelAndView mv, String tnum)
@@ -131,6 +140,15 @@ public class ProductController {
         mv.setViewName("product/pupdate.tiles");
         mv.addObject("p",psrv.readOneProduct(tnum));
         mv.addObject("b",psrv.readOneImage(tnum));
+        return mv;
+    }
+
+    @GetMapping("/product/pupdate2")
+    public ModelAndView pupdate2(ModelAndView mv, String tnum)
+    {
+        mv.setViewName("product/pupdate2.tiles");
+        mv.addObject("p",psrv.readOne2Product(tnum));
+        mv.addObject("b",psrv.readOne2Image(tnum));
         return mv;
     }
 
@@ -142,6 +160,15 @@ public class ProductController {
             psrv.modifyImage(b,img);
         }
         return "redirect:/product/plist";
+    }
+
+    @PostMapping("/product/pupdate2")
+    public String pupdateok2(Product p,BookImage b, MultipartFile[] img){
+        psrv.modify2Product(p);
+        if(b.getTodie()!=""){
+            psrv.modify2Image(b,img);
+        }
+        return "redirect:/product/pchild";
     }
 
 }

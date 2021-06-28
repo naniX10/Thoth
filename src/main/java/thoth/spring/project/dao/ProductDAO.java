@@ -68,6 +68,9 @@ public interface ProductDAO {
     int selectCount2Product(Map<String,Object> params);
     Product selectOne2Product(String tnum);
     BookImage selectOne2Image(String tnum);
-
     int insert2Product(Product p, BookImage b);
+    void delete2Product(String tnum);
+    void delete2Image(String tnum);
+    int update2Product(Product p);
+    int update2Image(BookImage b);
 }

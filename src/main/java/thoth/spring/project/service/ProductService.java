@@ -64,4 +64,11 @@ public interface ProductService {
     BookImage readOne2Image(String tnum);
 
     boolean newProduct2(Product p, BookImage b, MultipartFile[] img);
+
+    Product removeProduct2(String tnum);
+    BookImage removeImage2(String tnum);
+
+    void modify2Product(Product p);
+    void modify2Image(BookImage b, MultipartFile[] img);
+
 }

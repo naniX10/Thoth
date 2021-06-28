@@ -172,6 +172,23 @@
         values (#{tnum}, #{title}, #{author}, #{publish}, #{origin_price}, #{sale_price}, #{amount})
     </insert>
 
+    <delete id="delete2Product" statementType="PREPARED" parameterType="String">
+        delete from categoryChild where tnum = #{tnum}
+    </delete>
 
+    <delete id="delete2Image" statementType="PREPARED" parameterType="String">
+        delete from bookImage where tnum = #{tnum}
+    </delete>
+
+    <update id="update2Product" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
+        update categoryChild set author=#{author}, publish=#{publish}, origin_price=#{origin_price}, sale_price=#{sale_price}, amount=#{amount}
+        where tnum = #{tnum}
+    </update>
+
+    <update id="update2Image" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
+        update bookImage set
+                             fnames= #{fnames}, fsizes=#{fsizes}
+        where tnum = #{tnum};
+    </update>
 
 </mapper>
