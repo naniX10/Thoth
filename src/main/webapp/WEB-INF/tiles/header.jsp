@@ -13,7 +13,7 @@
             <c:if test="${not empty UID}">
             <button type="button" id="logoutbtn" class="btn" >로그아웃</button>
                 <span class="spaceA">&nbsp;</span>
-            <button type="button" id="signoutbtn" class="btn" >내정보</button>
+                <button type="button" id="myinfobtn" name="myinfobtn"> 내 정보</button>
             </c:if>
         </div>
         <div class="headerAreaB">
@@ -26,7 +26,7 @@
                     <li class="nav-item"><a href="/product/plist" class="nav-link">도서</a></li>
                     <li class="nav-item"><a href="/product/plist" class="nav-link">아동코너</a></li>
                     <li class="nav-item"><a href="/notice/ntlist" class="nav-link">공지사항</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Q&A</a></li>
+                    <li class="nav-item"><a href="/myinfo/mlist" class="nav-link">Q&A</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">이벤트</a></li>
                 </ul>
             </div>

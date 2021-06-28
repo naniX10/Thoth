@@ -3,60 +3,67 @@
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
 
-<div id="main">
-    <div>
-        <i class="fas fa-comments fa-2x"> QnA</i>
-        <hr> <!-- 페이지 타이틀? -->
-    </div>
+<div id="main" class="container">
+    <!-- Page Title -->
     <div class="row">
-        <div class="col-5 offset-1">
-            <h3><i > QnA 작성하기</i></h3></div>
-        <div class="col-5 text-right">
-            <button type="button" id="listmibtn">
-                <i ></i>&nbsp; 목록으로</button>
+        <div class="col" style="margin-top:50px">
+            <button class="float-right" type="button" id="listmibtn">목록으로</button>
         </div>
     </div>
 
-    <div class="card card-body bg-light col-10 offset-1">
+    <div class="row">
+        <div class="col">
+            <p class="mwriteTitle">Q&A 등록</p>
+        </div>
+    </div>
+
         <form id="qnafrm" name="qnafrm">
-
-            <div class="form-group row">
-                <label class="col-2 col-form-label text-right"
-                       for="title">제목</label>
-                <input type="text" name="title" id="title"
-                       class="form-control border-danger col-9">
-            </div>
-            <div class="form-group row">
-                <label class="col-2 col-form-label text-right"
-                       for="userid">작성자</label>
-                <input type="text" name="userid" id="userid"
-                       class="form-control border-danger col-9"
-                       value="${UID}" readonly>
-            </div>
-            <div class="form-group row">
-                <label class="col-2 col-form-label text-right"
-                       for="contents">내용</label>
-                <textarea class="form-control border-danger col-9"
-                          name="contents" id="contents" rows = "15"></textarea>
-            </div>
-            <div class="form-group row">
-                <label class="col-2 col-form-label text-danger text-right">
-                    자동<br>입력방지</label>
-                <div class="g-recaptcha"
-                     data-sitekey="6LfdIwgbAAAAAGZdSMWuY4f3zaKP-dIuhTMUrU8_"></div>
-                <input type="hidden" id="g-recaptcha" name="g-recaptcha" />
-            </div>
-
-
-            <div class="form-group row">
-                <hr class=col-10>
-                <div class="col-12 text-center">
-                    <button type="button" id="upqnabtn">
-                        <i class="fas fa-check-circle"></i> 입력완료</button>
-                    <button type="reset" >
-                        <i class="fas fa-times-circle"></i> 입력취소</button>
+            <div class="col-10 offset-2">
+                <div class="form-group row">
+                    <label class="col-2 text-right"
+                           for="title">제목</label>
+                    <input type="text" name="title" id="title" class="col-8">
                 </div>
-            </div><!-- 버튼들 -->
+
+                <div class="form-group row">
+                    <label class="col-2 text-right"
+                           for="userid">작성자</label>
+                    <input type="text" name="userid" id="userid"
+                           class="col-8"
+                           value="${UID}" readonly>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-2 text-right"
+                           for="contents">내용</label>
+                    <textarea class="col-8"
+                              name="contents" id="contents" rows = "15"></textarea>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-2 text-right">
+                        자동<br>입력방지</label>
+                    <div class="g-recaptcha"
+                         data-sitekey="6LfdIwgbAAAAAGZdSMWuY4f3zaKP-dIuhTMUrU8_"></div>
+                    <input type="hidden" id="g-recaptcha" name="g-recaptcha" />
+                </div>
+
+                <div class="form-group row">
+                    <div class="col offset-5">
+                        <button type="button" id="upqnabtn">
+                            <i class="fa fa-check-circle"></i> 입력완료</button>
+                        <button type="reset" id="reMbtn" >
+                            <i class="fa fa-times-circle"></i> 입력취소</button>
+                    </div>
+                </div><!-- 버튼들 -->
+            </div>
+
+
+
+
+
+
+
 
         </form>
 

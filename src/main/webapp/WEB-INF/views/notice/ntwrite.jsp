@@ -1,6 +1,6 @@
 <%@ page pageEncoding="UTF-8"%>
 
-<div id = "main" container>
+<div id = "main" class="container">
     <!-- Page Title -->
     <div class="row">
         <div class="col">

@@ -6,54 +6,58 @@
 <c:set var="newChar" value="
 " scope="application" />
 
+<div id="main" class="container">
+    <div class="row">
+        <div class="col">
+            <p class="ntlistTitle">Q&A</p>
+        </div>
+    </div>
 
-
-<div id="main">
-    <div>
-        <h1><i class="fas fa-comments"></i> QnA</h1>
-
-    </div> <!-- 페이지 타이틀? -->
-    <div>
-        <form name="mreplyfrm" id="mreplyfrm">
-            <br>
-
+    <div class="row">
+        <form class="container" name="mreplyfrm" id="mreplyfrm">
             <div class="row">
-                <table class="table col-10 offset-1">
-                    <tr class="tbbg1 text-center"><th colspan="2">
-                        <h2>${mi.title}</h2>
-                    </th></tr>
-                    <tr class="tbbg2">
-                        <td style="width: 50%">${mi.userid}</td>
+                <div class="col">
+                        <button type="button" id="delqnabtn">
+                            삭제하기</button>
+                    <span class="float-right"> </span>
+                    <%--자신이 작성한 글 이외에는 보이면 안됨--%>
+                    <%--<c:if test="${not empty UID and UID eq mi.userid}">--%>
+                    <a href="/myinfo/mupdate?mino=${mi.mino}">
+                        <button type="button" id="mmodqnabtn">
+                            수정하기</button></a>
+
+                    <%--</c:if>--%>
+                </div>
+            </div>
+            <div class="row">
+                <table class="col" style = "margin : 0px auto">
+                    <tr>
+                        <th colspan="2" class="text-white" style="width:50px; padding:10px;background-color:#BD83CE">
+                        <h3 style = "text-align:center">${mi.title}</h3>
+                    </th>
+                    </tr>
+                    <tr style="width:30px;  padding:10px; background-color:#F1C6E7">
+                        <td style="float : left">${mi.userid}</td>
                         <td class="text-right">${mi.regdate}</td></tr>
-                    <tr class="tbbg3 bdcsize"><td colspan="2">
+                    <tr><td colspan="2" style="height:550px; background-color:white;">
                         ${fn:replace(mi.contents, newChar, "<br>")}
                     </td></tr>
                 </table>
             </div><!--  -->
             <div class="row">
-                <div class="col-5 offset-1">
-                    <%--자신이 작성한 글 이외에는 보이면 안됨--%>
-                    <%--<c:if test="${not empty UID and UID eq mi.userid}">--%>
-                    <a href="/myinfo/mupdate?mino=${mi.mino}">
-                        <button type="button">
-                            <i ></i> 수정하기</button></a>
-
-                    <button type="button" id="delqnabtn">
-                        <i ></i> 삭제하기</button>
-                    <%--</c:if>--%>
-                </div>
-                <div class="col-5 text-right">
+                <div class="col">
                     <a href="/myinfo/mlist">
                         <button type="button" class="btn btn-secondary" id="listmibtn">
-                            <i ></i>&nbsp; 목록으로</button></a>
+                           목록으로</button></a>
                 </div>
             </div><!-- 배 -->
         </form>
-    </div> <!-- 본문글 -->
+    </div>
     <br>
     <div>
+
         <div class="row">
-            <h3 class="col-10 offset-1"><i class="far fa-comments"></i> 답변</h3></div>
+            <h3 class="col-10 offset-1"><i class="fa fa-comments"></i> 답변</h3></div>
         <table class="table col-10 offset-1">
             <c:forEach var="r" items="${rps}">
                 <c:if test="${r.mino eq r.rpno}">
@@ -90,7 +94,7 @@
                     <%--<c:if test="${not empty UID}">--%>
                     <button class="form-control col-2 pushdwn"
                             type="button" id="newmrbtn">
-                        <i class="fas fa-comment-dots"></i> 댓글쓰기</button>
+                        <i class="fa fa-comment-dots"></i> 댓글쓰기</button>
                     <%--</c:if>--%>
                 </div>
                 <input type="hidden" name="userid" value="${UID}" />
@@ -125,3 +129,6 @@
         </div>
     </div>
 </div>
+
+<br>
+<br>
