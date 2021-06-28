@@ -2,8 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<a name="top"></a>
-<div class="wrapPlist"></div>
+
 <div id="main" class="container">
     <!-- Page Title -->
     <div class="row">
@@ -81,11 +80,8 @@
 
     </form>
 
-    <div class="quick_menu">
-        <div class="quick_top"><a href="#top"><i class="fa fa-arrow-up fa-2x"></i></a></div>
-        <div class="quick_bottom"><a href="#bottom"><i class="fa fa-arrow-down fa-2x"></i></a></div>
-    </div>
+
 
 </div>
-<a name="bottom"></a>
+
 

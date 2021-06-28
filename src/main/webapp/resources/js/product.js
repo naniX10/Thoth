@@ -178,3 +178,24 @@ $('#die3').on('change',function(){
 $('#categoryUl li').on('click',function(){
 
 });
+
+// 상품 등록 버튼 클릭 이벤트 : 상품 등록 페이지로 이동
+$('#buy2Pbtn').on('click',function(){
+    location.href = '/product/porder?tnum='+$('#tnum').val();
+    // location.href = '/product/pupdate?tnum='+$('#tnum').val();
+})
+
+// 입력 완료 버튼 클릭 이벤트 : 상품 등록 완료
+$('#orderPbtn').on('click',function(){
+    if($('#address').val()=='') alert('주소를 입력해주세요.');
+    else if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
+    else {
+        const frm = $('#buyprdfrm');
+        frm.attr('action','/product/porder');
+        frm.attr('method','post');
+        frm.attr('enctype','multipart/form-data');
+        frm.submit();
+        alert('주문이 완료되었습니다.');
+    };
+});
+

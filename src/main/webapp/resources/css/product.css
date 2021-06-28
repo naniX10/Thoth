@@ -323,3 +323,48 @@ input[name="amount"]:hover{
     margin-top:15px;
 
 }
+
+/*porder */
+.porderTitle{
+    font-size:30px;
+    color:#3E206D;
+    font-weight:bold;
+    text-align: center;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.porderTitle2{
+    font-size:30px;
+    color:#3E206D;
+    font-weight:bold;
+    text-align: center;
+    margin-bottom:30px;
+}
+
+#re3Pbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#orderPbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+.viewWrap2{
+    margin-top:20px;
+    min-height:500px;
+}

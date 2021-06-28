@@ -37,6 +37,7 @@ public class ProductController {
         return mv;
     }
 
+
     @GetMapping("/product/pchild")
     public ModelAndView pchild(ModelAndView mv, String cp) {
         if(cp==null) cp="1";
@@ -45,6 +46,7 @@ public class ProductController {
         mv.addObject("pcnt",psrv.count2Product());   // 상품 전체 수 구하기
         return mv;
     }
+
 
     // 리스트 - 검색
     @GetMapping("/product/find")
