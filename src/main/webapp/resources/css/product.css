@@ -3,24 +3,28 @@
     position:fixed;
     display:block;
     bottom:0;
-    right:0;
+    right:100px;
+    z-index:999;
 }
 .quick_top{
     width:70px;
     height:50px;
-    border-style:solid;
-    border-width:1px;
+    /*border-style:solid;*/
+    /*border-width:1px;*/
+    z-index:999;
 }
 .quick_bottom{
     width:70px;
     height:50px;
-    border-style:solid;
-    border-width:1px;
+    /*border-style:solid;*/
+    /*border-width:1px;*/
+    z-index:999;
 }
 
 #categoryTitle{
     /*background-color:#B8B5FF;*/
-    background-color:#7868E6;
+    /*background-color:#7868E6;*/
+    background-color:#BE79DF;
     color:white;
     font-size:30px;
     height:150px;
@@ -58,16 +62,15 @@
     background-color:#EDEEF7;
     position:fixed; top:150px; left:0px;
     opacity : 0.6;
+    z-index:0;
 }
-
 #searchInbtn{
     /*background-color:#E4FBFF;*/
-    background-color:#7868E6;
+    background-color:#BE79DF;
     color:white;
     height:40px;
     width : 100px;
     border-radius : 3px;
-    border-color:#7868E6;
     border-style:none;
     font-size:15px;
     margin-bottom:5px;
@@ -100,7 +103,7 @@
 
 }
 #newPbtn{
-    background-color:#B8B5FF;
+    background-color:#E5B0EA;
     color:white;
     height:40px;
     width : 100px;
@@ -108,4 +111,215 @@
     border-style:none;
     font-size:15px;
     margin-bottom:5px;
+}
+
+.listAImage{
+    text-align: center;
+}
+.listA{
+    text-align: center;
+    font-size:13px;
+}
+.listAPaging{
+    margin-top:50px;
+}
+
+.textList{
+    color:#3B064D;
+    height:50px;
+    font-size:15px;
+    padding-top:15px;
+    padding-left:20px;
+
+}
+a:link {
+    color : black;
+}
+a:visited {
+    color : black;
+}
+a:hover {
+    color : black;
+}
+a:active {
+    color : black;
+}
+
+.pagingStyleA{
+    color:black;
+    border-color:black;
+}
+.pagingStyleB{
+    background-color:black;
+    border-color:black;
+    color:white;
+}
+
+/* pview style */
+.viewPImage{
+    text-align: center;
+}
+
+#pviewText1{
+    display:block;
+    color:#3E206D;
+    font-size:30px;
+    font-weight: bold;
+}
+#pviewText2{
+    display:block;
+    font-size:20px;
+
+}
+.pviewhr{
+    width:100%;
+    border-style: solid;
+}
+
+#buy1Pbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#buy2Pbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+
+#modPbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+}
+#delPbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+}
+#listPbtn{
+    background-color:#916DD5;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.viewWrap{
+    margin-top:50px;
+    min-height:600px;
+}
+
+/* pwrite style*/
+.pwriteTitle{
+    font-size:30px;
+    color:#3E206D;
+    font-weight:bold;
+    text-align: center;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.prdfrm{
+    margin-top:30px;
+}
+
+#rePbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#savePbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+input[name="tnum"]:hover{
+    background :#F0E3FF;
+}
+input[name="title"]:hover{
+    background :#F0E3FF;
+}
+input[name="author"]:hover{
+    background :#F0E3FF;
+}
+input[name="publish"]:hover{
+    background :#F0E3FF;
+}
+input[name="origin_price"]:hover{
+    background :#F0E3FF;
+}
+input[name="sale_price"]:hover{
+    background :#F0E3FF;
+}
+input[name="amount"]:hover{
+    background :#F0E3FF;
+}
+
+.prdfrmJ{
+    margin-top:50px;
+}
+
+/* pupdate */
+#re2Pbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#save2Pbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
 }
