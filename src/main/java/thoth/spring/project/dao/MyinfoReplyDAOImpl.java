@@ -8,7 +8,7 @@ import thoth.spring.project.vo.mReply;
 import java.util.List;
 
 @Repository("mrdao")
-public class MyinfoReplyDAOImpl implements MyinfoReplyDAO{
+public class MyinfoReplyDAOImpl implements MyinfoReplyDAO {
 
     @Autowired
     private SqlSession sqlSession;

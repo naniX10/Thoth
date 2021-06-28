@@ -32,12 +32,12 @@
 
     <div id="main">
         <div class="row text-center">
-        <div class="col-5">
-            <button type="button" id="qnabtn" name="qnabtn" style="width: 50%;"> QnA</button>
-        </div>
-        <div class="col-5">
-            <button type="button" id="myinfobtn" name="myinfobtn" style="width: 50%"> 내 정보 및 주문상품</button>
-        </div>
+            <div class="col-6">
+                <button type="button" id="qnabtn" name="qnabtn" style="width: 75%;"> QnA</button>
+            </div>
+            <div class="col-6">
+                <button type="button" id="myinfobtn" name="myinfobtn" style="width: 75%"> 내 정보 및 주문상품</button>
+            </div>
         </div>
 
         <span>
@@ -73,7 +73,6 @@
                     </tr>
                     </thead>
                     <tbody>
-
                     <c:forEach var="mi" items="${mis}">
                         <tr>
                             <td>${snum}</td>
@@ -83,8 +82,6 @@
                             <c:set var="snum" value="${snum - 1}" />
                         </tr>
                     </c:forEach>
-
-
                     </tbody>
                 </table>
             </div>
@@ -123,11 +120,11 @@
             </div>
         </div>
             </span>
-            <%--</c:if>--%>
-        </div><!-- 페이지 네이션 -->
+        <%--</c:if>--%>
+    </div><!-- 페이지 네이션 -->
 
 
-    </div>
+</div>
 
 
 </div>
