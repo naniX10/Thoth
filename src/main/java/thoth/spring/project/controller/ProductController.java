@@ -30,6 +30,7 @@ public class ProductController {
         mv.addObject("pcnt",psrv.countProduct());   // 상품 전체 수 구하기
         return mv;
     }
+
     // 리스트 - 검색
     @GetMapping("/product/find")
     public ModelAndView find(ModelAndView mv, String cp, String findtype, String findkey){
