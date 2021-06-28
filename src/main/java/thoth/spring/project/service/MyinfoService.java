@@ -7,7 +7,8 @@ import java.util.List;
 public interface MyinfoService {
 
     boolean newQna(Myinfo m);
-    int removeQna(String mino);
+    boolean modifyQna(Myinfo m);
+    boolean deleteQna(String mino);
 
     List<Myinfo> readQna(String cp);
     List<Myinfo> readQna(String cp, String ftype, String fkey);

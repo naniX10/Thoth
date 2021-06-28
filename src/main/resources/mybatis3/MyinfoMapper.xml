@@ -5,7 +5,7 @@
 
     <!-- QnA 데이터 삽입? -->
     <insert id="insertQna" statementType="PREPARED" parameterType="thoth.spring.project.vo.Myinfo"
-        >
+    >
         insert into myinfo (title, userid, contents)
         values (#{title}, #{userid}, #{contents})
     </insert>
@@ -41,16 +41,29 @@
             parameterType="map" resultType="int">
         select count(mino) cnt from myinfo
         <if test="ftype != 'titcont'">
-            where ${ftype} like concat(#{fkey}, '%') </if>
+            where ${ftype} like concat('%', #{fkey}, '%') </if>
         <if test="ftype == 'titcont'">
-            where title like concat(#{fkey}, '%') or
-            contents like concat(#{fkey}, '%') </if>
+            where title like concat('%', #{fkey}, '%') or
+            contents like concat('%', #{fkey}, '%') </if>
     </select>
 
     <select id="countQna" statementType="PREPARED"
             resultType="int">
         select count(mino) cnt from myinfo
     </select>
+
+    <!-- QnA 수정 -->
+    <update id="updateQna" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Myinfo">
+        update myinfo set title = #{title}, contents = #{contents}
+        where mino = #{mino};
+    </update>
+
+    <!-- QnA 삭제 -->
+    <delete id="deleteQna" statementType="PREPARED"
+            parameterType="String">
+        delete from myinfo where mino = #{mino};
+    </delete>
 
 
 </mapper>

@@ -11,43 +11,44 @@
 <div id="main">
     <div>
         <h1><i class="fas fa-comments"></i> QnA</h1>
-        <hr>
+
     </div> <!-- 페이지 타이틀? -->
     <div>
+        <form name="mreplyfrm" id="mreplyfrm">
+            <br>
 
-        <br>
+            <div class="row">
+                <table class="table col-10 offset-1">
+                    <tr class="tbbg1 text-center"><th colspan="2">
+                        <h2>${mi.title}</h2>
+                    </th></tr>
+                    <tr class="tbbg2">
+                        <td style="width: 50%">${mi.userid}</td>
+                        <td class="text-right">${mi.regdate}</td></tr>
+                    <tr class="tbbg3 bdcsize"><td colspan="2">
+                        ${fn:replace(mi.contents, newChar, "<br>")}
+                    </td></tr>
+                </table>
+            </div><!--  -->
+            <div class="row">
+                <div class="col-5 offset-1">
+                    <%--자신이 작성한 글 이외에는 보이면 안됨--%>
+                    <%--<c:if test="${not empty UID and UID eq mi.userid}">--%>
+                    <a href="/myinfo/mupdate?mino=${mi.mino}">
+                        <button type="button">
+                            <i ></i> 수정하기</button></a>
 
-        <div class="row">
-            <table class="table col-10 offset-1">
-                <tr class="tbbg1 text-center"><th colspan="2">
-                    <h2>${mi.title}</h2>
-                </th></tr>
-                <tr class="tbbg2">
-                    <td style="width: 50%">${mi.userid}</td>
-                    <td class="text-right">${mi.regdate}</td></tr>
-                <tr class="tbbg3 bdcsize"><td colspan="2">
-                    ${fn:replace(mi.contents, newChar, "<br>")}
-                </td></tr>
-            </table>
-        </div><!-- 가슴 -->
-        <div class="row">
-            <div class="col-5 offset-1">
-                <%--자신이 작성한 글 이외에는 보이면 안됨--%>
-                <c:if test="${not empty UID and UID eq mi.userid}">
-                    <button type="button" >
-                        <i ></i> 수정하기</button>
-
-                    <button type="button" >
+                    <button type="button" id="delqnabtn">
                         <i ></i> 삭제하기</button>
-                </c:if>
-            </div>
-            <div class="col-5 text-right">
-                <a href="/myinfo/mlist">
-                    <button type="button" class="btn btn-secondary" id="listmibtn">
-                        <i class="fas fa-list"></i>&nbsp; 목록으로</button></a>
-            </div>
-        </div><!-- 배 -->
-
+                    <%--</c:if>--%>
+                </div>
+                <div class="col-5 text-right">
+                    <a href="/myinfo/mlist">
+                        <button type="button" class="btn btn-secondary" id="listmibtn">
+                            <i ></i>&nbsp; 목록으로</button></a>
+                </div>
+            </div><!-- 배 -->
+        </form>
     </div> <!-- 본문글 -->
     <br>
     <div>
@@ -55,18 +56,19 @@
             <h3 class="col-10 offset-1"><i class="far fa-comments"></i> 답변</h3></div>
         <table class="table col-10 offset-1">
             <c:forEach var="r" items="${rps}">
-                <c:if test="${r.mrno eq r.rpno}">
+                <c:if test="${r.mino eq r.rpno}">
                     <tr><td><h4>${r.userid}</h4></td>
-                        <td><div class="cmtbg1">${r.regdate}
+
+                        <td><div class="cmtbg1"> ${r.regdate}
                             <span style="float:right">
                             <c:if test="${not empty UID}">
-                                <a href="javascript:addReply('${r.mrno}')">[추가]</a>
+                                <a href="javascript:addReply('${r.mino}')">[추가]</a>
                             </c:if>
                             <c:if test="${UID eq r.userid}"> [수정] [삭제] </c:if>
                         </span></div>
                             <p>${r.reply}</p></td></tr>
                 </c:if>
-                <c:if test="${r.mrno ne r.rpno }">
+                <c:if test="${r.mino ne r.rpno }">
                     <tr><td></td>
                         <td><div class="cmtbg2">
                             <span>${r.userid}</span>
@@ -85,11 +87,11 @@
                            for="reply">${UID}</label>
                     <textarea class="form-control col-7"
                               name="reply" id="reply" rows="5"></textarea>&nbsp;&nbsp;
-                    <c:if test="${not empty UID}">
-                        <button class="form-control col-2 pushdwn"
-                                type="button" id="newmrbtn">
-                            <i class="fas fa-comment-dots"></i> 댓글쓰기</button>
-                    </c:if>
+                    <%--<c:if test="${not empty UID}">--%>
+                    <button class="form-control col-2 pushdwn"
+                            type="button" id="newmrbtn">
+                        <i class="fas fa-comment-dots"></i> 댓글쓰기</button>
+                    <%--</c:if>--%>
                 </div>
                 <input type="hidden" name="userid" value="${UID}" />
                 <input type="hidden" name="mino" value="${param.mino}" />
@@ -116,7 +118,7 @@
                 </form>
             </div>
             <div class="modal=footer">
-                <button type="button" id="newrrpbtn" class="btn btn-warning">
+                <button type="button" id="newrrpbtn" >
                     대댓글 작성
                 </button>
             </div>

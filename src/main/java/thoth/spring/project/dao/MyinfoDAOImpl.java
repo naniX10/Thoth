@@ -19,11 +19,16 @@ public class MyinfoDAOImpl implements MyinfoDAO {
         return sqlSession.insert("insertQna", m);
     }
 
+    @Override
+    public int updateQna(Myinfo m) {
+        return sqlSession.update("myinfo.updateQna", m);
+    }
 
     @Override
     public int deleteQna(String mino) {
         return sqlSession.delete("myinfo.deleteQna", mino);
     }
+
 
     @Override
     public List<Myinfo> selectQna(int snum) {
@@ -37,7 +42,7 @@ public class MyinfoDAOImpl implements MyinfoDAO {
 
     @Override
     public Myinfo selectOneQna(String mino) {
-        return sqlSession.selectOne("myinfo.selectOne", mino);
+        return sqlSession.selectOne("myinfo.selectOneQna", mino);
     }
 
     @Override
