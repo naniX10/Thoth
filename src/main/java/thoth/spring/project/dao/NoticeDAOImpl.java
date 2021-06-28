@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import thoth.spring.project.vo.Notice;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository("ndao")
 public class NoticeDAOImpl implements NoticeDAO{
@@ -52,5 +53,32 @@ public class NoticeDAOImpl implements NoticeDAO{
     public Notice backBoard(String bdno) {
         return sqlSession.selectOne("Notice.backBoard" , bdno);
     }
+
+    @Override
+    public int selectCountBoard() {
+        return sqlSession.selectOne("Notice.countBoard");}
+
+    @Override
+    public List<Notice> findSelectBoard(Map<String, Object> param) {
+
+        return sqlSession.selectList("Notice.findSelect",param);
+    }
+
+    @Override
+    public int selectCountBoard(Map<String, Object> param) {
+
+        return sqlSession.selectOne("Notice.findSelectCount",param);
+    }
+
+    @Override
+    public String selectPrvpno(String bdno) {
+        return sqlSession.selectOne("Notice.selectPrev",bdno);
+    }
+
+    @Override
+    public String selectNxtpno(String bdno) {
+        return sqlSession.selectOne("Notice.selectNext",bdno);
+    }
+
 
 }

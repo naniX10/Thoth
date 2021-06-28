@@ -1,8 +1,10 @@
 package thoth.spring.project.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import thoth.spring.project.service.MyinfoReplyService;
 import thoth.spring.project.service.MyinfoService;
@@ -99,14 +101,33 @@ public class MyinfoController {
         return returnPage;
     }
 
+    // QnA 글 수정
+    @GetMapping("/myinfo/mupdate")
+    public ModelAndView update(ModelAndView mv,String mino) {
 
-    // QnA 글 삭제
-    @GetMapping("/myinfo/qnarmv")
-    public String mirmv(String mino) {
+        mv.setViewName("myinfo/mupdate.tiles");
+        mv.addObject("m",msrv.readOneQna(mino));
 
-        int m = msrv.removeQna(mino);
+        return mv;
+    }
+
+    @PostMapping("/myinfo/mupdate")
+    public String updateok(Myinfo m) {
+
+        msrv.modifyQna(m);
 
         return "redirect:/myinfo/mlist";
+    }
+
+
+
+    // QnA 글 삭제
+    @PostMapping("/myinfo/qnarmv")
+    public String mirmv(String mino) {
+        String returnPage = "redirect:/myinfo/mlist";
+        if (msrv.deleteQna(mino))
+            System.out.println("삭제완료!");
+        return returnPage;
 
     }
 
@@ -116,7 +137,6 @@ public class MyinfoController {
     public String mview() {
         return "myinfo/mview.tiles";
     }
-
 
 
 }

@@ -8,6 +8,7 @@ public interface MyinfoReplyDAO {
 
     List<mReply> selectReply(String mino);
 
+
     int insertComment(mReply r);
     int insertReply(mReply r);
 

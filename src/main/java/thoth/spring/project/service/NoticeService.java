@@ -21,4 +21,14 @@ public interface NoticeService {
     Notice nextBoard(String bdno);
 
     Notice backBoard(String bdno);
+
+    int countBoard();
+
+    List<Notice> readBoard(String cp, String ftype, String fkey);
+
+    int countBoard(String ftype, String fkey);
+
+    String readPrevpno(String bdno);
+
+    String readNxtpno(String bdno);
 }

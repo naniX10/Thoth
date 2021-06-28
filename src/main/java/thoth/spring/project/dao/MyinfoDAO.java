@@ -8,7 +8,7 @@ import java.util.Map;
 public interface MyinfoDAO {
 
     int insertQna(Myinfo m);
-
+    int updateQna(Myinfo m);
     int deleteQna(String mino);
 
     List<Myinfo> selectQna(int snum);
