@@ -11,7 +11,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
+
 	<!-- Font Awesome -->
+
+      <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- google recaptcha -->
@@ -23,6 +26,7 @@
       <link rel="stylesheet" type="text/css" href="/css/myinfo.css">
       <link rel="stylesheet" type="text/css" href="/css/notice.css">
       <link rel="stylesheet" type="text/css" href="/css/product.css">
+      <link rel="stylesheet" type="text/css" href="/css/join.css">
 
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -30,8 +34,9 @@
     <title>Thoth</title>
     </head>
   <body>
+  <div class="wrapPlist"></div>
       <div class="container">
-
+        <a name="top"></a>
         <!-- header Area -->
 		<tiles:insertAttribute name="header" />
 
@@ -42,9 +47,13 @@
 
      	<!-- footer Area -->
      	<tiles:insertAttribute name="footer"/>
+        <a name="bottom"></a>
       
     </div>
-
+  <div class="quick_menu">
+    <div class="quick_top"><a href="#top"><i class="fa fa-arrow-up fa-2x"></i></a></div>
+    <div class="quick_bottom"><a href="#bottom"><i class="fa fa-arrow-down fa-2x"></i></a></div>
+  </div>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"  crossorigin="anonymous"></script>
@@ -52,7 +61,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
     <!-- js파일 추가-->
-      <script src="/js/index.js"></script>
+      <script src="/js/join.js"></script>
       <script src="/js/intro.js"></script>
       <script src="/js/myinfo.js"></script>
       <script src="/js/notice.js"></script>
