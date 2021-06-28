@@ -39,7 +39,7 @@ $('#upqnabtn').on('click', function() {
 
 
 // QnA 수정 완료
-$('reupqnabtn').on('click', function () {
+$('#reupqnabtn').on('click', function () {
     if (grecaptcha.getResponse() == '') alert('자동입력방지를 확인해 주세요!');
     else {
         const frm = $('#reqnafrm');
@@ -49,10 +49,26 @@ $('reupqnabtn').on('click', function () {
     }
 });
 
+// 수정 버튼 클릭 이벤트 - 수정 페이지로 이동
+$('#mmodqnabtn').on('click',function(){
+    location.href = '/myinfo/mupdate?mino='+$('#mino').val();
+});
 
-// QnA 삭제?
-$('delqnabtn').on('click', function () {
-    location.href = '/myinfo/mirmv?mino=' + $('#mino').val();
+
+// 수정완료
+$('#reupqnabtn').on('click',function() {
+    const frm = $('#reqnafrm');
+    frm.attr('method','post');
+    frm.attr('action','/myinfo/mupdate');
+    frm.submit();
+});
+
+// QnA 삭제
+$('#delqnabtn').on('click', function () {
+    const frm = $('#replyfrm');
+    frm.attr('method','post');
+    frm.attr('action','/myinfo/qnarmv');
+    frm.submit();
 });
 
 // 댓글 작성?
