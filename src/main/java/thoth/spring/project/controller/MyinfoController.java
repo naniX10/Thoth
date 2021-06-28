@@ -1,10 +1,11 @@
 package thoth.spring.project.controller;
 
-spring.myinfo
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import thoth.spring.project.service.MyinfoReplyService;
 import thoth.spring.project.service.MyinfoService;
@@ -101,14 +102,33 @@ public class MyinfoController {
         return returnPage;
     }
 
+    // QnA 글 수정
+    @GetMapping("/myinfo/mupdate")
+    public ModelAndView update(ModelAndView mv,String mino) {
+
+        mv.setViewName("myinfo/mupdate.tiles");
+        mv.addObject("m",msrv.readOneQna(mino));
+
+        return mv;
+    }
+
+    @PostMapping("/myinfo/mupdate")
+    public String updateok(Myinfo m) {
+
+        msrv.modifyQna(m);
+
+        return "redirect:/myinfo/mlist";
+    }
+
+
 
     // QnA 글 삭제
     @GetMapping("/myinfo/qnarmv")
     public String mirmv(String mino) {
 
-        int m = msrv.removeQna(mino);
+        msrv.deleteQna(mino);
 
-        return "redirect:/myinfo/mlist";
+        return "redirect:/myinfo/mview";
 
     }
 
@@ -119,22 +139,6 @@ public class MyinfoController {
         return "myinfo/mview.tiles";
     }
 
-
-
-
-}
-
-    @GetMapping("/myinfo/mlist")
-    public String plist() {return "myinfo/mlist.tiles";}
-
-    @GetMapping("/myinfo/mreply")
-    public String preply() {return "myinfo/mreply.tiles";}
-
-    @GetMapping("/myinfo/mview")
-    public String pview() {return "myinfo/mview.tiles";}
-
-    @GetMapping("/myinfo/mwrite")
-    public String pwrite() {return "myinfo/mwrite.tiles";}
 
 }
 

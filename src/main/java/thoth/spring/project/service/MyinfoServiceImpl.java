@@ -22,13 +22,20 @@ public class MyinfoServiceImpl implements MyinfoService {
         return isInserted;
     }
 
+    @Override
+    public boolean modifyQna(Myinfo m) {
+        boolean isUpdated = false;
+        if (mdao.updateQna(m) > 0) isUpdated = true;
+        return isUpdated;
+    }
 
     @Override
-    public int removeQna(String mino) {
-
-
-        return mdao.deleteQna(mino);
+    public boolean deleteQna(String mino) {
+        boolean isDeleted = false;
+        if (mdao.deleteQna(mino) > 0) isDeleted = true;
+        return isDeleted;
     }
+
 
     @Override
     public List<Myinfo> readQna(String cp) {
@@ -66,4 +73,6 @@ public class MyinfoServiceImpl implements MyinfoService {
 
         return mdao.selectCountQna(params);
     }
+
+
 }

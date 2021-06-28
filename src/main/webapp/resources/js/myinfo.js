@@ -13,7 +13,18 @@ $('#listmibtn').on('click', function() {
     location.href = '/myinfo/mlist';
 });
 
-//
+// 검색?
+$('#findbtn').on('click', function() {
+    if ($('findkey').val() == '') alert('검색할 내용을 입력해주세요');
+    else {
+        let qry = '?findtype=' + $('#findtype').val();
+        qry += "&findkey=" + $('#findkey').val() + "&cp=1";
+        let url = '/myinfo/find' + qry;
+        location.href = url;
+    }
+});
+
+// 글 작성?
 $('#upqnabtn').on('click', function() {
     if ($('#title').val() == '') alert('제목을 작성하세요');
     else if ($('#contents').val() == '') alert('본문을 작성하세요');
@@ -26,18 +37,25 @@ $('#upqnabtn').on('click', function() {
     }
 });
 
-//
-$('#findbtn').on('click', function() {
-    if ($('findkey').val() == '') alert('검색할 내용을 입력해주세요');
+
+// QnA 수정 완료
+$('reupqnabtn').on('click', function () {
+    if (grecaptcha.getResponse() == '') alert('자동입력방지를 확인해 주세요!');
     else {
-        let qry = '?findtype=' + $('#findtype').val();
-        qry += "&findkey=" + $('#findkey').val() + "&cp=1";
-        let url = '/myinfo/find' + qry;
-        location.href = url;
+        const frm = $('#reqnafrm');
+        frm.attr('method','post');
+        frm.attr('action','/myinfo/mupdate');
+        frm.submit();
     }
 });
 
-//
+
+// QnA 삭제?
+$('delqnabtn').on('click', function () {
+    location.href = '/myinfo/mirmv?mino=' + $('#mino').val();
+});
+
+// 댓글 작성?
 $('#newmrbtn').on('click', function() {
     if ($('#reply').val() == '') alert('댓글을 작성하세요!');
     else {
@@ -64,3 +82,7 @@ $('#newrrpbtn').on('click', function (){
         frm.submit();
     }
 });
+
+
+
+
