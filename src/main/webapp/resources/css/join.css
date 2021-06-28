@@ -12,12 +12,16 @@
 /*agree-브레드 크럼 */
 .breadStyle{
     text-align: center;
-    padding:10px;
+
     z-index:300;
+    list-style:none;
+    padding-left:0px;
 
 }
+
 .breadStyle li {
     float:left;
+
 
 }
 /*agree-브레드 크럼 버튼 */

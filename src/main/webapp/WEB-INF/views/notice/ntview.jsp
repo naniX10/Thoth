@@ -3,40 +3,44 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:if test="${param.bdno eq 'null' or empty param.bdno}">
+    <script>alert('게시글이 존재하지 않습니다.'); location.href="/notice/ntlist?cp=1"</script>
+</c:if>
 
-<link rel = "stylesheet" href = "/css/notice.css">
+<div id="main" class="container">
 
-<div id="main">
-    <form name = "viewfrm" id = "viewfrm">
-        <input type="hidden" name="bdno" value="${bd.bdno}">
-        <div>
-            <i class="fas fa-comments fa-2x"> 자유 게시판 </i>
-            <hr>
-        </div><!-- 페이지 타이틀 -->
+    <div class="row">
+        <div class="col">
+            <p class="ntlistTitle">공지사항</p>
+        </div>
+    </div>
 
-        <div style = "float : right">
-            <a href="/notice/ntupdate?bdno=${bd.bdno}">수정</a>
-            <button type="button" id="delete_btn">삭제</button>
+    <div class="row">
+    <form class="container" name = "viewfrm" id = "viewfrm">
+        <input type="hidden" name="bdno" id="bdno" value="${param.bdno}">
+
+        <div class="row">
+            <div class="col">
+            <button type="button" class="btn" id="delete_btn">삭제</button>
+            <span class="float-right">&nbsp;</span>
+            <button type="button" class="btn" id="mod_btn">수정</button>
+            </div>
         </div>
 
-        <div>
-
-            <div>
-                <table style = "margin : 0px auto">
-
+        <div class="row">
+                <table class="col" style = "margin : 0px auto">
                     <tr>
-                        <th style = "padding-left: 380px">
-                            <h2 style="width : 300px">${bd.title}</h2>
+                        <th colspan="2" class="text-white" style="width:50px; padding:10px;background-color:#BD83CE">
+                            <h3 style = "text-align:center">${bd.title}</h3>
                         </th>
                     </tr>
-
-                    <tr>
+                    <tr style="width:30px;  padding:10px; background-color:#F1C6E7">
                         <td style = "float : left"> 작성자 : ${bd.userid}</td>
                         <td class="text-right">작성일 : ${bd.regdate} / 조회수 : ${bd.views}</td>
                     </tr>
 
                     <tr>
-                        <td colspan="2">
+                        <td colspan="2" style="height:550px; background-color:white;">
                             ${fn:replace(bd.contents, newChar, "<br>")}
                         </td>
                     </tr>
@@ -44,22 +48,18 @@
                 </table>
             </div>
 
-            <div>
-                <a href="/notice/ntlist" class="nav-link">목록으로</a>
-            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn float-right" id="list_btn">목록으로</button>
+                    <button type="button" class="btn" id="prev_btn">이전글</button>
+                    <span> </span>
+                    <button type="button" class="btn" id="next_btn">다음글</button>
 
-            <div>
-
-                <c:if test="${nbd.bdno > 0}">
-                    <li><a href = "/notice/ntview?bdno=${nbd.bdno}">다음글</a></li>
-                </c:if>
-
-                <c:if test="${bbd.bdno > 0}">
-                    <li><a href = "/notice/ntview?bdno=${bbd.bdno}">이전글</a></li>
-                </c:if>
+                </div>
 
             </div>
-
-        </div><!-- 본문글 -->
     </form>
+    </div>
 </div>
+<br>
+<br>
