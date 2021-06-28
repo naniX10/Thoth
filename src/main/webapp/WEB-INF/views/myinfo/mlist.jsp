@@ -28,48 +28,53 @@
 </c:if>
 
 
-<div class="container">
+<div id="main" class="container">
 
-    <div id="main">
-        <div class="row text-center">
-            <div class="col-6">
-                <button type="button" id="qnabtn" name="qnabtn" style="width: 75%;"> QnA</button>
-            </div>
-            <div class="col-6">
-                <button type="button" id="myinfobtn" name="myinfobtn" style="width: 75%"> 내 정보 및 주문상품</button>
-            </div>
+    <div class="row">
+        <div class="col">
+            <p class="mlistTitle">Q&A</p>
         </div>
+    </div>
 
-        <span>
-        <div class="row">
-            <div class="col-5 offset-1">
-                <div class="form-group row">
-                    <select class="form-control col-3 "
-                            name="findtype" id="findtype">
-                        <option value="title"> 제목</option>
-                        <option value="contents">내용</option>
-                        <option value="constit">제목+내용</option>
-                        <option value="userid">작성자</option>
-                    </select>&nbsp;
-                    <input type="text" name="findkey" id="findkey"
-                           class="form-control col-4 "
-                           value="${param.findkey}" />&nbsp;
-                    <button type="button" id="findbtn" >
-                        <i ></i> 검색</button>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col">
+            <select name="findtype" id="findtype">
+                <option value="title"> 제목</option>
+                <option value="contents">내용</option>
+                <option value="constit">제목+내용</option>
+                <option value="userid">작성자</option>
+            </select>&nbsp;
+            <input type="text" name="findkey" id="findkey" value="${param.findkey}" />&nbsp;
+            <button type="button" id="findbtn">검색</button>
+        </div>
+        <div class="col">
+            <button type="button" class="float-right" id="qnabtn" name="qnabtn">QnA 등록</button>
 
         </div>
+    </div>
 
         <div class="row">
-            <div class="col-10 offset-1">
-                <table class="table table-striped text-center table-hover">
-                    <thead style="background: #dff0d8">
-                    <tr>
+                <table class="col mlistTable" style = "margin : 0px auto">
+                    <thead>
+                    <tr class="text-white" style="background-color:#BD83CE">
                         <th style="width: 7%">번호</th>
                         <th> 제목</th>
                         <th style="width: 12%">작성자</th>
                         <th style="width: 12%">작성일</th>
+                    </tr>
+                    <tr style="background-color:#F1C6E7">
+                        <th>-</th>
+                        <th>중요Q&A1</th>
+                        <th>관리자A</th>
+                        <th>2021-06-27</th>
+
+                    </tr>
+                    <tr style="background-color:#F1C6E7">
+                        <th>-</th>
+                        <th>중요Q&A2</th>
+                        <th>관리자B</th>
+                        <th>2021-06-27</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -84,16 +89,15 @@
                     </c:forEach>
                     </tbody>
                 </table>
-            </div>
         </div>
 
         <div class="row">
-            <div class="col-12">
+            <div class="col listAPaging">
                 <ul class="pagination justify-content-center">
 
                     <!-- 이전 버튼이 작동되야 할때는 sp가 11보다 클때 -->
                     <li class="page-item <c:if test="${sp lt 11}"> disabled </c:if>" >
-                        <a href="${pglink}${sp-10}" class="page-link">이전</a></li>
+                        <a href="${pglink}${sp-10}" class="page-link pagingStyleA text-dark border-dark">이전</a></li>
 
                     <!-- 반복문을 이용해서 페이지 링크 생성 -->
                     <c:forEach var="i" begin="${sp}" end="${ep}" step="1">
@@ -101,12 +105,12 @@
                         <c:if test="${i le tp}">
                             <c:if test="${i eq cp}">
                                 <li class="page-item active">
-                                    <a href="${pglink}${i}" class="page-link">${i}</a></li>
+                                    <a href="${pglink}${i}" class="page-link bg-dark border-dark">${i}</a></li>
                             </c:if>
 
                             <c:if test="${i ne cp}">
                                 <li class="page-item">
-                                    <a href="${pglink}${i}" class="page-link">${i}</a></li>
+                                    <a href="${pglink}${i}" class="page-link text-dark border-dark">${i}</a></li>
                             </c:if>
                         </c:if>
                     </c:forEach>
@@ -114,7 +118,7 @@
 
                     <!-- 이전 버튼이 작동되야 할때는 sp가 11보다 작을때 -->
                     <li class="page-item <c:if test="${ep gt tp}"> disabled </c:if>">
-                        <a href="${pglink}${sp+10}" class="page-link">다음</a></li>
+                        <a href="${pglink}${sp+10}" class="page-link pagingStyleA text-dark border-dark">다음</a></li>
 
                 </ul>
             </div>

@@ -17,7 +17,8 @@ public class NoticeController {
     public ModelAndView ntlist(ModelAndView mv, String cp) {
         if (cp == null) cp = "1";
         mv.setViewName("notice/ntlist.tiles");
-        mv.addObject("bds", nsrv.readBoard(cp));
+        mv.addObject("nds", nsrv.readBoard(cp));
+        mv.addObject("ndcnt", nsrv.countBoard());
         return mv;
     }
 
@@ -68,6 +69,31 @@ public class NoticeController {
             System.out.println("삭제완료!");
         return returnPage;
     }
+
+    // 게시판 검색 기능 구현
+    @GetMapping("/notice/find")
+    public ModelAndView find(ModelAndView mv,String cp, String findtype, String findkey){
+        mv.setViewName("notice/ntlist.tiles");
+        mv.addObject("nds",nsrv.readBoard(cp,findtype,findkey));
+        mv.addObject("ndcnt",nsrv.countBoard(findtype,findkey));
+        return mv;
+    }
+
+    // 이전글 보여주기
+    @GetMapping("/notice/prev")
+    public String pdsprev(String bdno){
+        String prvbdno = nsrv.readPrevpno(bdno);
+
+        return "redirect:/notice/ntview?bdno=" + prvbdno;
+    }
+    // 다음글 보여주기
+    @GetMapping("/notice/next")
+    public String pdsnext(String bdno){
+        String nxtbdno = nsrv.readNxtpno(bdno);
+
+        return "redirect:/notice/ntview?bdno=" + nxtbdno;
+    }
+
 
 }
 

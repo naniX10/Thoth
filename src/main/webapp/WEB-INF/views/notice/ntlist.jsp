@@ -10,42 +10,73 @@
 <fmt:parseNumber var="ep" value="${sp + 9}" />
 
 <%-- 총게시물 수를 페이지당 게시물수로 나눔 : 총 페이지수 --%>
-<fmt:parseNumber var="tp" value="${bdcnt / 10}" integerOnly="true" />
-<c:if test="${(bdcnt % 10) > 0}">
+<fmt:parseNumber var="tp" value="${ndcnt / 10}" integerOnly="true" />
+<c:if test="${(ndcnt % 10) > 0}">
     <fmt:parseNumber var="tp" value="${tp + 1}" />
 </c:if>
 
 <%-- 글번호 --%>
-<fmt:parseNumber var="snum" value="${bdcnt - (cp - 1) * 10}" />
+<fmt:parseNumber var="snum" value="${ndcnt - (cp - 1) * 10}" />
 
 <%-- 페이지 링크 : 검색 기능 x --%>
 <c:set var="pglink" value="/notice/ntlist?cp=" />
 
-<link rel = "stylesheet" href = "/css/notice.css">
+<%-- 페이지 링크2 - 검색 --%>
+<c:if test ="${not empty param.findkey}">
+    <c:set var="pglink" value="/notice/find?findtype=${param.findtype}&findkey=${param.findkey}&cp="/>
+</c:if>
 
-<div id = "main" style = "margin-top : 50px">
+<div id = "main" class="container">
 
-    <div id = "listhead">
-        <ul>
-            <li>공지사항</li>
-        </ul>
+    <div class="row">
+        <div class="col">
+            <p class="ntlistTitle">공지사항 ${ndcnt}/${tp}</p>
+        </div>
     </div>
 
-    <button type="button" id="gowrite" style="margin-left : 465px">작성하기</button>
+    <div class="row">
+        <div class="col">
+            <select name="findtype" id="findtype">
+                <option value="title">제목</option>
+                <option value="author">작성자</option>
+                <option value="titcont">제목+내용</option>
+                <option value="contents">내용</option>
+            </select>
+            <input type="search" name="findkey" id="findkey" placeholder="분야내 검색">
+            <button type="button"  class="btn" id="searchNbtn">검색</button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn float-right" id="gowrite" style="">작성하기</button>
+        </div>
+    </div>
 
-    <table style = "margin : 0px auto">
-
+    <div class="row">
+    <table class="col ntlistTable" style = "margin : 0px auto">
         <thead>
-            <tr>
+            <tr class="text-white" style="background-color:#BD83CE">
                 <th>번호</th>
                 <th>제목</th>
                 <th>작성자</th>
                 <th>작성일</th>
                 <th>조회</th>
             </tr>
+            <tr style="background-color:#F1C6E7">
+                <th>-</th>
+                <th>중요공지A</th>
+                <th>관리자A</th>
+                <th>2021-06-27</th>
+                <th>32</th>
+            </tr>
+            <tr style="background-color:#F1C6E7">
+                <th>-</th>
+                <th>중요공지B</th>
+                <th>관리자B</th>
+                <th>2021-06-27</th>
+                <th>35</th>
+            </tr>
         </thead>
-
-        <c:forEach var = "bd" items = "${bds}">
+        <tbody>
+        <c:forEach var = "bd" items = "${nds}">
             <tr>
                 <td>${bd.bdno}</td><%--${snum}--%>
                 <td><a href="/notice/ntview?bdno=${bd.bdno}">${bd.title}</a></td>
@@ -55,16 +86,16 @@
                 <c:set var="snum" value="${snum - 1}" />
             </tr>
         </c:forEach>
-
+        </tbody>
     </table>
-
-    <div>
-        <div>
-            <ul>
-                <%-- '이전'버튼이 작동되어야 할때는 sp가 11보다 클때 --%>
-                <li class="page-item <c:if test="${sp lt 11}">disabled</c:if>">
-                    <a href="${pglink}${sp-10}" class="page-link">이전</a>
-                </li>
+    </div>
+    <div class="row">
+        <div class="col listAPaging" >
+        <ul class="pagination justify-content-center">
+            <%-- '이전'버튼이 작동되어야 할때는 sp가 11보다 클때 --%>
+            <li class="page-item <c:if test="${sp lt 11}">disabled</c:if>">
+                <a href="${pglink}${sp-10}" class="page-link pagingStyleA text-dark border-dark">이전</a>
+            </li>
 
                 <%-- 반복문을 이용해서 페이지 링크 생성 --%>
                 <c:forEach var="i" begin="${sp}" end="${ep}" step="1">
@@ -72,13 +103,13 @@
                     <c:if test="${i le tp}">
                         <c:if test="${i eq cp}">
                             <li class="page-item active">
-                                <a href="${pglink}${i}" class="page-link">${i}</a>
+                                <a href="${pglink}${i}" class="page-link bg-dark border-dark">${i}</a>
                             </li>
                         </c:if>
 
                         <c:if test="${i ne cp}">
                             <li class="page-item">
-                                <a href="${pglink}${i}" class="page-link">${i}</a>
+                                <a href="${pglink}${i}" class="page-link text-dark border-dark">${i}</a>
                             </li>
                         </c:if>
                     </c:if>
@@ -86,10 +117,9 @@
 
                 <%-- '다음'버튼이 작동되어야 할때는 ??? --%>
                 <li class="page-item <c:if test="${ep gt tp}">disabled</c:if>">
-                    <a href="${pglink}${sp+10}" class="page-link">다음</a>
+                    <a href="${pglink}${sp+10}" class="page-link pagingStyleA text-dark border-dark">다음</a>
                 </li>
             </ul>
-        </div>
     </div><!-- 페이지네이션  -->
-
+</div>
 </div>
