@@ -226,5 +226,93 @@ public class ProductServiceImpl implements ProductService{
         return pdao.selectCountProduct2();
     }
 
+    /* child */
+
+    @Override
+    public List<Product> read2Product(String cp) {
+        int snum = (Integer.parseInt(cp)-1)*20; // 10개 게시물 출력
+        return pdao.select2Product(snum);
+    }
+
+    @Override
+    public int count2Product() {
+        return pdao.selectCount2Product();
+    }
+
+    @Override
+    public List<Product> read2Product(String cp, String findtype, String findkey) {
+        int snum = 10*(Integer.parseInt(cp)-1); // 10개 게시물 고정
+        Map<String, Object> params = new HashMap<>();
+        params.put("snum",snum);
+        params.put("ftype",findtype);
+        params.put("fkey",findkey);
+        return pdao.findSelect2Product(params);
+    }
+
+    @Override
+    public int count2Product(String findtype, String findkey) {
+        Map<String,Object> params = new HashMap<>();
+        params.put("ftype",findtype);
+        params.put("fkey",findkey);
+        return pdao.selectCount2Product(params);
+    }
+
+    @Override
+    public Product readOne2Product(String tnum) {
+        return pdao.selectOne2Product(tnum);
+    }
+
+    @Override
+    public BookImage readOne2Image(String tnum) {
+        return pdao.selectOne2Image(tnum);
+    }
+
+    @Override
+    public boolean newProduct2(Product p, BookImage b, MultipartFile[] img) {
+        // 식별코드 생성
+        String uuid = imgutil.makeUUID();
+
+        // 첨부파일이 존재할 경우
+        if(imgutil.checkImageFiles(img)) {
+
+            // 이미지명 저장을 위한 공간 생성
+            List<String> imgs = new ArrayList<>();
+
+
+            // imgs에 저장, 저장 실패시 '-/-'를 넘김
+            for (MultipartFile f : img) {
+                if (!f.getOriginalFilename().isEmpty())
+                    imgs.add(imgutil.ImageUpload(f, uuid));
+                else
+                    imgs.add("-/-");
+            }
+
+            // DB저장을 위한 변수 선언
+            String fnames = "";
+            String fsizes = "";
+
+            // 파일명, 파일크기 저장
+            for (int i = 0; i < imgs.size(); ++i) {
+                fnames += imgs.get(i).split("/")[0] + "/";
+                fsizes += imgs.get(i).split("/")[1] + "/";
+            }
+
+            // VO에 반영
+            b.setFnames(fnames);
+            b.setFsizes(fsizes);
+            b.setUuid(uuid);
+
+            p.setFnames(fnames);
+            p.setFsizes(fsizes);
+            p.setUuid(uuid);
+
+        }
+
+        //DAO에 전달
+        boolean isInserted = false;
+        if(pdao.insert2Product(p,b)>0) isInserted = true;
+        //pdao.insertProduct(p,b);
+        return isInserted;
+    }
 
 }

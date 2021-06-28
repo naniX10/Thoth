@@ -52,4 +52,16 @@ public interface ProductService {
 
     // 게시글 수2
     int countProduct2();
+
+    /* child */
+    List<Product> read2Product(String cp);
+    int count2Product();
+
+    List<Product> read2Product(String cp, String findtype, String findkey);
+    int count2Product(String findtype, String findkey);
+
+    Product readOne2Product(String tnum);
+    BookImage readOne2Image(String tnum);
+
+    boolean newProduct2(Product p, BookImage b, MultipartFile[] img);
 }

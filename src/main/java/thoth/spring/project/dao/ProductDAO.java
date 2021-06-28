@@ -61,4 +61,13 @@ public interface ProductDAO {
     // 상품 조회2 - 전체 상품 수 구하기
     int selectCountProduct2();
 
+    /* child */
+    List<Product> select2Product(int snum);
+    int selectCount2Product();
+    List<Product> findSelect2Product(Map<String, Object> params);
+    int selectCount2Product(Map<String,Object> params);
+    Product selectOne2Product(String tnum);
+    BookImage selectOne2Image(String tnum);
+
+    int insert2Product(Product p, BookImage b);
 }
