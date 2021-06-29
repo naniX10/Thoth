@@ -27,6 +27,7 @@
       <link rel="stylesheet" type="text/css" href="/css/myinfo.css">
       <link rel="stylesheet" type="text/css" href="/css/notice.css">
       <link rel="stylesheet" type="text/css" href="/css/product.css">
+      <link rel="stylesheet" type="text/css" href="/css/product2.css">
       <link rel="stylesheet" type="text/css" href="/css/join.css">
       <link rel="stylesheet" type="text/css" href="/css/manage.css">
 
@@ -108,6 +109,9 @@
       <script src="/js/myinfo.js"></script>
       <script src="/js/notice.js"></script>
       <script src="/js/product.js"></script>
+      <script src="/js/baproduct.js"></script>
+      <script src="/js/chproduct.js"></script>
+      <script src="/js/coproduct.js"></script>
   </body>
 </html>
 

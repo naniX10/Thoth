@@ -48,7 +48,7 @@ $('#bamodPbtn').on('click',function(){
     location.href = '/product/bapupdate?tnum='+$('#tnum').val();
 });
 
-$('#basavePbtn').on('click',function(){
+$('#basavePbtn2').on('click',function(){
     if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
     else {
         const frm = $('#modprdfrm');

@@ -48,7 +48,7 @@ $('#chmodPbtn').on('click',function(){
     location.href = '/product/chpupdate?tnum='+$('#tnum').val();
 });
 
-$('#chsavePbtn').on('click',function(){
+$('#chsavePbtn2').on('click',function(){
     if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
     else {
         const frm = $('#modprdfrm');

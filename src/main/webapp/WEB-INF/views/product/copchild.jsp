@@ -36,12 +36,12 @@
     <!-- 공통 영역 : 카테고리 타이틀, 검색 -->
     <div class="row">
         <ul class="col-3" id="categoryTitle">
-            <li>Category</li>
+            <li>아동도서</li>
         </ul>
         <div class="col-9">
             <div class="container">
                 <div class="row">
-                    <div class="col"><div class="Titletext">종합</div></div>
+                    <div class="col"><div class="Titletext">아동만화</div></div>
                     <div class="col ">
 
                     </div>
@@ -67,29 +67,12 @@
     <!-- 분리 -->
     <div class="row">
         <!-- 카테고리 리스트 -->
-            <ul class="col-3" id="categoryUl">
-                <li><c:set var="category" value="All"></c:set>종합</li>
-                <li>소설</li>
-                <li>에세이</li>
-                <li><c:set var="category" value="C"></c:set>
-                    시</li>
-                <li><c:set var="category" value="D"></c:set>인문</li>
-                <li>정치사회</li>
-                <li>경제경영</li>
-                <li>건강</li>
-                <li>교양과학</li>
-                <li>외국어</li>
-                <li>예술</li>
-                <li><c:set var="category" value="K"></c:set>취미/스포츠</li>
-                <li><c:set var="category" value="L"></c:set>TOEIC/TOEFL</li>
-                <li><c:set var="category" value="M"></c:set>종교</li>
-                <li>만화</li>
-                <li>요리/와인</li>
-                <li>역사/문화</li>
-                <li>자기계발</li>
-                <li>여행</li>
-                <li>기술/컴퓨터</li>
-            </ul><!-- 카테고리 리스트 -->
+        <ul class="col-3" id="categoryUl">
+            <li><a href="/product/pchild">종합</a></li>
+            <li><a href="/product/bapchild">유아</a></li>
+            <li><a href="/product/chpchild">어린이</a></li>
+            <li><a href="/product/copchild">아동만화</a></li>
+        </ul><!-- 카테고리 리스트 -->
         <!-- 상품 리스트 -->
         <div class="col-9">
             <div class="container">

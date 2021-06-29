@@ -199,3 +199,16 @@ $('#orderPbtn').on('click',function(){
     };
 });
 
+// 입력 완료 버튼 클릭 이벤트 : 상품 등록 완료
+$('#order3Pbtn').on('click',function(){
+    if($('#address').val()=='') alert('주소를 입력해주세요.');
+    else if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
+    else {
+        const frm = $('#buyprdfrm');
+        frm.attr('action','/product/porder2');
+        frm.attr('method','post');
+        frm.attr('enctype','multipart/form-data');
+        frm.submit();
+        alert('주문이 완료되었습니다.');
+    };
+});

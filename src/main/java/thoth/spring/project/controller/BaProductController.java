@@ -70,7 +70,7 @@ public class BaProductController {
         return "redirect:/product/bapchild";
     }
 
-    @GetMapping("/product/babapupdate")
+    @GetMapping("/product/bapupdate")
     public ModelAndView bapupdate(ModelAndView mv, String tnum)
     {
         mv.setViewName("product/bapupdate.tiles");

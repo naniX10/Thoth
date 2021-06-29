@@ -70,7 +70,7 @@
         <!-- 버튼들 -->
         <div class="form-group row prdfrmJ">
             <div class="col offset-5">
-            <button type="button" id="chsavePbtn">수정완료</button>
+            <button type="button" id="chsavePbtn2">수정완료</button>
             <button type="reset" id="chrePbtn">다시입력</button>
             </div>
         </div>

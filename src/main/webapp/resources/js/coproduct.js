@@ -48,7 +48,7 @@ $('#comodPbtn').on('click',function(){
     location.href = '/product/copupdate?tnum='+$('#tnum').val();
 });
 
-$('#cosavePbtn').on('click',function(){
+$('#cosavePbtn2').on('click',function(){
     if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
     else {
         const frm = $('#modprdfrm');
