@@ -10,13 +10,10 @@
 </c:if>
 
 
-<div id="main">
-    <div>
-        <i class="fas fa-comments fa-2x"> QnA</i>
-        <hr> <!-- 페이지 타이틀? -->
+<div id="main" class="container">
 
-    </div>
-
+    <br>
+    <br>
     <div class="row">
         <div class="col">
             <p class="mwriteTitle">Q&A 등록</p>

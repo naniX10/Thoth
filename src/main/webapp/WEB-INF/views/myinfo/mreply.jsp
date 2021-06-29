@@ -9,69 +9,49 @@
 <div id="main" class="container">
     <div class="row">
         <div class="col">
-            <p class="ntlistTitle">Q&A</p>
+            <h2 class="ntlistTitle">Q&A</h2>
         </div>
     </div>
 
-    <div class="row">
-        <form class="container" name="mreplyfrm" id="mreplyfrm">
-            <div class="row">
-                <div class="col">
-                        <button type="button" class="btn" id="delqnabtn">
-                            삭제하기</button>
-                    <span class="float-right"> </span>
-                    <%--자신이 작성한 글 이외에는 보이면 안됨--%>
-                    <%--<c:if test="${not empty UID and UID eq mi.userid}">--%>
-
-
-<div id="main">
-    <div>
-        <h1><i class="fas fa-comments"></i> QnA</h1>
-
-    </div> <!-- 페이지 타이틀? -->
-    <div>
-        <form name="mreplyfrm" id="mreplyfrm">
-            <br>
-            <input type="hidden" name="mino" id="mino" value="${param.mino}" />
-
-            <div class="row">
-                <table class="col" style = "margin : 0px auto">
-                    <tr>
-                        <th colspan="2" class="text-white" style="width:50px; padding:10px;background-color:#BD83CE">
-                        <h3 style = "text-align:center">${mi.title}</h3>
-                    </th>
-                    </tr>
-                    <tr style="width:30px;  padding:10px; background-color:#F1C6E7">
-                        <td style="float : left">${mi.userid}</td>
-                        <td class="text-right">${mi.regdate}</td></tr>
-                    <tr><td colspan="2" style="height:550px; background-color:white;">
-                        ${fn:replace(mi.contents, newChar, "<br>")}
-                    </td></tr>
-                </table>
-            </div><!--  -->
-            <div class="row">
-
-                <div class="col-5 offset-1">
-                    <%--자신이 작성한 글 이외에는 보이면 안됨--%>
-                    <c:if test="${not empty UID and UID eq mi.userid}">
-                    <a href="/myinfo/mupdate?mino=${mi.mino}">
-                        <button type="button">
-                            <i ></i> 수정하기</button></a>
-
-                    <button type="button" id="delqnabtn">
-                        <i ></i> 삭제하기</button>
-                    </c:if>
+    <!-- 페이지 타이틀? -->
+        <div class="row">
+            <form class="container" name="mreplyfrm" id="mreplyfrm">
+                <input type="hidden" name="mino" id="mino" value="${param.mino}" />
+                <div class="row">
+                    <div class="col">
+                        <%--자신이 작성한 글 이외에는 보이면 안됨--%>
+                        <c:if test="${not empty UID and UID eq mi.userid}">
+                            <a href="/myinfo/mupdate?mino=${mi.mino}">
+                                <button type="button">수정하기</button></a>
+                            <button type="button" id="delqnabtn">삭제하기</button>
+                        </c:if>
+                    </div>
                 </div>
-                <div class="col-5 text-right">
 
-                    <a href="/myinfo/mlist">
-                        <button type="button" class="btn btn-secondary" id="listmibtn">
-                           목록으로</button></a>
-                </div>
-            </div><!-- 배 -->
-
-        </form>
-    </div>
+                <div class="row">
+                    <table class="col" style = "margin : 0px auto">
+                        <tr>
+                            <th colspan="2" class="text-white" style="width:50px; padding:10px;background-color:#BD83CE">
+                                <h3 style = "text-align:center">${mi.title}</h3>
+                            </th>
+                        </tr>
+                        <tr style="width:30px;  padding:10px; background-color:#F1C6E7">
+                            <td style="float : left">${mi.userid}</td>
+                            <td class="text-right">${mi.regdate}</td></tr>
+                        <tr><td colspan="2" style="height:550px; background-color:white;">
+                            ${fn:replace(mi.contents, newChar, "<br>")}
+                        </td></tr>
+                    </table>
+                </div><!--  -->
+                <div class="row">
+                    <div class="col-5 text-right">
+                        <a href="/myinfo/mlist">
+                            <button type="button" class="btn btn-secondary" id="listmibtn">
+                                목록으로</button></a>
+                    </div>
+                </div><!-- 배 -->
+            </form>
+        </div>
     <br>
     <div>
 
@@ -107,18 +87,18 @@
                            for="reply">${UID}</label>
                     <textarea class="form-control col-7"
                               name="reply" id="reply" rows="5"></textarea>&nbsp;&nbsp;
-                    <c:if test="${not empty UID}">
+                    <%--<c:if test="${not empty UID}">--%>
                     <button class="form-control col-2 pushdwn"
                             type="button" id="newmrbtn">
-
                         <i class="fas fa-comment-dots"></i> 댓글쓰기</button>
-                    </c:if>
+                    <%--</c:if>--%>
                 </div>
-
-
-
+                <input type="hidden" name="userid" value="${UID}" />
+                <input type="hidden" name="mino" value="${param.mino}" />
             </form>
         </div>
+
+    </div> <!-- 댓글쓰기 -->
 
     </div> <!-- 댓글쓰기 -->
 </div>

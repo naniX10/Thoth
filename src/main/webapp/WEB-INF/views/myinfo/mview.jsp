@@ -27,24 +27,20 @@
 </c:if>
 
 
-<div id="main">
-    <div>
-        <i > My info</i>
-        <hr>
-    </div>
+<div id="main" class="container">
+
     <div class="row">
         <div class="col-5 offset-1"></div>
         <div class="col-5 text-right">
-            <button type="button" id="listmibtn">
-                <i ></i>&nbsp; 목록으로</button>
+            <button type="button" id="listmibtn">목록으로</button>
         </div>
     </div>
 
     <div class="row">
         <div class="col-5 offset-1">
-            <h3><i > 내 정보 수정</i></h3></div>
+            <h3>내 정보 수정</h3></div>
     </div>
-    <div class="card card-body bg-light col-10 offset-1">
+    <div class="card card-body bg-white col-10 offset-1">
         <form id="miform" name="miform">
 
             <div class="form-group row">
