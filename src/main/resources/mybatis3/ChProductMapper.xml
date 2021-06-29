@@ -58,7 +58,7 @@
         <if test="ftype == 'titauth'">
             where c.title like concat('%',#{fkey},'%') or c.author like concat('%',#{fkey},'%')
         </if>
-        limit ${snum}, 10
+        limit ${snum}, 20
     </select>
 
     <select id="ChfindSelectCount" statementType="PREPARED" parameterType="map" resultType="int">

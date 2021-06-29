@@ -72,7 +72,7 @@ public class BaProductDAOImpl implements BaProductDAO{
 
     @Override
     public void badeleteImage(String tnum) {
-        sqlSession.delete("baproduct.badeleteImage",tnum);
+        sqlSession.delete("baproduct.badeleImage",tnum);
     }
 
     @Override

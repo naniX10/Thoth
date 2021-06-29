@@ -58,6 +58,7 @@ public class CoProductController {
         mv.setViewName("product/copview.tiles");
         mv.addObject("p", pcosrv.coreadOneProduct(tnum));   // tnum 상품 정보 조회
         mv.addObject("b",pcosrv.coreadOneImage(tnum)); // 이미지 조회
+        System.out.println(mv);
         return mv;
     }
 
