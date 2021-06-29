@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="baproduct">
+
+    <!-- 카테고리별 조회(All 조회 제외) -->
+    <select id="selectProduct2" statementType="PREPARED" parameterType="int" resultType="thoth.spring.project.vo.Product">
+        select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+               b.fnames, b.fsizes, b.uuid from categoryAll c
+                   left outer join bookImage b using(tnum)
+        where substr(tnum,1,1)='category' order by tnum limit ${snum}, 20;
+    </select>
+
+    <select id="countProduct2" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Product" resultType="int">
+        select count(tnum) from categoryAll
+        where substr(tnum,1,1)='category';
+    </select>
+
+    <!-- 상품 등록 write(이미지) -->
+    <insert id="insertImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
+        insert into bookImage (tnum, fnames, fsizes, uuid)
+        values(#{tnum},#{fnames},#{fsizes},#{uuid})
+    </insert>
+
+    <!-- 파일이름 읽어오기(수정에 사용) -->
+    <select id="readFnames" statementType="PREPARED" parameterType="String" resultType="String">
+        select fnames from bookImage where tnum = #{tnum}
+    </select>
+
+    <!-- 파일크기 읽어오기(수정에 사용) -->
+    <select id="readFsizes" statementType="PREPARED" parameterType="String" resultType="String">
+        select fsizes from bookImage where tnum = #{tnum}
+    </select>
+
+    <!-- CH -->
+
+    <select id="baselectProduct" statementType="PREPARED"
+            parameterType="int" resultType="thoth.spring.project.vo.Product">
+        select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+               b.fnames, b.fsizes, b.uuid
+        from AgeBaby c left outer join bookImage b using(tnum)
+        order by tnum limit ${snum}, 20;
+    </select>
+
+    <select id="bacountProduct" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Product" resultType="int">
+        select count(tnum) from AgeBaby
+    </select>
+
+    <select id="bafindSelect" statementType="PREPARED"
+            parameterType="map" resultType="thoth.spring.project.vo.Product">
+        select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+        b.fnames,b.fsizes, b.uuid from AgeBaby c
+        left outer join bookImage b using(tnum)
+        <if test="ftype != 'titauth'">
+            where ${ftype} like concat('%',#{fkey},'%')
+        </if>
+        <if test="ftype == 'titauth'">
+            where c.title like concat('%',#{fkey},'%') or c.author like concat('%',#{fkey},'%')
+        </if>
+        limit ${snum}, 10
+    </select>
+
+    <select id="bafindSelectCount" statementType="PREPARED" parameterType="map" resultType="int">
+        select count(tnum) cnt from AgeBaby
+        <if test="ftype != 'titauth'">
+            where ${ftype} like concat('%',#{fkey},'%')
+        </if>
+        <if test="ftype == 'titauth'">
+            where title like concat('%',#{fkey},'%') or author like concat('%',#{fkey},'%')
+        </if>
+    </select>
+
+    <insert id="bainsertProduct" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
+        insert into AgeBaby(tnum, title, author, publish, origin_price, sale_price, amount)
+        values (#{tnum}, #{title}, #{author}, #{publish}, #{origin_price}, #{sale_price}, #{amount})
+    </insert>
+
+    <select id="baselectOne" statementType="PREPARED" parameterType="String" resultType="thoth.spring.project.vo.Product">
+        select * from AgeBaby where tnum = #{tnum}
+    </select>
+
+    <select id="baselectOneImage" statementType="PREPARED" parameterType="String" resultType="thoth.spring.project.vo.BookImage">
+        select * from bookImage where tnum = #{tnum}
+    </select>
+
+    <delete id="badeleteProduct" statementType="PREPARED" parameterType="String">
+        delete from AgeBaby where tnum = #{tnum}
+    </delete>
+
+    <delete id="badeleteImage" statementType="PREPARED" parameterType="String">
+        delete from bookImage where tnum = #{tnum}
+    </delete>
+
+    <update id="baupdateProduct" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
+        update AgeBaby set author=#{author}, publish=#{publish}, origin_price=#{origin_price}, sale_price=#{sale_price}, amount=#{amount}
+        where tnum = #{tnum}
+    </update>
+
+    <update id="baupdateImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
+        update bookImage set
+                             fnames= #{fnames}, fsizes=#{fsizes}
+        where tnum = #{tnum};
+    </update>
+
+</mapper>
