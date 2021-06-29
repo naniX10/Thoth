@@ -128,12 +128,12 @@ public class MyinfoController {
 
 
     // QnA 글 삭제
-    @GetMapping("/myinfo/qnarmv")
+    @PostMapping("/myinfo/qnarmv")
     public String mirmv(String mino) {
-
-        msrv.deleteQna(mino);
-
-        return "redirect:/myinfo/mview";
+        String returnPage = "redirect:/myinfo/mlist";
+        if (msrv.deleteQna(mino))
+            System.out.println("삭제완료!");
+        return returnPage;
 
     }
 

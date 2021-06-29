@@ -58,7 +58,7 @@
         <h3 style="margin-bottom:15px;">사이트 이용약관</h3>
         <form name="agreefrm" id="agreefrm">
             <div class="form-group">
-                        <textarea  rows="10" class="form-control">
+                        <textarea  rows="10" class="form-control border-dark">
                             Thoth계정 약관
 
 제 1 장 환영합니다!
@@ -234,7 +234,7 @@ Copyright © Thoth Corp. All rights reserved.
         <h3 style="margin-bottom:15px;">개인정보 수집 및 이용에 대한 안내</h3>
         <form>
             <div class="form-group">
-                        <textarea rows="10" class="form-control  border-danger">
+                        <textarea rows="10" class="form-control  border-dark">
                         Thoth계정 약관
 
 제 1 장 환영합니다!

@@ -3,6 +3,7 @@ package thoth.spring.project.dao;
 import thoth.spring.project.vo.Notice;
 
 import java.util.List;
+import java.util.Map;
 
 public interface NoticeDAO {
 
@@ -21,4 +22,13 @@ public interface NoticeDAO {
     Notice nextBoard(String bdno);
 
     Notice backBoard(String bdno);
+
+    int selectCountBoard();
+
+    List<Notice> findSelectBoard(Map<String, Object> param);
+    int selectCountBoard(Map<String, Object> param);
+
+    String selectPrvpno(String bdno);
+
+    String selectNxtpno(String bdno);
 }

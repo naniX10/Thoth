@@ -52,10 +52,25 @@ $('#reupqnabtn').on('click', function () {
     }
 });
 
+// 수정 버튼 클릭 이벤트 - 수정 페이지로 이동
+$('#mmodqnabtn').on('click',function(){
+    location.href = '/myinfo/mupdate?mino='+$('#mino').val();
+});
+
+
+// 수정완료
+$('#reupqnabtn').on('click',function() {
+    const frm = $('#reqnafrm');
+    frm.attr('method','post');
+    frm.attr('action','/myinfo/mupdate');
+    frm.submit();
+});
+
 
 // QnA 삭제?
 $('#delqnabtn').on('click', function () {
     location.href = '/myinfo/mirmv?mino=' + $('#mino').val();
+
 });
 
 // 댓글 작성?

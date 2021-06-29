@@ -17,7 +17,6 @@
                b.fnames, b.fsizes, b.uuid from categoryAll c
                    left outer join bookImage b using(tnum)
         where substr(tnum,1,1)='category' order by tnum limit ${snum}, 20;
-;
     </select>
 
     <!-- 상품 조회 - 전체 상품 수 구하기 -->
@@ -26,11 +25,6 @@
         select count(tnum) from categoryAll
     </select>
 
-    <select id="countProduct2" statementType="PREPARED"
-            parameterType="thoth.spring.project.vo.Product" resultType="int">
-        select count(tnum) from categoryAll
-        where substr(tnum,1,1)='category';
-    </select>
 
     <!-- 상품 조회 - 검색 기능 구현 -->
     <!-- 동적 질의문 사용 - 컬럼명,테이블명만 ${}사용 -->
@@ -96,15 +90,6 @@
         where tnum = #{tnum}
     </update>
 
-<!--    &lt;!&ndash; 상품 수정 (이미지) &ndash;&gt;-->
-<!--    <update id="updateImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">-->
-<!--        update bookImage set-->
-<!--            <if test="todie != ''">-->
-<!--                fnames= #{fnames}, fsizes=#{fsizes}-->
-<!--            </if>-->
-<!--        where tnum = #{tnum};-->
-<!--    </update>-->
-
     <!-- 상품 수정 (이미지) -->
     <update id="updateImage" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
         update bookImage set
@@ -122,6 +107,74 @@
         select fsizes from bookImage where tnum = #{tnum}
     </select>
 
+    <!-- child -->
+    <select id="select2Product" statementType="PREPARED"
+            parameterType="int" resultType="thoth.spring.project.vo.Product">
+        select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+               b.fnames, b.fsizes, b.uuid
+        from categoryChild c left outer join bookImage b using(tnum)
+        order by tnum limit ${snum}, 20;
+    </select>
 
+    <select id="count2Product" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Product" resultType="int">
+        select count(tnum) from categoryChild
+    </select>
+
+    <select id="find2Select" statementType="PREPARED"
+            parameterType="map" resultType="thoth.spring.project.vo.Product">
+        select c.tnum, c.title, c.author, c.publish, c.image, c.url, c.origin_price, c.sale_price, c.amount,
+        b.fnames,b.fsizes, b.uuid from categoryChild c
+        left outer join bookImage b using(tnum)
+        <if test="ftype != 'titauth'">
+            where ${ftype} like concat('%',#{fkey},'%')
+        </if>
+        <if test="ftype == 'titauth'">
+            where c.title like concat('%',#{fkey},'%') or c.author like concat('%',#{fkey},'%')
+        </if>
+        limit ${snum}, 10
+    </select>
+
+    <select id="findSelect2Count" statementType="PREPARED" parameterType="map" resultType="int">
+        select count(tnum) cnt from categoryChild
+        <if test="ftype != 'titauth'">
+            where ${ftype} like concat('%',#{fkey},'%')
+        </if>
+        <if test="ftype == 'titauth'">
+            where title like concat('%',#{fkey},'%') or author like concat('%',#{fkey},'%')
+        </if>
+    </select>
+
+    <select id="select2One" statementType="PREPARED" parameterType="String" resultType="thoth.spring.project.vo.Product">
+        select * from categoryChild where tnum = #{tnum}
+    </select>
+
+    <select id="select2OneImage" statementType="PREPARED" parameterType="String" resultType="thoth.spring.project.vo.BookImage">
+        select * from bookImage where tnum = #{tnum}
+    </select>
+
+    <insert id="insert2Product" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
+        insert into categoryChild(tnum, title, author, publish, origin_price, sale_price, amount)
+        values (#{tnum}, #{title}, #{author}, #{publish}, #{origin_price}, #{sale_price}, #{amount})
+    </insert>
+
+    <delete id="delete2Product" statementType="PREPARED" parameterType="String">
+        delete from categoryChild where tnum = #{tnum}
+    </delete>
+
+    <delete id="delete2Image" statementType="PREPARED" parameterType="String">
+        delete from bookImage where tnum = #{tnum}
+    </delete>
+
+    <update id="update2Product" statementType="PREPARED" parameterType="thoth.spring.project.vo.Product">
+        update categoryChild set author=#{author}, publish=#{publish}, origin_price=#{origin_price}, sale_price=#{sale_price}, amount=#{amount}
+        where tnum = #{tnum}
+    </update>
+
+    <update id="update2Image" statementType="PREPARED" parameterType="thoth.spring.project.vo.BookImage">
+        update bookImage set
+                             fnames= #{fnames}, fsizes=#{fsizes}
+        where tnum = #{tnum};
+    </update>
 
 </mapper>

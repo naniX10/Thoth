@@ -67,4 +67,35 @@
     </select>
 
 
+    <select id="findSelect" statementType="PREPARED" parameterType="map" resultType="thoth.spring.project.vo.Notice">
+        select bdno, title, userid, contents, regdate, views from ntBoard
+        <if test="ftype !='titcont'">
+            where ${ftype} like concat('%',#{fkey},'%')</if>
+        <if test="ftype =='titcont'">
+            where title like concat('%',#{fkey},'%') or contents like concat('%',#{fkey},'%') </if>
+        order by bdno desc limit ${snum}, 10
+    </select>
+
+    <select id="findSelectCount" statementType="PREPARED" parameterType="map" resultType="int">
+        select count(bdno) cnt from ntBoard
+        <if test="ftype !='titcont'">
+            where ${ftype} like concat('%',#{fkey},'%')</if>
+        <if test="ftype =='titcont'">
+            where title like concat('%',#{fkey},'%') or contents like concat('%',#{fkey},'%') </if>
+    </select>
+
+    <select id="selectPrev" statementType="PREPARED" parameterType="String" resultType="String">
+        select prev from
+            (select bdno,
+                    lead(bdno) over(order by bdno desc) prev
+             from ntBoard) newone
+        where bdno = #{pno}
+    </select>
+    <select id="selectNext" statementType="PREPARED" parameterType="String" resultType="String">
+        select next from
+            (select bdno,
+                    lag(bdno) over(order by bdno desc) next
+             from ntBoard) newone
+        where bdno = #{pno}
+    </select>
 </mapper>

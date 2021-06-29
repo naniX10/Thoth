@@ -90,4 +90,9 @@ public class MemberServiceImpl implements MemberService {
 
         return isLogin;
     }
+
+    @Override
+    public int countMember() {
+        return mbdao.selectCountOrder();
+    }
 }

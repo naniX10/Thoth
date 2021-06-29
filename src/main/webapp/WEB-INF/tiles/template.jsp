@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
 <html lang="ko">
@@ -26,7 +27,9 @@
       <link rel="stylesheet" type="text/css" href="/css/myinfo.css">
       <link rel="stylesheet" type="text/css" href="/css/notice.css">
       <link rel="stylesheet" type="text/css" href="/css/product.css">
+      <link rel="stylesheet" type="text/css" href="/css/product2.css">
       <link rel="stylesheet" type="text/css" href="/css/join.css">
+      <link rel="stylesheet" type="text/css" href="/css/manage.css">
 
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -48,6 +51,46 @@
      	<!-- footer Area -->
      	<tiles:insertAttribute name="footer"/>
         <a name="bottom"></a>
+
+        <!-- 로그인 모달 -->
+        <!-- 로그인 폼 모달 -->
+        <div class="modal" id="loginmodal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title font-weight-bold">로그인</h3>
+                <button type="button" id="lgmbtn" class="btn btn-light font-weight-bold" >
+                  닫 기
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <form name="loginfrm" id="loginfrm" method="post">
+                  <div class="form-group row">
+                    <label for="userid" class="col-form-label col-4 text-right">아이디</label>
+                    <input type="text" name="userid" id="userid" class="form-control border-dark col-5">
+                  </div>
+                  <div class="form-group row">
+                    <label for="passwd" class="col-form-label col-4 text-right" >비밀번호</label>
+                    <input type="password" name="passwd" id="passwd" class="form-control border-dark col-5">
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-4"></div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input">
+                      <label class="form-check-label text-dark">로그인 상태 유지</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="modal-footer justify-content-center bg-light">
+                <button type="button" id="loginModalbtn" class="btn">로그인</button>
+                <button type="button" id="findIdbtn" class="btn">아이디/비밀번호 찾기</button>
+              </div>
+            </div>
+          </div>
+        </div>
       
     </div>
   <div class="quick_menu">
@@ -66,6 +109,9 @@
       <script src="/js/myinfo.js"></script>
       <script src="/js/notice.js"></script>
       <script src="/js/product.js"></script>
+      <script src="/js/baproduct.js"></script>
+      <script src="/js/chproduct.js"></script>
+      <script src="/js/coproduct.js"></script>
   </body>
 </html>
 

@@ -47,9 +47,22 @@ public interface ProductService {
     // 상품 수정 - 이미지
     void modifyImage(BookImage b, MultipartFile[] img);
 
-    // 상품 조회2
-    List<Product> readProduct2(String cp); // cp: 페이지 번호(페이징에 사용)
+    /* child */
+    List<Product> read2Product(String cp);
+    int count2Product();
 
-    // 게시글 수2
-    int countProduct2();
+    List<Product> read2Product(String cp, String findtype, String findkey);
+    int count2Product(String findtype, String findkey);
+
+    Product readOne2Product(String tnum);
+    BookImage readOne2Image(String tnum);
+
+    boolean newProduct2(Product p, BookImage b, MultipartFile[] img);
+
+    Product removeProduct2(String tnum);
+    BookImage removeImage2(String tnum);
+
+    void modify2Product(Product p);
+    void modify2Image(BookImage b, MultipartFile[] img);
+
 }

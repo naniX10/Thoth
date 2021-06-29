@@ -12,4 +12,5 @@ public interface MemberService {
     String checkUserid(String uid);
     boolean checkLogin(Member m, HttpSession sess);
 
+    int countMember();
 }

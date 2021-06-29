@@ -55,10 +55,17 @@ public interface ProductDAO {
     // 파일 크기 읽어오기 (상품 수정에 사용)
     String readFsizes(String tnum);
 
-    // 상품 조회2 - snum부터 n개의 게시물 출력(현재는 20개로 설정)
-    List<Product> selectProduct2(int snum);
 
-    // 상품 조회2 - 전체 상품 수 구하기
-    int selectCountProduct2();
-
+    /* child */
+    List<Product> select2Product(int snum);
+    int selectCount2Product();
+    List<Product> findSelect2Product(Map<String, Object> params);
+    int selectCount2Product(Map<String,Object> params);
+    Product selectOne2Product(String tnum);
+    BookImage selectOne2Image(String tnum);
+    int insert2Product(Product p, BookImage b);
+    void delete2Product(String tnum);
+    void delete2Image(String tnum);
+    int update2Product(Product p);
+    int update2Image(BookImage b);
 }

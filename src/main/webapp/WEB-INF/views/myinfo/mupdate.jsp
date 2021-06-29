@@ -1,60 +1,59 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <div id="main">
     <div>
         <i class="fas fa-comments fa-2x"> QnA</i>
         <hr> <!-- 페이지 타이틀? -->
-    </div>
+   </div>
+
     <div class="row">
-        <div class="col-5 offset-1">
-            <h3><i > QnA 수정하기</i></h3></div>
-        <div class="col-5 text-right">
-            <button type="button" id="listmibtn">
-                <i ></i>&nbsp; 목록으로</button>
+        <div class="col">
+            <p class="mwriteTitle">Q&A 수정</p>
         </div>
     </div>
 
-    <div class="card card-body bg-light col-10 offset-1">
         <form id="reqnafrm" name="reqnafrm">
+
             <input type="hidden" name="mino" value="${mi.mino}">
             <div class="form-group row">
                 <label class="col-2 col-form-label text-right"
+
                        for="title">제목</label>
                 <input type="text" name="title" id="title"
-                       class="form-control border-danger col-9" value="${mi.title}">
-            </div>
+                       class="col-8" value="${mi.title}">
+                </div>
             <div class="form-group row">
-                <label class="col-2 col-form-label text-right"
+                <label class="col-2 text-right"
                        for="userid">작성자</label>
                 <input type="text" name="userid" id="userid"
-                       class="form-control border-danger col-9"
+                       class="col-8"
                        value="${UID}" readonly>
             </div>
             <div class="form-group row">
-                <label class="col-2 col-form-label text-right"
+                <label class="col-2 text-right"
                        for="contents">내용</label>
-                <textarea class="form-control border-danger col-9"
-                          name="contents" id="contents" rows = "15">${mi.contents}</textarea>
+                <input type="textarea"  style="height:450px"  class="col-8"
+                          name="contents" id="contents" value="${mi.contents}"></textarea>
             </div>
             <div class="form-group row">
-                <label class="col-2 col-form-label text-danger text-right">
+                <label class="col-2 text-right">
                     자동<br>입력방지</label>
                 <div class="g-recaptcha"
                      data-sitekey="6LfdIwgbAAAAAGZdSMWuY4f3zaKP-dIuhTMUrU8_"></div>
                 <input type="hidden" id="g-recaptcha" name="g-recaptcha" />
             </div>
 
-
             <div class="form-group row">
-                <hr class=col-10>
-                <div class="col-12 text-center">
+                <div class="col offset-5">
                     <button type="button" id="reupqnabtn">
-                        <i class="fas fa-check-circle"></i> 수정완료</button>
-                    <button type="reset" >
-                        <i class="fas fa-times-circle"></i> 입력취소</button>
+                        <i class="fa fa-check-circle"></i> 수정완료</button>
+                    <button type="reset" id="reMbtn2">
+                        <i class="fa fa-times-circle"></i> 입력취소</button>
                 </div>
             </div><!-- 버튼들 -->
+
 
         </form>
 

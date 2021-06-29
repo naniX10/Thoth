@@ -4,7 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="baseURL" value="http://localhost/book/"/>
 
-
 <!-- 페이징관련 변수 -->
 <!-- 현재페이지번호 : 전달받은 값-->
 <fmt:parseNumber var = "cp" value="${param.cp}"/>
@@ -69,7 +68,7 @@
     <div class="row">
         <!-- 카테고리 리스트 -->
             <ul class="col-3" id="categoryUl">
-                <li><c:set var="category" value="All"></c:set>종합</li>
+                <li><a href="/product/plist">종합</a></li>
                 <li>소설</li>
                 <li>에세이</li>
                 <li><c:set var="category" value="C"></c:set>
@@ -81,9 +80,9 @@
                 <li>교양과학</li>
                 <li>외국어</li>
                 <li>예술</li>
-                <li>취미/스포츠</li>
-                <li>TOEIC/TOEFL</li>
-                <li>종교</li>
+                <li><c:set var="category" value="K"></c:set>취미/스포츠</li>
+                <li><c:set var="category" value="L"></c:set>TOEIC/TOEFL</li>
+                <li><c:set var="category" value="M"></c:set>종교</li>
                 <li>만화</li>
                 <li>요리/와인</li>
                 <li>역사/문화</li>

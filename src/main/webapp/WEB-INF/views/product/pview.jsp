@@ -13,12 +13,13 @@
 <c:set var="salePrice" value="${p.origin_price - p.sale_price}"/>
 <c:set var="salePercent" value="${(salePrice/p.origin_price)*100}"/>
 
-<a name="top"></a>
-<div class="wrapPlist"></div>
+
+
 <div id="main" class="container">
 
     <!-- 상품수정/삭제를 위해 넘겨주는 값 -->
     <input type="hidden" id="tnum" value="${param.tnum}"/>
+<%--    <input type="hidden" id="qty" value="${qty}"/>--%>
 
     <!-- 책 정보 관련 내용 -->
     <div class="row viewWrap">
@@ -94,7 +95,7 @@
                 <!-- 주문 수량 -->
                 <div class="row">
                     <div class="col">
-                    주문수량 : &nbsp;<input type="number" min="1" max="1000">
+                    주문수량 : &nbsp;<input type="number" class="qty" min="1" max="1000">
                     </div>
                 </div>
                 <!-- 버튼들 -->
@@ -111,11 +112,7 @@
     </div><!-- 책 정보 관련 내용 -->
 
 
-    <div class="quick_menu">
-        <div class="quick_top"><a href="#top"><i class="fa fa-arrow-up fa-2x"></i></a></div>
-        <div class="quick_bottom"><a href="#bottom"><i class="fa fa-arrow-down fa-2x"></i></a></div>
-    </div>
+
 
 
 </div>
-<a name="bottom"></a>
