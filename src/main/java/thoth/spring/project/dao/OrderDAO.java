@@ -10,4 +10,6 @@ public interface OrderDAO {
 
     // 특정 상품 조회
     Order selectOneOrder(String tnum);
+
+    int selectCountOrder();
 }

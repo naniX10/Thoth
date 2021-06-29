@@ -27,4 +27,9 @@ public class OrderDAOImpl implements OrderDAO{
         return sqlSession.selectOne("order.selectOne",tnum);
     }
 
+    @Override
+    public int selectCountOrder() {
+        return sqlSession.selectOne("order.countOrder");
+    }
+
 }

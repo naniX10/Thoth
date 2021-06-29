@@ -12,4 +12,7 @@ public interface OrderService {
 
     // 특정 상품 조회
     Order readOneOrder(String tnum);
+
+
+    int countOrder();
 }

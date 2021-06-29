@@ -35,7 +35,7 @@ public class ProductServiceImpl implements ProductService{
     // 상품 조회 - 검색(내부)
     @Override
     public List<Product> readProduct(String cp, String ftype, String fkey) {
-        int snum = 10*(Integer.parseInt(cp)-1); // 10개 게시물 고정
+        int snum = 20*(Integer.parseInt(cp)-1); // 10개 게시물 고정
         Map<String, Object> params = new HashMap<>();
         params.put("snum",snum);
         params.put("ftype",ftype);
@@ -215,16 +215,7 @@ public class ProductServiceImpl implements ProductService{
        
     }
 
-    @Override
-    public List<Product> readProduct2(String cp) {
-        int snum = (Integer.parseInt(cp)-1)*20; // 10개 게시물 출력
-        return pdao.selectProduct2(snum);
-    }
 
-    @Override
-    public int countProduct2() {
-        return pdao.selectCountProduct2();
-    }
 
     /* child */
 

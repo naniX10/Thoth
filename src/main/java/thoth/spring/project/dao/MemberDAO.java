@@ -19,4 +19,5 @@ public interface MemberDAO {
     int selectOneUserid(String uid);
     int selectLogin(Member m);
 
+    int selectCountOrder();
 }

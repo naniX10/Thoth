@@ -33,4 +33,10 @@
         where userid = #{userid} and passwd = #{passwd}
     </select>
 
+    <!-- 회원 조회 - 전체 회원 수 구하기 -->
+    <select id="countMember" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Member" resultType="int">
+        select count(userid) from joinMember
+    </select>
+
 </mapper>

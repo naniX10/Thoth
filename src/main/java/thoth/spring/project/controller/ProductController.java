@@ -47,7 +47,6 @@ public class ProductController {
         return mv;
     }
 
-
     // 리스트 - 검색
     @GetMapping("/product/find")
     public ModelAndView find(ModelAndView mv, String cp, String findtype, String findkey){
@@ -66,6 +65,7 @@ public class ProductController {
 
         return mv;
     }
+
 
     // 뷰 - 상품 정보 조회
     @GetMapping("/product/pview")
