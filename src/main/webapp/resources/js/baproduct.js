@@ -143,3 +143,23 @@ $('#orderPbtn').on('click',function(){
     };
 });
 
+// 상품 등록 버튼 클릭 이벤트 : 상품 등록 페이지로 이동
+$('#babuy2Pbtn').on('click',function(){
+    location.href = '/product/baporder?tnum='+$('#tnum').val();
+    // location.href = '/product/pupdate?tnum='+$('#tnum').val();
+})
+
+// 주문완료2
+$('#baorderPbtn').on('click',function(){
+    if($('#address').val()=='') alert('주소를 입력해주세요.');
+    else if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
+    else {
+        const frm = $('#babuyprdfrm');
+        frm.attr('action','/product/baporder');
+        frm.attr('method','post');
+        frm.attr('enctype','multipart/form-data');
+        frm.submit();
+        alert('주문이 완료되었습니다.');
+    };
+});
+

@@ -106,7 +106,7 @@
             <p class="porderTitle2">구매정보입력</p>
         </div>
     </div>
-    <form id="buyprdfrm" class="buyprdfrm">
+    <form id="buyprdfrm2" class="buyprdfrm2">
         <div class="col-10 offset-2">
             <div class="form-group row prdfrmA">
                 <label for="userid" class="col-2 text-right">회원아이디</label>

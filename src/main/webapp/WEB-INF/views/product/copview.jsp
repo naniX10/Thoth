@@ -100,9 +100,9 @@
                 <!-- 버튼들 -->
                 <div class="row">
                     <div class="col">
-                        <button type="button" class="btn buy2Pbtn float-right" id="buy2Pbtn">바로구매</button>
+                        <button type="button" class="btn cobuy2Pbtn float-right" id="cobuy2Pbtn">바로구매</button>
                         <span class="float-right">&nbsp;</span>
-                        <button type="button" class="btn buy1Pbtn float-right" id="buy1Pbtn">장바구니</button>
+                        <button type="button" class="btn cobuy1Pbtn float-right" id="cobuy1Pbtn">장바구니</button>
 
                     </div>
                 </div>

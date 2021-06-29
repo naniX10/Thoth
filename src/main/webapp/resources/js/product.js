@@ -185,7 +185,7 @@ $('#buy2Pbtn').on('click',function(){
     // location.href = '/product/pupdate?tnum='+$('#tnum').val();
 })
 
-// 입력 완료 버튼 클릭 이벤트 : 상품 등록 완료
+// 주문완료
 $('#orderPbtn').on('click',function(){
     if($('#address').val()=='') alert('주소를 입력해주세요.');
     else if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
@@ -199,12 +199,18 @@ $('#orderPbtn').on('click',function(){
     };
 });
 
-// 입력 완료 버튼 클릭 이벤트 : 상품 등록 완료
+// 상품 등록 버튼 클릭 이벤트 : 상품 등록 페이지로 이동
+$('#buy4Pbtn').on('click',function(){
+    location.href = '/product/porder2?tnum='+$('#tnum').val();
+    // location.href = '/product/pupdate?tnum='+$('#tnum').val();
+})
+
+// 주문완료2
 $('#order3Pbtn').on('click',function(){
     if($('#address').val()=='') alert('주소를 입력해주세요.');
     else if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
     else {
-        const frm = $('#buyprdfrm');
+        const frm = $('#buyprdfrm2');
         frm.attr('action','/product/porder2');
         frm.attr('method','post');
         frm.attr('enctype','multipart/form-data');

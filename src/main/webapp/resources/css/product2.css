@@ -239,7 +239,76 @@
     margin-top:15px;
 
 }
+#cobuy1Pbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#cobuy2Pbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
 
+}
+#chbuy1Pbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#chbuy2Pbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+
+#babuy1Pbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#babuy2Pbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
 #modPbtn{
     background-color:#E5B0EA;
     color:white;
@@ -588,7 +657,76 @@ input[name="amount"]:hover{
     margin-bottom:5px;
     margin-top:15px;
 }
-#orderPbtn{
+#corePbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#chrePbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#barePbtn{
+    background-color:#E5B0EA;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+}
+#order3Pbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+#coorderPbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+#baorderPbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+    margin-bottom:5px;
+    margin-top:15px;
+
+}
+#chorderPbtn{
     background-color:#BE79DF;
     color:white;
     height:40px;

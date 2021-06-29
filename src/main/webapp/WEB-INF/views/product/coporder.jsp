@@ -13,15 +13,17 @@
 <c:set var="salePrice" value="${p.origin_price - p.sale_price}"/>
 <c:set var="salePercent" value="${(salePrice/p.origin_price)*100}"/>
 
-<a name="top"></a>
-<div class="wrapPlist"></div>
+
+
 <div id="main" class="container">
-
-    <!-- 상품수정/삭제를 위해 넘겨주는 값 -->
-    <input type="hidden" id="tnum" value="${param.tnum}"/>
-
+    <!-- Page Title -->
+    <div class="row">
+        <div class="col">
+            <p class="porderTitle">주문하기</p>
+        </div>
+    </div>
     <!-- 책 정보 관련 내용 -->
-    <div class="row viewWrap">
+    <div class="row viewWrap2">
         <!-- 책 이미지 -->
         <div class="col-3 viewPImage">
             <!-- 기존글 이미지  -->
@@ -48,11 +50,8 @@
                         <p id="pviewText1">${p.title}</p>
                     </div>
                     <div class="col">
-                        <button type="button" class="listPbtn float-right" id="balistPbtn">목록보기</button>
-                        <span class="float-right">&nbsp;</span>
-                        <button type="button" class="delPbtn float-right" id="badelPbtn">상품삭제</button>
-                        <span class="float-right">&nbsp;</span>
-                        <button type="button" class="modPbtn float-right" id="bamodPbtn">상품수정</button>
+                        <button type="button" class="listPbtn float-right" id="listPbtn">목록보기</button>
+
                     </div>
                 </div>
                 <!-- 지은이, 출판사 -->
@@ -97,25 +96,57 @@
                     주문수량 : &nbsp;<input type="number" min="1" max="1000">
                     </div>
                 </div>
-                <!-- 버튼들 -->
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn babuy2Pbtn float-right" id="babuy2Pbtn">바로구매</button>
-                        <span class="float-right">&nbsp;</span>
-                        <button type="button" class="btn babuy1Pbtn float-right" id="babuy1Pbtn">장바구니</button>
-
-                    </div>
-                </div>
             </div>
         </div><!-- 책 정보 -->
     </div><!-- 책 정보 관련 내용 -->
 
-
-    <div class="quick_menu">
-        <div class="quick_top"><a href="#top"><i class="fa fa-arrow-up fa-2x"></i></a></div>
-        <div class="quick_bottom"><a href="#bottom"><i class="fa fa-arrow-down fa-2x"></i></a></div>
+    <!-- 구매 폼-->
+    <div class="row">
+        <div class="col">
+            <p class="porderTitle2">구매정보입력</p>
+        </div>
     </div>
+    <form id="cobuyprdfrm" class="cobuyprdfrm">
+        <div class="col-10 offset-2">
+            <div class="form-group row prdfrmA">
+                <label for="userid" class="col-2 text-right">회원아이디</label>
+                <input type="text" name="userid" id="userid" class="col-8" value="${UID}" readonly>
+            </div>
+            <div class="form-group row prdfrmC">
+                <label for="tnum" class="col-2 text-right">상품번호</label>
+                <input type="text" name="tnum" id="tnum"class="col-8"  value="${p.tnum}" readonly>
+            </div>
+            <div class="form-group row prdfrmD">
+                <label for="price" class="col-2 text-right">가격</label>
+                <input type="text" name="price" id="price" class="col-8" value="${p.sale_price}" readonly>
+            </div>
+            <div class="form-group row prdfrmE">
+                <label for="qty" class="col-2 text-right">주문량</label>
+                <input type="text" name="qty" id="qty" class="col-8" value="">
+            </div>
+            <div class="form-group row prdfrmE">
+                <label for="address" class="col-2 text-right">주소</label>
+                <input type="text" name="address" id="address" class="col-8">
+            </div>
+            <div class="form-group row prdfrmE">
+                <label for="regdate" class="col-2 text-right">주문날짜</label>
+                <input type="text" name="regdate" id="regdate" class="col-8" disabled value="2021-06-28">
+            </div>
+            <hr>
+            <div class="form-group row prdfrmI">
+                <label class="col-2 text-right">자동입력방지</label>
+                <div class="g-recaptcha" data-sitekey="6LfaIwgbAAAAAEVrujfQ72ArOe5Ru4YCjVW1GBSl"></div>
+                <input type="hidden" id="g-recaptcha" name="g-recaptcha" />
+            </div>
+        </div>
 
+        <!-- 버튼들 -->
+        <div class="form-group row prdfrmJ">
+            <div class="col offset-5">
+                <button type="button" id="coorderPbtn">주문완료</button>
+                <button type="reset" id="corePbtn">다시입력</button>
+            </div>
+        </div>
+    </form>
 
 </div>
-<a name="bottom"></a>
