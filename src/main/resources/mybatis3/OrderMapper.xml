@@ -3,15 +3,21 @@
 <mapper namespace="order">
 
 
-    <!-- 상품 등록 write -->
+    <!-- 주문 등록 write -->
     <insert id="insertOrder" statementType="PREPARED" parameterType="thoth.spring.project.vo.Order">
         insert into torder(userid, tnum, price, qty, address)
         values (#{userid}, #{tnum}, #{price}, #{qty}, #{address})
     </insert>
 
-    <!-- 상품 상세 조회 view-->
+    <!-- 주문 상세 조회 view-->
     <select id="selectOne" statementType="PREPARED" parameterType="String" resultType="thoth.spring.project.vo.Order">
         select * from torder where tnum = #{tnum}
+    </select>
+
+    <!-- 주문 조회 - 전체 주문 수 구하기 -->
+    <select id="countOrder" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Order" resultType="int">
+        select count(tnum) from torder
     </select>
 
 </mapper>

@@ -3,6 +3,7 @@ package thoth.spring.project.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import thoth.spring.project.dao.MyinfoDAO;
+import thoth.spring.project.vo.Member;
 import thoth.spring.project.vo.Myinfo;
 
 import java.util.HashMap;
@@ -14,6 +15,7 @@ public class MyinfoServiceImpl implements MyinfoService {
 
     @Autowired
     private MyinfoDAO mdao;
+
 
     @Override
     public boolean newQna(Myinfo m) {
@@ -73,6 +75,27 @@ public class MyinfoServiceImpl implements MyinfoService {
 
         return mdao.selectCountQna(params);
     }
+
+    @Override
+    public void updatemyinfo(Member member) {
+
+        mdao.updatemyinfo(member);
+
+    }
+
+    //
+    @Override
+    public Member readOneMem(String userid) {
+        return mdao.selectOneMember(userid);
+    }
+
+
+    @Override
+    public List<Myinfo> readMyQna(String cp) {
+        int snum = (Integer.parseInt(cp) - 1) * 5;
+        return mdao.selectMyQna(snum);
+    }
+
 
 
 }

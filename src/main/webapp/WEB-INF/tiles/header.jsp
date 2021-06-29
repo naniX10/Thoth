@@ -24,10 +24,10 @@
                 <ul class="headerNav">
                     <li class="nav-item"><a href="/" class="nav-link">소개</a></li>
                     <li class="nav-item"><a href="/product/plist" class="nav-link">도서</a></li>
-                    <li class="nav-item"><a href="/product/plist" class="nav-link">아동코너</a></li>
+                    <li class="nav-item"><a href="/product/pchild" class="nav-link">아동코너</a></li>
                     <li class="nav-item"><a href="/notice/ntlist" class="nav-link">공지사항</a></li>
                     <li class="nav-item"><a href="/myinfo/mlist" class="nav-link">Q&A</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">이벤트</a></li>
+                    <li class="nav-item"><a href="/manage/managePage" class="nav-link">관리자</a></li>
                 </ul>
             </div>
 

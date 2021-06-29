@@ -1,0 +1,15 @@
+
+/* ntlist */
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+
+}
+
+.mglistTable{
+    text-align: center;
+}
+.mglistTable thead tr {
+    height:30px;
+}

@@ -3,12 +3,18 @@
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
 
-<div id="main" class="container">
-    <!-- Page Title -->
-    <div class="row">
-        <div class="col" style="margin-top:50px">
-            <button class="float-right" type="button" id="listmibtn">목록으로</button>
-        </div>
+
+<c:if test="${empty UID}">
+    <script>alert('로그인하세요!');
+    location.href='/myinfo/mlist';</script>
+</c:if>
+
+
+<div id="main">
+    <div>
+        <i class="fas fa-comments fa-2x"> QnA</i>
+        <hr> <!-- 페이지 타이틀? -->
+
     </div>
 
     <div class="row">

@@ -68,7 +68,7 @@
     <div class="row">
         <!-- 카테고리 리스트 -->
             <ul class="col-3" id="categoryUl">
-                <li><c:set var="category" value="All"></c:set>종합</li>
+                <li><a href="/product/plist">종합</a></li>
                 <li>소설</li>
                 <li>에세이</li>
                 <li><c:set var="category" value="C"></c:set>

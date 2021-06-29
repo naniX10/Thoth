@@ -5,7 +5,7 @@
         <h1 class="display-3 text-center">
             thoth</h1>
         <div class="row">
-            <img src="/thoth.png"
+            <img src="/img/thoth.png"
                  class="col-8 offset-2 img-fluid">
         </div>
     </div>

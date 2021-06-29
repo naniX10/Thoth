@@ -29,10 +29,10 @@
             parameterType="map" resultType="thoth.spring.project.vo.Myinfo">
         select mino, title, userid, regdate from myinfo
         <if test="ftype != 'titcont'">
-            where ${ftype} like concat(#{fkey}, '%') </if>
+            where ${ftype} like concat('%', #{fkey}, '%') </if>
         <if test="ftype == 'titcont'">
-            where title like concat(#{fkey}, '%') or
-            contents like concat(#{fkey}, '%') </if>
+            where title like concat('%', #{fkey}, '%') or
+            contents like concat('%', #{fkey}, '%') </if>
         order by mino desc limit #{snum}, 20
     </select>
 
@@ -64,6 +64,27 @@
             parameterType="thoth.spring.project.vo.Myinfo">
         delete from myinfo where mino = #{mino};
     </delete>
+
+    <!-- 내정보 보기? -->
+    <select id="selectOneMember" statementType="PREPARED"
+            parameterType="String" resultType="thoth.spring.project.vo.Member">
+        select * from joinMember where userid = #{userid};
+    </select>
+
+    <!-- 내정보 수정? -->
+    <update id="updatemyinfo" statementType="PREPARED"
+            parameterType="thoth.spring.project.vo.Member">
+        update joinMember set passwd = #{passwd}, phone = #{phone},
+        email = #{email} where mno = #{mno};
+    </update>
+
+    <!--내가 쓴 글 보기?-->
+    <select id="selectmyQna" statementType="PREPARED" parameterType="String"
+            resultType="thoth.spring.project.vo.Myinfo">
+        select mi.title, mi.userid, mi.regdate from joinMember jm inner join myinfo mi
+        on mi.userid = jm.userid where mi.userid = #{userid}
+        order by mi.regdate desc limit 5;
+    </select>
 
 
 </mapper>

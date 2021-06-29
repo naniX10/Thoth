@@ -36,5 +36,10 @@ public class OrderServiceImpl implements OrderService{
         return odao.selectOneOrder(tnum);
     }
 
+    @Override
+    public int countOrder() {
+        return odao.selectCountOrder();
+    }
+
 
 }
