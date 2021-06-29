@@ -111,3 +111,8 @@ $('#updateinfobtn').on('click', function () {
 });
 
 
+$('#myinfobtn').on('click', function() {
+
+    location.href = '/myinfo/mview';
+
+});

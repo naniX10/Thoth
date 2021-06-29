@@ -29,12 +29,8 @@
 
 <div id="main" class="container">
 
-    <div class="row">
-        <div class="col-5 offset-1"></div>
-        <div class="col-5 text-right">
-            <button type="button" id="listmibtn">목록으로</button>
-        </div>
-    </div>
+    <br>
+    <br>
 
     <div class="row">
         <div class="col-5 offset-1">
@@ -113,7 +109,7 @@
     <br>
     <div class="row">
         <div class="col-5 offset-1">
-            <h3><i > 내 주문</i></h3></div>
+            <h3>내 주문</h3></div>
     </div>
     <div class="card card-body bg-light col-10 offset-1">
         <form id="moform" name="moform">
@@ -152,7 +148,7 @@
     <br>
     <div class="row">
         <div class="col-5 offset-1">
-            <h3><i > 내 QnA</i></h3></div>
+            <h3>내 QnA</h3></div>
     </div>
     <div class="card card-body bg-light col-10 offset-1">
         <form id="mqform" name="mqform">

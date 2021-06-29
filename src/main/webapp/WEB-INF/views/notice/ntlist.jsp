@@ -25,12 +25,12 @@
 <c:if test ="${not empty param.findkey}">
     <c:set var="pglink" value="/notice/find?findtype=${param.findtype}&findkey=${param.findkey}&cp="/>
 </c:if>
-
+<%--${ndcnt}/${tp}--%>
 <div id = "main" class="container">
 
     <div class="row">
         <div class="col">
-            <p class="ntlistTitle">공지사항 ${ndcnt}/${tp}</p>
+            <p class="ntlistTitle">공지사항 </p>
         </div>
     </div>
 
