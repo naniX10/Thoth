@@ -1,5 +1,6 @@
 package thoth.spring.project.dao;
 
+import thoth.spring.project.vo.Member;
 import thoth.spring.project.vo.Myinfo;
 
 import java.util.List;
@@ -18,15 +19,11 @@ public interface MyinfoDAO {
     int selectCountQna();
     int selectCountQna(Map<String, Object> param);
 
+    int updatemyinfo(Member member);
 
+    Member selectOneMember(String userid);
 
-
-    /*int selectMyinfo();
-    int updateMyinfo();
-    int deleteMyinfo();*/
-
-    //selectOneMyor();
-    //updateMyor();
+    List<Myinfo> selectMyQna(int msnum);
 
 
 }

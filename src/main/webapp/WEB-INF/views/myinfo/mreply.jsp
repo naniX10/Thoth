@@ -23,12 +23,17 @@
                     <%--자신이 작성한 글 이외에는 보이면 안됨--%>
                     <%--<c:if test="${not empty UID and UID eq mi.userid}">--%>
 
-                        <button type="button" class="btn" id="mmodqnabtn">
-                            수정하기</button>
 
-                    <%--</c:if>--%>
-                </div>
-            </div>
+<div id="main">
+    <div>
+        <h1><i class="fas fa-comments"></i> QnA</h1>
+
+    </div> <!-- 페이지 타이틀? -->
+    <div>
+        <form name="mreplyfrm" id="mreplyfrm">
+            <br>
+            <input type="hidden" name="mino" id="mino" value="${param.mino}" />
+
             <div class="row">
                 <table class="col" style = "margin : 0px auto">
                     <tr>
@@ -45,12 +50,26 @@
                 </table>
             </div><!--  -->
             <div class="row">
-                <div class="col">
+
+                <div class="col-5 offset-1">
+                    <%--자신이 작성한 글 이외에는 보이면 안됨--%>
+                    <c:if test="${not empty UID and UID eq mi.userid}">
+                    <a href="/myinfo/mupdate?mino=${mi.mino}">
+                        <button type="button">
+                            <i ></i> 수정하기</button></a>
+
+                    <button type="button" id="delqnabtn">
+                        <i ></i> 삭제하기</button>
+                    </c:if>
+                </div>
+                <div class="col-5 text-right">
+
                     <a href="/myinfo/mlist">
                         <button type="button" class="btn btn-secondary" id="listmibtn">
                            목록으로</button></a>
                 </div>
             </div><!-- 배 -->
+
         </form>
     </div>
     <br>
@@ -65,10 +84,7 @@
 
                         <td><div class="cmtbg1"> ${r.regdate}
                             <span style="float:right">
-                            <c:if test="${not empty UID}">
-                                <a href="javascript:addReply('${r.mino}')">[추가]</a>
-                            </c:if>
-                            <c:if test="${UID eq r.userid}"> [수정] [삭제] </c:if>
+
                         </span></div>
                             <p>${r.reply}</p></td></tr>
                 </c:if>
@@ -91,14 +107,16 @@
                            for="reply">${UID}</label>
                     <textarea class="form-control col-7"
                               name="reply" id="reply" rows="5"></textarea>&nbsp;&nbsp;
-                    <%--<c:if test="${not empty UID}">--%>
+                    <c:if test="${not empty UID}">
                     <button class="form-control col-2 pushdwn"
                             type="button" id="newmrbtn">
-                        <i class="fa fa-comment-dots"></i> 댓글쓰기</button>
-                    <%--</c:if>--%>
+
+                        <i class="fas fa-comment-dots"></i> 댓글쓰기</button>
+                    </c:if>
                 </div>
-                <input type="hidden" name="userid" value="${UID}" />
-                <input type="hidden" name="mino" id="mino" value="${param.mino}" />
+
+
+
             </form>
         </div>
 
@@ -106,7 +124,7 @@
 </div>
 
 <!-- 대댓글 작성을 위한 모달 대화 상자 -->
-<div class="modal hide" id="replyModal" role="dialog">
+<%--<div class="modal hide" id="replyModal" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal=header">
@@ -128,7 +146,6 @@
             </div>
         </div>
     </div>
-</div>
 
-<br>
-<br>
+</div>--%>
+

@@ -21,7 +21,7 @@ public class MyinfoReplyDAOImpl implements MyinfoReplyDAO {
 
     @Override
     public int insertComment(mReply r) {
-        r.setMino(selectLastRno());
+        r.setRpno(selectLastRno());
 
         return sqlSession.insert("mireply.insertComment", r);
     }
