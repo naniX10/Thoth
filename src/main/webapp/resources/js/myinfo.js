@@ -1,11 +1,14 @@
 //
 $('#qnabtn').on('click', function() {
-    location.href = '/myinfo/mwrite';
+
+        location.href = '/myinfo/mwrite';
+
 });
 
-//
-$('#myinfobtn').on('click', function() {
-    location.href = '/myinfo/mview';
+// id입력?
+$('#myinfonqnabtn').on('click', function() {
+    let uid = $('#UID');
+    location.href = '/minfoupdate/mview?userid=' + uid;
 });
 
 //
@@ -39,7 +42,7 @@ $('#upqnabtn').on('click', function() {
 
 
 // QnA 수정 완료
-$('reupqnabtn').on('click', function () {
+$('#reupqnabtn').on('click', function () {
     if (grecaptcha.getResponse() == '') alert('자동입력방지를 확인해 주세요!');
     else {
         const frm = $('#reqnafrm');
@@ -51,7 +54,7 @@ $('reupqnabtn').on('click', function () {
 
 
 // QnA 삭제?
-$('delqnabtn').on('click', function () {
+$('#delqnabtn').on('click', function () {
     location.href = '/myinfo/mirmv?mino=' + $('#mino').val();
 });
 
@@ -83,6 +86,13 @@ $('#newrrpbtn').on('click', function (){
     }
 });
 
+// 내정보 수정하기
 
+$('#updateinfobtn').on('click', function () {
+    const frm = $('#upmiform');
+    frm.attr('method','post');
+    frm.attr('action','/myinfo/mview');
+    frm.submit();
+});
 
 

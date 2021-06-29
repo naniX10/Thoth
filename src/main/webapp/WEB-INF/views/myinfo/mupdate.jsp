@@ -1,8 +1,6 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<script src="https://www.google.com/recaptcha/api.js"></script>
-
 <div id="main">
     <div>
         <i class="fas fa-comments fa-2x"> QnA</i>
@@ -19,7 +17,7 @@
 
     <div class="card card-body bg-light col-10 offset-1">
         <form id="reqnafrm" name="reqnafrm">
-
+            <input type="hidden" name="mino" value="${mi.mino}">
             <div class="form-group row">
                 <label class="col-2 col-form-label text-right"
                        for="title">제목</label>
@@ -60,6 +58,9 @@
 
         </form>
 
+        <input type="hidden" name="">
+
     </div>
 
 </div><!-- 메인 -->
+<br>

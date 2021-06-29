@@ -3,6 +3,12 @@
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
 
+<c:if test="${empty UID}">
+    <script>alert('로그인하세요!');
+    location.href='/myinfo/mlist';</script>
+</c:if>
+
+
 <div id="main">
     <div>
         <i class="fas fa-comments fa-2x"> QnA</i>
