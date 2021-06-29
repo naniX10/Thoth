@@ -1,11 +1,29 @@
 package thoth.spring.project.vo;
 
 public class Order {
+    protected String ordnum;
     protected String userid;
     protected String tnum;
     protected String price;
     protected String qty;
     protected String address;
+    protected String regdate;
+
+    public String getOrdnum() {
+        return ordnum;
+    }
+
+    public void setOrdnum(String ordnum) {
+        this.ordnum = ordnum;
+    }
+
+    public String getRegdate() {
+        return regdate;
+    }
+
+    public void setRegdate(String regdate) {
+        this.regdate = regdate;
+    }
 
     public String getUserid() {
         return userid;

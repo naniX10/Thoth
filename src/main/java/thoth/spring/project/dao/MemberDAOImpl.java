@@ -34,4 +34,9 @@ public class MemberDAOImpl implements MemberDAO {
     public int selectLogin(Member m) {
         return sqlSession.selectOne("member.checkLogin", m);
     }
+
+    @Override
+    public int selectCountOrder() {
+        return sqlSession.selectOne("member.countMember");
+    }
 }

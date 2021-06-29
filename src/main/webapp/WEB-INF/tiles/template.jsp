@@ -28,6 +28,7 @@
       <link rel="stylesheet" type="text/css" href="/css/notice.css">
       <link rel="stylesheet" type="text/css" href="/css/product.css">
       <link rel="stylesheet" type="text/css" href="/css/join.css">
+      <link rel="stylesheet" type="text/css" href="/css/manage.css">
 
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
