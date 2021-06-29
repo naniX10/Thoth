@@ -22,7 +22,7 @@
                         <%--자신이 작성한 글 이외에는 보이면 안됨--%>
                         <c:if test="${not empty UID and UID eq mi.userid}">
                             <a href="/myinfo/mupdate?mino=${mi.mino}">
-                                <button type="button">수정하기</button></a>
+                                <button type="button" id="modmrbtn">수정하기</button></a>
                             <button type="button" id="delqnabtn">삭제하기</button>
                         </c:if>
                     </div>
@@ -44,28 +44,30 @@
                     </table>
                 </div><!--  -->
                 <div class="row">
-                    <div class="col-5 text-right">
+                    <div class="col">
+                        <br>
                         <a href="/myinfo/mlist">
-                            <button type="button" class="btn btn-secondary" id="listmibtn">
+                            <button type="button" class="btn" id="listmibtn">
                                 목록으로</button></a>
                     </div>
                 </div><!-- 배 -->
             </form>
         </div>
     <br>
-    <div>
+    <br>
 
-        <div class="row">
-            <h3 class="col-10 offset-1"><i class="fa fa-comments"></i> 답변</h3></div>
-        <table class="table col-10 offset-1">
+    <div class="row">
+        <h3 class="col"><i class="fa fa-comments"></i>답변</h3>
+    </div>
+    <div class="row">
+        <table class="table col offset-1">
             <c:forEach var="r" items="${rps}">
                 <c:if test="${r.mino eq r.rpno}">
-                    <tr><td><h4>${r.userid}</h4></td>
-
+                    <tr>
+                        <td><h4>${r.userid}</h4></td>
                         <td><div class="cmtbg1"> ${r.regdate}
                             <span style="float:right">
-
-                        </span></div>
+                            </span></div>
                             <p>${r.reply}</p></td></tr>
                 </c:if>
                 <c:if test="${r.mino ne r.rpno }">
@@ -78,10 +80,10 @@
             </c:forEach>
         </table>
     </div> <!-- 댓글목록 -->
-    <div>
+
         <div class="row">
             <form name="replyfrm" id="replyfrm"
-                  class="card card-body bg-light col-10 offset-1">
+                  class="card card-body bg-light col offset-1">
                 <div class="form-group row justify-content-center">
                     <label class="col-form-label col-2 pushdwn"
                            for="reply">${UID}</label>
@@ -90,7 +92,7 @@
                     <%--<c:if test="${not empty UID}">--%>
                     <button class="form-control col-2 pushdwn"
                             type="button" id="newmrbtn">
-                        <i class="fas fa-comment-dots"></i> 댓글쓰기</button>
+                        <i class="fa fa-comment-dots"></i> 댓글쓰기</button>
                     <%--</c:if>--%>
                 </div>
                 <input type="hidden" name="userid" value="${UID}" />
@@ -99,10 +101,9 @@
         </div>
 
     </div> <!-- 댓글쓰기 -->
-
-    </div> <!-- 댓글쓰기 -->
 </div>
 
+<br><br>
 
 
 

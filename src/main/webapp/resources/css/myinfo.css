@@ -142,3 +142,24 @@
     margin-bottom:5px;
     float:right;
 }
+
+#newmrbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+
+}
+#modmrbtn{
+    background-color:#BE79DF;
+    color:white;
+    height:40px;
+    width : 100px;
+    border-radius : 3px;
+    border-style:none;
+    font-size:15px;
+
+}
