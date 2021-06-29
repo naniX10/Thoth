@@ -3,6 +3,7 @@ package thoth.spring.project.dao;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import thoth.spring.project.vo.Member;
 import thoth.spring.project.vo.Myinfo;
 
 import java.util.List;
@@ -54,6 +55,23 @@ public class MyinfoDAOImpl implements MyinfoDAO {
     public int selectCountQna(Map<String, Object> param) {
         return sqlSession.selectOne("myinfo.findSelectCount", param);
     }
+
+    @Override
+    public int updatemyinfo(Member member) {
+        return sqlSession.update("Member.updatemyinfo", member);
+    }
+
+    @Override
+    public Member selectOneMember(String userid) {
+        return sqlSession.selectOne("myinfo.selectOneMember", userid);
+    }
+
+    @Override
+    public List<Myinfo> selectMyQna(int msnum) {
+        return sqlSession.selectList("myinfo.selectMyQna", msnum);
+    }
+
+
 
 
     /*@Override
