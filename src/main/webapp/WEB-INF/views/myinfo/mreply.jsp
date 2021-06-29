@@ -17,14 +17,14 @@
         <form class="container" name="mreplyfrm" id="mreplyfrm">
             <div class="row">
                 <div class="col">
-                        <button type="button" id="delqnabtn">
+                        <button type="button" class="btn" id="delqnabtn">
                             삭제하기</button>
                     <span class="float-right"> </span>
                     <%--자신이 작성한 글 이외에는 보이면 안됨--%>
                     <%--<c:if test="${not empty UID and UID eq mi.userid}">--%>
-                    <a href="/myinfo/mupdate?mino=${mi.mino}">
-                        <button type="button" id="mmodqnabtn">
-                            수정하기</button></a>
+
+                        <button type="button" class="btn" id="mmodqnabtn">
+                            수정하기</button>
 
                     <%--</c:if>--%>
                 </div>
@@ -98,7 +98,7 @@
                     <%--</c:if>--%>
                 </div>
                 <input type="hidden" name="userid" value="${UID}" />
-                <input type="hidden" name="mino" value="${param.mino}" />
+                <input type="hidden" name="mino" id="mino" value="${param.mino}" />
             </form>
         </div>
 

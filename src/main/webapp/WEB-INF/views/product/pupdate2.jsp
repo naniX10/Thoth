@@ -2,7 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-
+<a name="top"></a>
+<div class="wrapPlist"></div>
 <div id="main" class="container">
     <!-- Page Title -->
     <div class="row">
@@ -69,8 +70,8 @@
         <!-- 버튼들 -->
         <div class="form-group row prdfrmJ">
             <div class="col offset-5">
-            <button type="button" id="save2Pbtn">수정완료</button>
-            <button type="reset" id="re2Pbtn">다시입력</button>
+            <button type="button" id="save3Pbtn">수정완료</button>
+            <button type="reset" id="re3Pbtn">다시입력</button>
             </div>
         </div>
 
@@ -80,8 +81,11 @@
 
     </form>
 
-
+    <div class="quick_menu">
+        <div class="quick_top"><a href="#top"><i class="fa fa-arrow-up fa-2x"></i></a></div>
+        <div class="quick_bottom"><a href="#bottom"><i class="fa fa-arrow-down fa-2x"></i></a></div>
+    </div>
 
 </div>
-
+<a name="bottom"></a>
 

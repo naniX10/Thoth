@@ -18,13 +18,13 @@
     </div>
 
         <form id="reqnafrm" name="reqnafrm">
-            <input type="hidden" name="bdno" value="${mi.mino}">
+            <input type="hidden" name="mino" id="mino" value="${m.mino}">
             <div class="col-10 offset-2">
                 <div class="form-group row">
                 <label class="col-2 text-right"
                        for="title">제목</label>
                 <input type="text" name="title" id="title"
-                       class="col-8" value="${mi.title}">
+                       class="col-8" value="${m.title}">
                 </div>
             <div class="form-group row">
                 <label class="col-2 text-right"
@@ -37,7 +37,7 @@
                 <label class="col-2 text-right"
                        for="contents">내용</label>
                 <input type="textarea"  style="height:450px"  class="col-8"
-                          name="contents" id="contents" value="${mi.contents}"></textarea>
+                          name="contents" id="contents" value="${m.contents}"></textarea>
             </div>
             <div class="form-group row">
                 <label class="col-2 text-right">

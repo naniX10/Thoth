@@ -61,7 +61,7 @@
 
     <!-- QnA 삭제 -->
     <delete id="deleteQna" statementType="PREPARED"
-            parameterType="String">
+            parameterType="thoth.spring.project.vo.Myinfo">
         delete from myinfo where mino = #{mino};
     </delete>
 

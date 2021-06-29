@@ -14,7 +14,16 @@ table {
     height:50px;
 
 }
-
+.ntlistTable td {
+    border-bottom-style: solid;
+    border-bottom-width:1px;
+    border-bottom-color:black;
+}
+.ntlistTable th {
+    border-bottom-style: solid;
+    border-bottom-width:1px;
+    border-bottom-color:black;
+}
 .ntlistTable tbody tr{
     background-color:#F7E8F6;
 }

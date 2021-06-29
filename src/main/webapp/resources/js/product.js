@@ -9,9 +9,24 @@ $('#searchInbtn').on('click',function(){
     }
 });
 
+// 검색 버튼 클릭 이벤트
+$('#search2Inbtn').on('click',function(){
+    if($('#findkey').val()=='') alert('검색할 내용을 작성해주세요.');
+    else {
+        let qry = '?findtype=' + $('#findtype').val();
+        qry += '&findkey=' + $('#findkey').val()+"&cp=1";
+        let url = "/product/findchild" + qry;
+        location.href = url;
+    }
+});
+
 // 상품 등록 버튼 클릭 이벤트 : 상품 등록 페이지로 이동
 $('#newPbtn').on('click',function(){
     location.href = '/product/pwrite'
+})
+
+$('#newPbtn2').on('click',function(){
+    location.href = '/product/pwrite2'
 })
 
 // 입력 완료 버튼 클릭 이벤트 : 상품 등록 완료
@@ -34,17 +49,44 @@ $('#savePbtn').on('click',function(){
     };
 });
 
+$('#savePbtn2').on('click',function(){
+    if($('#tnum').val()=='') alert('분류코드를 입력해주세요.');
+    else if($('#title').val()=='') alert('제목을 입력해주세요.');
+    else if($('#author').val()=='') alert('저자를 입력해주세요.');
+    else if($('#publish').val()=='') alert('출판사를 입력해주세요.');
+    else if($('#origin_price').val()=='') alert('정가를 입력해주세요.');
+    else if($('#sale_price').val()=='') alert('판매가를 입력해주세요.');
+    else if($('#amount').val()=='') alert('판매량을 입력해주세요.');
+    else if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
+    else {
+        const frm = $('#prdfrm');
+        frm.attr('action','/product/pwrite2');
+        frm.attr('method','post');
+        frm.attr('enctype','multipart/form-data');
+        frm.submit();
+        alert('상품이 등록되었습니다.');
+    };
+});
+
 // 목록으로 버튼 클릭 이벤트 : view에서 list로 돌아가기
 $('#listPbtn').on('click',function(){
     location.href='/product/plist';
 });
 
+$('#list2Pbtn').on('click',function(){
+    location.href='/product/pchild';
+});
 
 
 // 상품 삭제 버튼 클릭 이벤트 1 : view에서 상품 삭제(1개 제거)
 $('#delPbtn').on('click',function(){
     alert('상품이 삭제되었습니다.');
     location.href='/product/premove?tnum='+$('#tnum').val();
+});
+
+$('#delPbtn2').on('click',function(){
+    alert('상품이 삭제되었습니다.');
+    location.href='/product/premove2?tnum='+$('#tnum').val();
 });
 
 
@@ -70,6 +112,10 @@ $('#modPbtn').on('click',function(){
     location.href = '/product/pupdate?tnum='+$('#tnum').val();
 });
 
+$('#modPbtn2').on('click',function(){
+    location.href = '/product/pupdate2?tnum='+$('#tnum').val();
+});
+
 // 수정 완료 버튼 클릭 이벤트 : 상품 수정 완료
 $('#save2Pbtn').on('click',function(){
    if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
@@ -80,6 +126,18 @@ $('#save2Pbtn').on('click',function(){
          frm.attr('enctype','multipart/form-data');
          frm.submit();
          alert('상품이 수정되었습니다.');
+    };
+});
+
+$('#save3Pbtn').on('click',function(){
+    if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
+    else {
+        const frm = $('#modprdfrm');
+        frm.attr('action','/product/pupdate2');
+        frm.attr('method','post');
+        frm.attr('enctype','multipart/form-data');
+        frm.submit();
+        alert('상품이 수정되었습니다.');
     };
 });
 
@@ -120,3 +178,24 @@ $('#die3').on('change',function(){
 $('#categoryUl li').on('click',function(){
 
 });
+
+// 상품 등록 버튼 클릭 이벤트 : 상품 등록 페이지로 이동
+$('#buy2Pbtn').on('click',function(){
+    location.href = '/product/porder?tnum='+$('#tnum').val();
+    // location.href = '/product/pupdate?tnum='+$('#tnum').val();
+})
+
+// 입력 완료 버튼 클릭 이벤트 : 상품 등록 완료
+$('#orderPbtn').on('click',function(){
+    if($('#address').val()=='') alert('주소를 입력해주세요.');
+    else if(grecaptcha.getResponse()=='') alert('자동가입방지를 입력해주세요.');
+    else {
+        const frm = $('#buyprdfrm');
+        frm.attr('action','/product/porder');
+        frm.attr('method','post');
+        frm.attr('enctype','multipart/form-data');
+        frm.submit();
+        alert('주문이 완료되었습니다.');
+    };
+});
+

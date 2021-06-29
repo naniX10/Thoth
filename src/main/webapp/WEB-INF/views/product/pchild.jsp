@@ -19,11 +19,11 @@
 </c:if>
 
 <%-- 페이지 링크 --%>
-<c:set var="pglink" value="/product/plist?cp="/>
+<c:set var="pglink" value="/product/pchild?cp="/>
 
 <%-- 페이지 링크2 - 검색 --%>
 <c:if test ="${not empty param.findkey}">
-    <c:set var="pglink" value="/product/find?findtype=${param.findtype}&findkey=${param.findkey}&cp="/>
+    <c:set var="pglink" value="/product/findchild?findtype=${param.findtype}&findkey=${param.findkey}&cp="/>
 </c:if>
 
 <%-- 카테고리 --%>
@@ -55,8 +55,8 @@
                             <option value="publish">출판사</option>
                         </select>
                         <input type="search" name="findkey" id="findkey" placeholder="분야내 검색">
-                        <button type="button"  class="btn" id="searchInbtn">검색</button>
-                        <button type="button" class="btn newPbtn" id="newPbtn">상품등록</button>
+                        <button type="button"  class="btn" id="search2Inbtn">검색</button>
+                        <button type="button" class="btn newPbtn" id="newPbtn2">상품등록</button>
                     </div>
                         <%--                <p>검색 결과 : ${pcnt} 개의 결과가 검색되었습니다. 총 페이지 수 : ${tp}</p>--%></div>
             </div>
@@ -107,7 +107,7 @@
                             <div class="row listAImage">
                                 <div class="col">
                                 <c:if test="${not empty p.image}">
-                                    <a href="/product/pview?tnum=${p.tnum}">
+                                    <a href="/product/pviewchild?tnum=${p.tnum}">
                                         <img src="${p.image}" alt="도서이미지" width="100px" height="150px"></img></a>
                                 </c:if>
                                 <!-- 새글쓰기로 추가한 이미지 -->
@@ -117,14 +117,14 @@
                                         <c:set var="pos" value="${fn:indexOf(f,'.')}"/>
                                         <c:set var="fname" value="${fn:substring(f,0,pos)}"/>
                                         <c:set var="fext" value="${fn:substring(f,pos+1,fn:length(f))}"/>
-                                        <a href="/product/pview?tnum=${p.tnum}"><img src="${baseURL}${fname}${p.uuid}.${fext}" alt="도서이미지2" width="100px" height="150px"></img></a>
+                                        <a href="/product/pviewchild?tnum=${p.tnum}"><img src="${baseURL}${fname}${p.uuid}.${fext}" alt="도서이미지2" width="100px" height="150px"></img></a>
                                     </c:if>
                                 </c:if>
                                 </div>
                             </div>
                             <div class="row listA">
                                 <div class="col">
-                                    <a href="/product/pview?tnum=${p.tnum}">${p.title}</a>
+                                    <a href="/product/pviewchild?tnum=${p.tnum}">${p.title}</a>
                                 </div>
 
                             </div>

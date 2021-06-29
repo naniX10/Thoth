@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import thoth.spring.project.vo.BookImage;
 import thoth.spring.project.vo.Product;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +18,6 @@ public class ProductDAOImpl implements ProductDAO{
     // 상품 조회 - snum부터 n개의 게시물 출력(현재는 10개로 설정)
     @Override
     public List<Product> selectProduct(int snum) {
-
         return sqlSession.selectList("product.selectProduct",snum);
     }
 
@@ -105,5 +105,65 @@ public class ProductDAOImpl implements ProductDAO{
     public int selectCountProduct2() {
         return sqlSession.selectOne("product.countProduct2");
     }
+
+    /* child */
+
+    @Override
+    public List<Product> select2Product(int snum) {
+        return sqlSession.selectList("product.select2Product",snum);
+    }
+
+    @Override
+    public int selectCount2Product() {
+        return sqlSession.selectOne("product.count2Product");
+    }
+
+    @Override
+    public List<Product> findSelect2Product(Map<String, Object> params) {
+        return sqlSession.selectList("product.find2Select",params) ;
+    }
+
+    @Override
+    public int selectCount2Product(Map<String, Object> params) {
+        return sqlSession.selectOne("product.findSelect2Count",params);
+    }
+
+    @Override
+    public Product selectOne2Product(String tnum) {
+        return sqlSession.selectOne("product.select2One",tnum);
+    }
+
+    @Override
+    public BookImage selectOne2Image(String tnum) {
+        return  sqlSession.selectOne("product.select2OneImage",tnum);
+    }
+
+    @Override
+    public int insert2Product(Product p, BookImage b) {
+        int result = sqlSession.insert("product.insert2Product",p);
+        sqlSession.insert("product.insertImage",b);
+        return result;
+    }
+
+    @Override
+    public void delete2Product(String tnum) {
+        sqlSession.delete("product.delete2Product",tnum);
+    }
+
+    @Override
+    public void delete2Image(String tnum) {
+        sqlSession.delete("product.delete2Image",tnum);
+    }
+
+    @Override
+    public int update2Product(Product p) {
+        return sqlSession.update("product.update2Product",p);
+    }
+
+    @Override
+    public int update2Image(BookImage b) {
+        return sqlSession.update("product.update2Image",b);
+    }
+
 
 }

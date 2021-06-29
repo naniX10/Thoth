@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<a name="top"></a>
+<div class="wrapPlist"></div>
 <div id="main" class="container">
         <!-- Page Title -->
         <div class="row">
@@ -66,11 +67,18 @@
                 <!-- 버튼들 -->
                 <div class="form-group row prdfrmJ">
                     <div class="col offset-5">
-                        <button type="submit" id="savePbtn">입력완료</button>
+                        <button type="submit" id="savePbtn2">입력완료</button>
                         <button type="reset" id="rePbtn">다시입력</button>
                     </div>
                 </div>
             </form>
-</div>
 
+
+
+    <div class="quick_menu">
+        <div class="quick_top"><a href="#top"><i class="fa fa-arrow-up fa-2x"></i></a></div>
+        <div class="quick_bottom"><a href="#bottom"><i class="fa fa-arrow-down fa-2x"></i></a></div>
+    </div>
+</div>
+<a name="bottom"></a>
 
