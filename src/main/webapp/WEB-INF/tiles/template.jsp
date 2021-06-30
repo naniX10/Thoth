@@ -93,7 +93,19 @@
         </div>
       
     </div>
+  <div class="minibook text-center">
+    <h6 style="font-weight:bold">추천도서</h6>
+    <a href="/product/pview?tnum=D13">
+      <img src="http://image.kyobobook.co.kr/images/book/large/274/l9788932474274.jpg" width="70px"></a>
+    <h4> </h4>
+    <a href="/product/pview?tnum=J19">
+      <img src="http://image.kyobobook.co.kr/images/book/large/148/l9788997107148.jpg" width="70px"></a>
+    <h4> </h4>
+    <a href="/product/pview?tnum=K16">
+      <img src="http://image.kyobobook.co.kr/images/book/large/640/l9791160320640.jpg" width="70px"></a></div>
+
   <div class="quick_menu">
+
     <div class="quick_top"><a href="#top"><i class="fa fa-arrow-up fa-2x"></i></a></div>
     <div class="quick_bottom"><a href="#bottom"><i class="fa fa-arrow-down fa-2x"></i></a></div>
   </div>

@@ -25,7 +25,7 @@ public class ChProductServiceImpl implements ChProductService{
 
     @Override
     public List<Product> chreadProduct(String cp) {
-        int snum = (Integer.parseInt(cp)-1)*20; // 10개 게시물 출력
+        int snum = (Integer.parseInt(cp)-1)*20; // 20개 게시물 출력
         return pchdao.chselectProduct(snum);
     }
 
@@ -36,7 +36,7 @@ public class ChProductServiceImpl implements ChProductService{
 
     @Override
     public List<Product> chreadProduct(String cp, String findtype, String findkey) {
-        int snum = 10*(Integer.parseInt(cp)-1); // 10개 게시물 고정
+        int snum = 20*(Integer.parseInt(cp)-1); // 20개 게시물 고정
         Map<String, Object> params = new HashMap<>();
         params.put("snum",snum);
         params.put("ftype",findtype);
