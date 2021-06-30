@@ -31,7 +31,13 @@
 
     <br>
     <br>
-
+    <!-- Page Title -->
+    <div class="row">
+        <div class="col">
+            <p class="joinTitle">내정보페이지</p>
+        </div>
+        <hr>
+    </div><!-- 페이지 타이틀 -->
     <div class="row">
         <div class="col-5 offset-1">
             <h3>내 정보 수정</h3></div>
