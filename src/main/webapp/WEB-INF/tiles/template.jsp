@@ -102,7 +102,11 @@
       <img src="http://image.kyobobook.co.kr/images/book/large/148/l9788997107148.jpg" width="70px"></a>
     <h4> </h4>
     <a href="/product/pview?tnum=K16">
-      <img src="http://image.kyobobook.co.kr/images/book/large/640/l9791160320640.jpg" width="70px"></a></div>
+      <img src="http://image.kyobobook.co.kr/images/book/large/640/l9791160320640.jpg" width="70px"></a>
+    <h4> </h4>
+    <a href="/product/pview?tnum=R4">
+      <img src="http://image.kyobobook.co.kr/images/book/large/754/l9788925567754.jpg" width="70px"></a>
+  </div>
 
   <div class="quick_menu">
 
