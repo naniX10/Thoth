@@ -74,16 +74,16 @@
                 </select>
                 <span class="col-form-label">&nbsp;&mdash;&nbsp;</span>
                 <input type="text" name="mitel2" id="mitel2"
-                       class="form-control col-2" maxlength="4" value="${member.phone}">
+                       class="form-control col-2" maxlength="4" value="${fn:substring(member.phone,4,8)}">
                 <span class="col-form-label">&nbsp;&mdash;&nbsp;</span>
                 <input type="text" name="mitel3" id="mitel3"
-                       class="form-control col-2" maxlength="4">
+                       class="form-control col-2" maxlength="4" value="${fn:substring(member.phone,9,13)}">
             </div><!-- 전화번호 -->
             <div class="form-group row">
                 <label class="col-3 col-form-label text-right"
                        for="miemail1">이메일 주소</label>
                 <input type="text" name="miemail1" id="miemail1"
-                       class="form-control col-3" value="${(member.email)}">
+                       class="form-control col-3" value="${fn:substringBefore(member.email, '@')}">
 
                 <div class="input-group-prepend">
                     <span class="input-group-text">@</span>

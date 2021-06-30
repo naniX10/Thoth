@@ -115,7 +115,7 @@
                                 <div class="col">${p.author}&nbsp;|&nbsp;${p.publish}</div>
                             </div>
                             <div class="row listA">
-                                <div class="col">${p.sale_price}</div>
+                                <div class="col">${p.sale_price}원</div>
                             </div>
                         </div>
                     </div>
