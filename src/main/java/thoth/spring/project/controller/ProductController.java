@@ -141,7 +141,7 @@ public class ProductController {
     {
         mv.setViewName("product/pupdate.tiles");
         mv.addObject("p",psrv.readOneProduct(tnum));
-        mv.addObject("b",psrv.readOneImage(tnum));
+        //mv.addObject("b",psrv.readOneImage(tnum));
         return mv;
     }
 
@@ -150,7 +150,7 @@ public class ProductController {
     {
         mv.setViewName("product/pupdate2.tiles");
         mv.addObject("p",psrv.readOne2Product(tnum));
-        mv.addObject("b",psrv.readOne2Image(tnum));
+        //mv.addObject("b",psrv.readOne2Image(tnum));
         return mv;
     }
 
@@ -158,18 +158,18 @@ public class ProductController {
     @PostMapping("/product/pupdate")
     public String pupdateok(Product p,BookImage b, MultipartFile[] img){
         psrv.modifyProduct(p);
-        if(b.getTodie()!=""){
-            psrv.modifyImage(b,img);
-        }
+//        if(b.getTodie()!=""){
+//            psrv.modifyImage(b,img);
+//        }
         return "redirect:/product/plist";
     }
 
     @PostMapping("/product/pupdate2")
     public String pupdateok2(Product p,BookImage b, MultipartFile[] img){
         psrv.modify2Product(p);
-        if(b.getTodie()!=""){
-            psrv.modify2Image(b,img);
-        }
+//        if(b.getTodie()!=""){
+//            psrv.modify2Image(b,img);
+//        }
         return "redirect:/product/pchild";
     }
 
