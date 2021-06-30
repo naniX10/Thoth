@@ -89,7 +89,7 @@
                     <span class="input-group-text">@</span>
                 </div>
                 <input type="text" name="miemail2" id="miemail2"
-                       class="form-control border-dark col-2" readonly>
+                       class="form-control border-dark col-2" readonly value="${fn:substringAfter(member.email, '@')}">
                 &nbsp;
                 <select class="form-control col-2" id="miemail3">
                     <option>-선택하세요-</option>

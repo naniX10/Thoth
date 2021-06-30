@@ -109,7 +109,16 @@ $('#updateinfobtn').on('click', function () {
     frm.attr('action','/myinfo/mview');
     frm.submit();
 });
-
+$('#miemail3').on('change', function () {
+    let val = $('#miemail3 option:selected').text();
+    if (val == '직접입력하기') {
+        $('#miemail2').attr('readonly', false);
+        $('#miemail2').val('');
+    } else {
+        $('#miemail2').attr('readonly', true);
+        $('#miemail2').val(val);
+    }
+});
 
 $('#myinfobtn').on('click', function() {
     location.href = '/myinfo/mview';
