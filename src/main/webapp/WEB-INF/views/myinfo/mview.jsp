@@ -114,22 +114,16 @@
     <div class="card card-body bg-light col-10 offset-1">
         <form id="moform" name="moform">
             <table class="table table-striped text-center table-hover">
-                <thead style="background: #dff0d8">
-                <tr>
-                    <th style="width: 7%">주문날짜</th>
+                <thead class="mglistTable" style="background: #dff0d8">
+                <tr class="text-white" style="background-color:#BD83CE">
+                    <th >주문날짜</th>
                     <th>제품명</th>
-                    <th style="width: 15%">상태</th>
-                    <th style="width: 15%">취소/확인</th>
+                    <th >상태</th>
+                    <th >취소/확인</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="text-danger">
-                    <th>2021/06/18</th>
-                    <th>한권으로 끝내는 FFF</th>
-                    <th>배송중<br>배송조회</th>
-                    <th>[반품하기]<br> [수취확인]</th>
 
-                </tr>
                 <c:forEach var="mo" items="${mos}">
                     <tr>
                         <td>${fn:substring(mi.ordate,0,10)}</td>
@@ -152,12 +146,12 @@
     </div>
     <div class="card card-body bg-light col-10 offset-1">
         <form id="mqform" name="mqform">
-            <table class="table table-striped text-center table-hover">
+            <table class="table table-striped text-center table-hover mglistTable">
                 <thead style="background: #dff0d8">
-                <tr>
+                <tr class="text-white" style="background-color:#BD83CE">
                     <th>제목</th>
-                    <th style="width: 15%">작성자</th>
-                    <th style="width: 15%">작성일</th>
+                    <th >작성자</th>
+                    <th >작성일</th>
                 </tr>
                 </thead>
                 <tbody>
