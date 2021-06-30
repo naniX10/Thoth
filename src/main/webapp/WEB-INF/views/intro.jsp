@@ -1,65 +1,60 @@
 <%@ page pageEncoding="UTF-8"%>
 
 <div id="main" class="row">
+
+    <!-- Page Title -->
+
+
     <div class="col-12">
-        <h1 class="display-3 text-center">
-            thoth</h1>
         <div class="row">
+            <div class="col">
+                <p class="introTitle">Welcome to Thoth</p>
             <img src="/img/thoth.png"
                  class="col-8 offset-2 img-fluid">
+            </div>
         </div>
     </div>
+
     <div class="row">
-        <div class="col-8 offset-2 text-justify">
-            <p>Maecenas luctus dignissim magna, vitae iaculis thoth ultricies eu. thoth  dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque lectus porttitor tellus scelerisque, vel placerat  pulvinar. Donec ut convallis sem. Curabitur hendrerit nulla vitae turpis viverra, at sodales lacus aliquet. Aenean id posuere neque, quis pulvinar sapien. Aliquam vestibulum maximus nibh at dapibus. Quisque feugiat egestas elementum. Nunc vulputate imperdiet augue, sed rutrum  fermentum ac. Sed porttitor rhoncus tempus. Aliquam dapibus consequat orci, eu fringilla erat facilisis vel. Phasellus sagittis nulla ac sem efficitur convallis. Mauris convallis metus quis efficitur interdum. Etiam eget nunc lectus. Duis feugiat  sit amet justo dignissim, sed hendrerit lectus sodales. Maecenas volutpat, nunc ut viverra lobortis, libero  laoreet mauris, quis efficitur ante nisi sed ex.</p>
-            <div class="text-center">
-                <button type="button"
-                        class="btn btn-success">
-                    지금 바로 시작하기</button></div>
+        <div class="col-4 text-center">
+            <h2>최고 매출 도서</h2>
+            <br>
+            <a href="/product/pview?tnum=H8">
+            <img src="http://image.kyobobook.co.kr/images/book/large/508/l9788962622508.jpg" width="150px" height="200px">
+            </a>
+            <p></p>
+            <p>Fusce quam sem, ornare vel pulvinar id, suscipit ac leo. Mauris vel nibh in est efficitur porttitor. Etiam quis malesuada tellus.Donec aliquet augue et mauris elementum consectetur.</p>
+<%--            <div><button type="button"--%>
+<%--                         class="btn btn-light">--%>
+<%--                자세히 보기&blacktriangleright;</button></div>--%>
+            <br>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <h2>極秘</h2>
-            <p>Fusce quam sem, ornare vel pulvinar id, suscipit ac leo. Mauris vel nibh in est efficitur porttitor. Etiam quis malesuada tellus. Aliquam ac mattis turpis. Proin suscipit et thoth sed ultricies. Sed augue nibh, tincidunt eget accumsan in, mollis id risus. Sed interdum  sed diam convallis mattis. Fusce euismod viverra nisi, a consectetur erat vehicula nec. Pellentesque ac mi ligula. Vivamus molestie mauris quis nisl fermentum, ut luctus enim hendrerit. Duis sagittis et sapien quis posuere. Morbi ac lacinia tortor, eu sagittis quam. Donec aliquet augue et mauris elementum consectetur. Maecenas nisi tortor, euismod accumsan elit a, ornare tincidunt ligula. Vestibulum luctus thoth nec rhoncus placerat.</p>
-            <div><button type="button"
-                         class="btn btn-light">
-                자세히 보기&blacktriangleright;</button></div>
+        <div class="col-4 text-center">
+            <h2>최고 매출 아동도서</h2>
+            <br>
+            <a href="/product/pviewchild?tnum=Child20">
+            <img src="http://image.kyobobook.co.kr/images/book/large/561/l9791186494561.jpg" width="150px" height="200px"></a>
+            <p></p>
+            <p>Fusce quam sem, ornare vel pulvinar id, suscipit ac leo. Mauris vel nibh in est efficitur porttitor. Etiam quis malesuada tellus.Donec aliquet augue et mauris elementum consectetur.</p>
+<%--            <div><button type="button"--%>
+<%--                         class="btn btn-light">--%>
+<%--                자세히 보기&blacktriangleright;</button></div>--%>
+            <br>
         </div>
-        <div class="col-4">
-            <h2>誤謬</h2>
-            <p>Fusce quam sem, ornare vel pulvinar id, suscipit ac leo. Mauris vel nibh in est efficitur porttitor. Etiam quis malesuada tellus. Aliquam ac mattis turpis. Proin suscipit et thoth sed ultricies. Sed augue nibh, tincidunt eget accumsan in, mollis id risus. Sed interdum  sed diam convallis mattis. Fusce euismod viverra nisi, a consectetur erat vehicula nec. Pellentesque ac mi ligula. Vivamus molestie mauris quis nisl fermentum, ut luctus enim hendrerit. Duis sagittis et sapien quis posuere. Morbi ac lacinia tortor, eu sagittis quam. Donec aliquet augue et mauris elementum consectetur. Maecenas nisi tortor, euismod accumsan elit a, ornare tincidunt ligula. Vestibulum luctus thoth nec rhoncus placerat.</p>
-            <div><button type="button"
-                         class="btn btn-light">
-                자세히 보기&blacktriangleright;</button></div>
+        <div class="col-4 text-center">
+            <h2>실시간 추천도서</h2>
+            <br>
+            <a href="/product/pview?tnum=P1">
+                <img src="http://image.kyobobook.co.kr/images/book/large/248/l9788970127248.jpg" width="150px" height="200px"></a>s
+            <p></p>
+            <p>Fusce quam sem, ornare vel pulvinar id, suscipit ac leo. Mauris vel nibh in est efficitur porttitor. Etiam quis malesuada tellus.Donec aliquet augue et mauris elementum consectetur.</p>
+<%--            <div><button type="button"--%>
+<%--                         class="btn btn-light">--%>
+<%--                자세히 보기&blacktriangleright;</button></div>--%>
+            <br>
         </div>
-        <div class="col-4">
-            <h2>警告</h2>
-            <p>Fusce quam sem, ornare vel pulvinar id, suscipit ac leo. Mauris vel nibh in est efficitur porttitor. Etiam quis malesuada tellus. Aliquam ac mattis turpis. Proin suscipit et thoth sed ultricies. Sed augue nibh, tincidunt eget accumsan in, mollis id risus. Sed interdum  sed diam convallis mattis. Fusce euismod viverra nisi, a consectetur erat vehicula nec. Pellentesque ac mi ligula. Vivamus molestie mauris quis nisl fermentum, ut luctus enim hendrerit. Duis sagittis et sapien quis posuere. Morbi ac lacinia tortor, eu sagittis quam. Donec aliquet augue et mauris elementum consectetur. Maecenas nisi tortor, euismod accumsan elit a, ornare tincidunt ligula. Vestibulum luctus thoth nec rhoncus placerat.</p>
-            <div><button type="button"
-                         class="btn btn-light">
-                자세히 보기&blacktriangleright;</button></div>
-        </div>
-        <div class="col-4">
-            <h2>危險</h2>
-            <p>Fusce quam sem, ornare vel pulvinar id, suscipit ac leo. Mauris vel nibh in est efficitur porttitor. Etiam quis malesuada tellus. Aliquam ac mattis turpis. Proin suscipit et thoth sed ultricies. Sed augue nibh, tincidunt eget accumsan in, mollis id risus. Sed interdum  sed diam convallis mattis. Fusce euismod viverra nisi, a consectetur erat vehicula nec. Pellentesque ac mi ligula. Vivamus molestie mauris quis nisl fermentum, ut luctus enim hendrerit. Duis sagittis et sapien quis posuere. Morbi ac lacinia tortor, eu sagittis quam. Donec aliquet augue et mauris elementum consectetur. Maecenas nisi tortor, euismod accumsan elit a, ornare tincidunt ligula. Vestibulum luctus thoth nec rhoncus placerat.</p>
-            <div><button type="button"
-                         class="btn btn-light">
-                자세히 보기&blacktriangleright;</button></div>
-        </div>
-        <div class="col-4">
-            <h2>隔離</h2>
-            <p>Fusce quam sem, ornare vel pulvinar id, suscipit ac leo. Mauris vel nibh in est efficitur porttitor. Etiam quis malesuada tellus. Aliquam ac mattis turpis. Proin suscipit et thoth sed ultricies. Sed augue nibh, tincidunt eget accumsan in, mollis id risus. Sed interdum  sed diam convallis mattis. Fusce euismod viverra nisi, a consectetur erat vehicula nec. Pellentesque ac mi ligula. Vivamus molestie mauris quis nisl fermentum, ut luctus enim hendrerit. Duis sagittis et sapien quis posuere. Morbi ac lacinia tortor, eu sagittis quam. Donec aliquet augue et mauris elementum consectetur. Maecenas nisi tortor, euismod accumsan elit a, ornare tincidunt ligula. Vestibulum luctus thoth nec rhoncus placerat.</p>
-            <div><button type="button"
-                         class="btn btn-light">
-                자세히 보기&blacktriangleright;</button></div>
-        </div>
-        <div class="col-4">
-            <h2>制限</h2>
-            <p>Fusce quam sem, ornare vel pulvinar id, suscipit ac leo. Mauris vel nibh in est efficitur porttitor. Etiam quis malesuada tellus. Aliquam ac mattis turpis. Proin suscipit et thoth sed ultricies. Sed augue nibh, tincidunt eget accumsan in, mollis id risus. Sed interdum  sed diam convallis mattis. Fusce euismod viverra nisi, a consectetur erat vehicula nec. Pellentesque ac mi ligula. Vivamus molestie mauris quis nisl fermentum, ut luctus enim hendrerit. Duis sagittis et sapien quis posuere. Morbi ac lacinia tortor, eu sagittis quam. Donec aliquet augue et mauris elementum consectetur. Maecenas nisi tortor, euismod accumsan elit a, ornare tincidunt ligula. Vestibulum luctus thoth nec rhoncus placerat.</p>
-            <div><button type="button"
-                         class="btn btn-light">
-                자세히 보기&blacktriangleright;</button></div>
-        </div>
+
     </div>
 </div>
+
+<br><br>
